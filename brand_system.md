@@ -5,6 +5,11 @@ single, self-contained, narrated Manim scene file that renders cleanly on the us
 via the existing batch pipeline. Follow every rule below. A gold-standard example
 (`q1.py`, "The Chase") is appended after these rules — match its structure and quality.
 
+>> FOR KINEMATICS QUESTIONS: also obey `kinematics_guidelines.md` (the decoded official
+   Orange Nelumbo design system). It defines the 8-frame arc (TITLE, HOOK, CONCEPT, FORMULA,
+   EXAMPLE, GRAPH, RECAP, END CARD), the exact chrome, the colour law, and 2D vs 3D recipes.
+   Use Part A (2D) for almost everything; use Part B (ThreeDScene) ONLY for genuinely 3D motion.
+
 ## OUTPUT CONTRACT (strict)
 - Return ONLY the Python file content, inside ONE ```python fenced block. No prose, no tools.
 - The file must define exactly ONE class, named EXACTLY as instructed in the task.
