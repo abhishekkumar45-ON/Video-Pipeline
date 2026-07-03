@@ -21,12 +21,15 @@ scenes render exactly like the Mac previews, no code edits). First render downlo
 ~330 MB Kokoro model once, then it's offline.
 
 ## 2. Render in 4K — run each in its own terminal (parallel)
+Each terminal needs the project root on PYTHONPATH so scenes can import the voice service:
 ```bash
 source .venv/bin/activate
+export PYTHONPATH="$PWD"                                   # REQUIRED (import kokoro_service)
 manim -qk --media_dir build/media scenes/q5.py Scene_q5   # terminal 1
 manim -qk --media_dir build/media scenes/q6.py Scene_q6   # terminal 2
 manim -qk --media_dir build/media scenes/q7.py Scene_q7   # terminal 3
 ```
+(Or skip the PYTHONPATH line and use `python batch_render.py --quality=-qk`, which sets it for you.)
 `-qk` = 2160p (4K). Output lands at:
 ```
 build/media/videos/q5/2160p60/Scene_q5.mp4
