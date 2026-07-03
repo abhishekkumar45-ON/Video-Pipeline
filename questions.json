@@ -1,0 +1,44 @@
+[
+  {
+    "id": "q1",
+    "chapter": "Kinematics",
+    "question": "Particle 1 starts from A with u=10 m/s, a=2 m/s^2. Exactly 5 s later Particle 2 starts from the same point A with u=20 m/s, a=1 m/s^2, same direction. Find the time (from Particle 1's start) at which Particle 2 first catches Particle 1.",
+    "options": "(A) 10 s  (B) 15 s  (C) 20 s  (D) never catches",
+    "answer": "(D) The second particle never catches the first (discriminant < 0)",
+    "status": "done",
+    "video_url": "https://drive.google.com/open?id=1U4Sq7Tu0fmScvRfOP8ozaWU2JYKqMz5j"
+  },
+  {
+    "id": "q3",
+    "chapter": "Kinematics",
+    "question": "A stone is dropped from rest from the top of a 45 m tall building. Taking g = 10 m/s^2, how long does it take to reach the ground?",
+    "options": "(A) 2 s  (B) 3 s  (C) 4 s  (D) 4.5 s",
+    "answer": "(B) 3 s",
+    "status": "done",
+    "video_url": "https://drive.google.com/open?id=1x25cLfSPQ7fAhlUAiYAckP2V2Me5cncu"
+  },
+  {
+    "id": "q5",
+    "chapter": "Optics",
+    "question": "Two isosceles prisms 1 and 2 (angles A1,A2; indices n1,n2) have inner faces a1b1, a2b2 parallel and both perpendicular to a horizontal mirror M. A ray enters a1c1, leaves prism 1 at a1b1, reflects off M, enters prism 2 at a2b2, emerges from a2c2. Pick correct statement(s). Key link: i2 = e1.",
+    "options": "(A) both at min deviation => n2/n1 = sin(A1/2)/sin(A2/2)  (B) sin i1 = n2 sin(A2/2)  (C) theta = (1/2)[dm1/(n1-1)+dm2/(n2-1)]  (D) if prism1 at min deviation, sin i2 = n1 sin(A1/2)",
+    "answer": "A and D",
+    "status": "pending"
+  },
+  {
+    "id": "q6",
+    "chapter": "EM Fields",
+    "question": "Charge q=1uC, mass m=1mg, v0=(i+2j) m/s at origin (y0=0). For 0<=t<0.2s: E=1i V/m with gravity -10j. At t=0.2s E off, B=6j T on. q/m=1. Phase1: a=(1i-10j); at 0.2s v=(1.2,0,0), y=0.2m. Phase2: y free-falls y=0.2-5t'^2, xz circle R=v_perp/omega=1.2/6=0.2m, omega=6. Pick correct statement(s).",
+    "options": "(A) at t=0.3s, y=15 cm  (B) at t=0.4s, distance from XZ plane =10 cm  (C) radius = 20 cm  (D) returns to XZ plane at t=0.35 s",
+    "answer": "A and C",
+    "status": "pending"
+  },
+  {
+    "id": "q7",
+    "chapter": "Electrostatics",
+    "question": "Charge Q1=q at P1(a,b) and Q2=mq at P2(ma,mb), with a,b nonzero and m not 0 or 1. Find the locus of points where |V1|=|V2|. Master equation: (m+1)(x^2+y^2) - 2m(ax+by) = 0. m=-1 gives a line ax+by=0; else a circle center (ma/(m+1), mb/(m+1)), radius |m|/|m+1| * sqrt(a^2+b^2).",
+    "options": "(A) m=-1 => line ax+by=0  (B) m=2 => circle center (2a/3,2b/3) radius (2/3)sqrt(a^2+b^2)  (C) m=-2 => circle center (2a,2b) radius 2 sqrt(a^2+b^2)  (D) m=-3 => straight line 3bx+3ay=0",
+    "answer": "A, B and C",
+    "status": "pending"
+  }
+]

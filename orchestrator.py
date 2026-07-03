@@ -1,0 +1,308 @@
+"""
+orchestrator.py — assisted question -> narrated Manim video pipeline (ZERO cost).
+
+Your org blocked headless `claude -p`, and you won't pay the API. So the LLM step
+(writing the Manim code) stays in THIS chat, which is free on your subscription.
+The orchestrator automates everything around it: question tracking, the paste-ready
+prompt, the compile+render gate, Drive upload, and resumable state.
+
+Two-step loop per question:
+
+  1) python orchestrator.py next
+        Selector picks the next `pending` question, builds the full prompt
+        (brand_system.md + q1.py exemplar + the question), writes it to
+        prompts/<id>.txt AND copies it to your clipboard.
+        -> Paste it into the Claude chat. Save the ```python reply to scenes/<id>.py.
+
+  2) python orchestrator.py build <id> [--quality=-qh] [--drive=gdrive:JEE-Videos/Kinematics]
+        Gate (py_compile) -> render -> copy to outputs/<id>.mp4 -> upload to Drive
+        -> mark the question done (+url) in questions.json.
+        If the render fails, it writes prompts/<id>_repair.txt (traceback + your code)
+        and copies it to the clipboard -> paste that, re-save scenes/<id>.py, build again.
+
+  python orchestrator.py status         # table of every question + its state
+
+Prereqs in the shell:
+  source .venv/bin/activate
+  eval "$(/usr/libexec/path_helper)"    # so latex/MathTex resolves
+
+Phase-2 (when you fund an API key, these become real autonomous agents):
+  script_judge(), visual_qc(), caption_writer() hooks are stubbed below.
+"""
+import argparse
+import glob
+import json
+import os
+import re
+import shutil
+import subprocess
+import sys
+
+ROOT = os.path.dirname(os.path.abspath(__file__))
+QUESTIONS = os.path.join(ROOT, "questions.json")
+BRAND = os.path.join(ROOT, "brand_system.md")
+EXEMPLAR = os.path.join(ROOT, "scenes", "q1.py")
+SCENES_DIR = os.path.join(ROOT, "scenes")
+PROMPTS_DIR = os.path.join(ROOT, "prompts")
+OUT_DIR = os.path.join(ROOT, "outputs")
+MEDIA = os.path.join(ROOT, "build", "media")
+
+
+# ---------------- state ----------------
+def load_questions():
+    with open(QUESTIONS, encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_questions(qs):
+    with open(QUESTIONS, "w", encoding="utf-8") as f:
+        json.dump(qs, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
+
+def find_q(qs, qid):
+    for q in qs:
+        if q["id"] == qid:
+            return q
+    return None
+
+
+def class_name_for(qid):
+    """Deterministic, valid-identifier class name the agent must use and we render."""
+    return "Scene_" + re.sub(r"\W", "_", qid)
+
+
+def read(path):
+    with open(path, encoding="utf-8") as f:
+        return f.read()
+
+
+def to_clipboard(text):
+    try:
+        p = subprocess.run(["pbcopy"], input=text, text=True)
+        return p.returncode == 0
+    except FileNotFoundError:
+        return False
+
+
+# ---------------- the prompt (what you paste into chat) ----------------
+def build_prompt(q, cls, prior_code=None, error=None):
+    brand = read(BRAND)
+    exemplar = read(EXEMPLAR)
+    task = f"""# TASK
+Write the complete Manim scene for this question, saved as scenes/{q['id']}.py.
+
+- id: {q['id']}
+- chapter: {q.get('chapter', '')}
+- question: {q['question']}
+- options: {q.get('options', '(none)')}
+- KNOWN CORRECT ANSWER (anchor the whole explanation to this, never contradict it): {q['answer']}
+
+Requirements:
+- The class MUST be named EXACTLY: {cls}
+- Top-left chapter tag: // {q.get('chapter', 'JEE').upper()}
+- Follow every rule in the BRAND + CODING SYSTEM above. Teaching-style narration,
+  af_nova Kokoro voice, brand colours, MathTex basictex-safe.
+- Return ONLY the file content in ONE ```python block.
+"""
+    if error:
+        task += f"""
+# THE PREVIOUS VERSION FAILED THE RENDER GATE
+Error:
+
+{error}
+
+Your previous code:
+```python
+{prior_code}
+```
+Fix it and return the FULL corrected file in one ```python block. Keep the class name {cls}.
+"""
+    return brand + "\n" + exemplar + "\n" + task
+
+
+# ---------------- deterministic gates + render ----------------
+def render_env():
+    env = dict(os.environ)
+    env["PYTHONPATH"] = ROOT + os.pathsep + env.get("PYTHONPATH", "")
+    texbin = "/Library/TeX/texbin"
+    if os.path.isdir(texbin) and texbin not in env.get("PATH", ""):
+        env["PATH"] = texbin + os.pathsep + env.get("PATH", "")
+    return env
+
+
+def py_compile_check(path):
+    proc = subprocess.run([sys.executable, "-m", "py_compile", path],
+                          capture_output=True, text=True)
+    return (proc.returncode == 0, (proc.stderr or proc.stdout).strip())
+
+
+def layout_check(path, cls):
+    """Deterministic overlap / off-frame gate. Returns (ok, report)."""
+    proc = subprocess.run([sys.executable, "layout_check.py", path, cls],
+                          cwd=ROOT, env=render_env(), capture_output=True, text=True)
+    if proc.returncode == 0:
+        return True, ""
+    # keep only the violation lines for the repair prompt
+    lines = [ln.strip() for ln in proc.stdout.splitlines()
+             if "OVERLAP" in ln or "OFF-FRAME" in ln or "violation" in ln]
+    return False, "\n".join(lines) or proc.stdout[-1500:]
+
+
+def render(path, cls, quality):
+    """Render <cls> from <path>. Returns (ok, mp4_path_or_error_tail)."""
+    proc = subprocess.run(
+        ["manim", quality, "--media_dir", MEDIA, path, cls],
+        cwd=ROOT, env=render_env(), capture_output=True, text=True,
+    )
+    if proc.returncode != 0:
+        return False, (proc.stdout + "\n" + proc.stderr)[-2500:]
+    stem = os.path.splitext(os.path.basename(path))[0]
+    hits = glob.glob(os.path.join(MEDIA, "videos", stem, "*", cls + ".mp4"))
+    if not hits:
+        hits = glob.glob(os.path.join(MEDIA, "videos", "**", cls + ".mp4"), recursive=True)
+    if not hits:
+        return False, "render succeeded but mp4 not found"
+    return True, sorted(hits, key=os.path.getmtime)[-1]
+
+
+def upload_to_drive(local_path, remote_dir):
+    fname = os.path.basename(local_path)
+    remote_file = remote_dir.rstrip("/") + "/" + fname
+    try:
+        subprocess.run(["rclone", "copy", local_path, remote_dir],
+                       check=True, capture_output=True, text=True)
+        out = subprocess.run(["rclone", "link", remote_file],
+                             check=True, capture_output=True, text=True)
+        return out.stdout.strip()
+    except (FileNotFoundError, subprocess.CalledProcessError) as e:
+        print(f"    (drive upload skipped: {getattr(e, 'stderr', e)})")
+        return None
+
+
+# ---------------- phase-2 agent hooks (stubbed until an API key exists) ----------------
+def script_judge(code, q):   return True, []   # TODO rubric gate
+def visual_qc(mp4, q):       return True, []   # TODO geometry + multimodal keyframes
+def caption_writer(q, code): return None       # TODO YouTube metadata
+
+
+# ---------------- commands ----------------
+def emit_prompt(q, error=None, prior_code=None, tag=""):
+    cls = class_name_for(q["id"])
+    prompt = build_prompt(q, cls, prior_code=prior_code, error=error)
+    os.makedirs(PROMPTS_DIR, exist_ok=True)
+    name = f"{q['id']}{'_repair' if tag == 'repair' else ''}.txt"
+    path = os.path.join(PROMPTS_DIR, name)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(prompt)
+    copied = to_clipboard(prompt)
+    print(f"  prompt -> {os.path.relpath(path, ROOT)}"
+          + ("  (copied to clipboard ✅)" if copied else "  (pbcopy unavailable)"))
+    print(f"  NEXT: paste it into the Claude chat, save the ```python reply to "
+          f"scenes/{q['id']}.py, then:  python orchestrator.py build {q['id']}")
+
+
+def cmd_prompt(args):
+    qs = load_questions()
+    if args.id:
+        q = find_q(qs, args.id)
+        if not q:
+            sys.exit(f"no question with id {args.id}")
+    else:
+        pend = [x for x in qs if x.get("status", "pending") == "pending"]
+        if not pend:
+            print("No pending questions. (use --id to force one)")
+            return
+        q = pend[0]
+    print(f"=== {q['id']} ({q.get('chapter','')}) ===")
+    emit_prompt(q)
+    q["status"] = "prompted"
+    save_questions(qs)
+
+
+def cmd_build(args):
+    qs = load_questions()
+    q = find_q(qs, args.id)
+    if not q:
+        sys.exit(f"no question with id {args.id}")
+    cls = class_name_for(q["id"])
+    scene_path = os.path.join(SCENES_DIR, f"{q['id']}.py")
+    if not os.path.exists(scene_path):
+        sys.exit(f"{scene_path} not found — run `prompt`, paste into chat, save the reply there first.")
+
+    print(f"=== build {q['id']} ({cls}) ===")
+    ok, msg = py_compile_check(scene_path)
+    if not ok:
+        print("  py_compile FAILED:")
+        print("   ", msg.splitlines()[-1] if msg else "")
+        emit_prompt(q, error=msg, prior_code=read(scene_path), tag="repair")
+        q["status"] = "review"; save_questions(qs); return
+
+    print("  layout gate (overlap / off-frame) ...", flush=True)
+    ok, report = layout_check(scene_path, cls)
+    if not ok:
+        print("  LAYOUT FAILED:")
+        for ln in report.splitlines():
+            print("   ", ln)
+        emit_prompt(q, error="Layout gate failed — FIX THESE overlaps/clipping:\n" + report,
+                    prior_code=read(scene_path), tag="repair")
+        q["status"] = "review"; save_questions(qs); return
+
+    print(f"  rendering {args.quality} ...", flush=True)
+    ok, msg = render(scene_path, cls, args.quality)
+    if not ok:
+        print("  render FAILED — writing repair prompt")
+        emit_prompt(q, error=msg, prior_code=read(scene_path), tag="repair")
+        q["status"] = "review"; save_questions(qs); return
+
+    os.makedirs(OUT_DIR, exist_ok=True)
+    final = os.path.join(OUT_DIR, f"{q['id']}.mp4")
+    shutil.copy(msg, final)
+    print(f"  OK -> {os.path.relpath(final, ROOT)}")
+    url = upload_to_drive(final, args.drive) if args.drive else None
+    if url:
+        print(f"  Drive: {url}")
+        q["video_url"] = url
+    q["status"] = "done"
+    save_questions(qs)
+    print(f"  {q['id']} DONE ✅")
+
+
+def cmd_status(args):
+    qs = load_questions()
+    icon = {"done": "✅", "pending": "· ", "prompted": "✍️", "review": "⚠️"}
+    print(f"{'id':6} {'status':10} {'chapter':16} question")
+    for q in qs:
+        s = q.get("status", "pending")
+        print(f"{q['id']:6} {icon.get(s,'? ')} {s:8} {q.get('chapter','')[:15]:16} "
+              f"{q['question'][:60]}")
+
+
+def main():
+    ap = argparse.ArgumentParser(description="Assisted Manim video pipeline (free).")
+    sub = ap.add_subparsers(dest="cmd", required=True)
+
+    p = sub.add_parser("next", help="build the prompt for the next pending question")
+    p.add_argument("--id", default="", help="force a specific question id")
+    p.set_defaults(func=cmd_prompt)
+
+    p = sub.add_parser("prompt", help="alias of next; --id targets a specific question")
+    p.add_argument("--id", default="")
+    p.set_defaults(func=cmd_prompt)
+
+    p = sub.add_parser("build", help="gate + render + upload a saved scene")
+    p.add_argument("id", help="question id whose scenes/<id>.py to build")
+    p.add_argument("--quality", default="-ql", help="-ql fast, -qm medium, -qh final")
+    p.add_argument("--drive", default="", metavar="REMOTE:FOLDER",
+                   help="rclone remote for finals, e.g. gdrive:JEE-Videos/Kinematics")
+    p.set_defaults(func=cmd_build)
+
+    p = sub.add_parser("status", help="show all questions + states")
+    p.set_defaults(func=cmd_status)
+
+    args = ap.parse_args()
+    args.func(args)
+
+
+if __name__ == "__main__":
+    main()
