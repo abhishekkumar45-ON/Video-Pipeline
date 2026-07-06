@@ -57,6 +57,15 @@
     "options": "NUMERICAL",
     "answer": "(T1/T2)^2 = 2",
     "status": "done",
-    "video_url": "https://drive.google.com/open?id=1b4_L2B7Fg1Ik81zDIv-QqSynujU7kWUW"
+    "video_url": "https://drive.google.com/open?id=1juBrejcr5qDi1sTR18xCdEAkVFWz7qAy"
+  },
+  {
+    "id": "q10",
+    "chapter": "Thermodynamics",
+    "question": "10 mol ideal monoatomic gas, state a at atmospheric P, Ta=300K, volume V0. Suddenly compressed to V0/3 = state b (adiabatic). Piston fixed, submerged in 11C=284K bath -> state c (isochoric). Piston slowly back to V0 in the bath -> state f (isothermal 284K). 9^(1/3)=2.08, gamma=5/3. (A) PV schematic adiabatic a->b, isochoric b->c, isothermal c->f. (B) dU(a->b)=4860R. (C) net dU=-240R. (D) Pb=2.08 atm & Tb=624K.",
+    "options": "(A) correct PV schematic  (B) dU(a->b)=4860R  (C) net dU=-240R  (D) Pb=2.08 atm & Tb=624K",
+    "answer": "A, B and C (D wrong: Pb=6.24 atm)",
+    "status": "done",
+    "video_url": "https://drive.google.com/open?id=1n7B7EleiT9qELPwaF6WBhbigSY-S5geE"
   }
 ]

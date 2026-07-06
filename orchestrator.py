@@ -188,7 +188,7 @@ def wrap_intro_outro(video, qid):
         return float(o.stdout.strip())
 
     idur, odur = dur(intro), dur(outro)
-    out = os.path.join(OUT_DIR, f"{qid}_full.mp4")
+    out = os.path.join(OUT_DIR, f"{qid}_wrapped.mp4")
     vf = "scale=3840:2160,setsar=1,fps=30,format=yuv420p"
     fc = (f"[0:v]{vf}[v0];[1:v]{vf}[v1];[2:v]{vf}[v2];"
           f"[3:a]aresample=48000,aformat=channel_layouts=stereo[a0];"
@@ -298,30 +298,32 @@ def cmd_build(args):
         q["status"] = "review"; save_questions(qs); return
 
     os.makedirs(OUT_DIR, exist_ok=True)
-    final = os.path.join(OUT_DIR, f"{q['id']}.mp4")
-    shutil.copy(msg, final)
-    print(f"  OK -> {os.path.relpath(final, ROOT)}")
+    solo = os.path.join(OUT_DIR, f"{q['id']}.mp4")
+    shutil.copy(msg, solo)
+    print(f"  OK -> {os.path.relpath(solo, ROOT)}")
 
-    # background music (same track/level for the whole batch until told otherwise)
+    # 1) wrap intro + outro (silent bumpers) around the voice-only solution
+    print("  wrapping intro + outro ...", flush=True)
+    base = wrap_intro_outro(solo, q["id"]) or solo
+    if base != solo:
+        print(f"  + intro/outro -> {os.path.relpath(base, ROOT)}")
+
+    # 2) background music across the WHOLE video, ducked under the voice — so it plays
+    #    a touch louder over the silent intro/outro and dips under the teaching narration.
+    final = base
     if args.music:
-        print("  adding background music ...", flush=True)
+        print("  adding background music (whole video, ducked) ...", flush=True)
         r = subprocess.run(
-            [sys.executable, os.path.join(ROOT, "add_bgm.py"), final,
-             "--volume", str(args.music_vol), "--fadeout", "4", "--duck", "--suffix", "_music"],
+            [sys.executable, os.path.join(ROOT, "add_bgm.py"), base,
+             "--volume", str(args.music_vol), "--fadein", "1.5", "--fadeout", "3",
+             "--duck", "--suffix", "_final"],
             cwd=ROOT, env=render_env(), capture_output=True, text=True)
-        music_out = os.path.join(OUT_DIR, f"{q['id']}_music.mp4")
-        if r.returncode == 0 and os.path.exists(music_out):
-            final = music_out
+        mout = os.path.splitext(base)[0] + "_final.mp4"
+        if r.returncode == 0 and os.path.exists(mout):
+            final = mout
             print(f"  + music -> {os.path.relpath(final, ROOT)}")
         else:
-            print(f"  (music step failed — shipping no-music version)\n{r.stderr[-300:]}")
-
-    # intro + outro bumpers (brand) — for every video
-    print("  wrapping intro + outro ...", flush=True)
-    wrapped = wrap_intro_outro(final, q["id"])
-    if wrapped:
-        final = wrapped
-        print(f"  + intro/outro -> {os.path.relpath(final, ROOT)}")
+            print(f"  (music step failed — shipping no-music version)\n{(r.stderr or '')[-300:]}")
 
     url = upload_to_drive(final, args.drive) if args.drive else None
     if url:

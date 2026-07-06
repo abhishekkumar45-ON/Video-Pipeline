@@ -39,16 +39,16 @@ def mix(video, music, vol, fin, fout, duck, out):
           f"afade=t=out:st={fade_out_start:.2f}:d={fout},"
           f"aresample=44100,aformat=channel_layouts=stereo[bg]")
     voice = "[0:a]aresample=44100,aformat=channel_layouts=stereo[voice]"
-    # loudness-normalise the master to the YouTube target (−14 LUFS, −1 dB true peak)
-    norm = "aresample=async=1:first_pts=0,loudnorm=I=-14:TP=-1:LRA=11"
+    # master tail: resync + gentle limiter (no loudnorm — it would pump the music-only
+    # intro/outro). The sidechain duck itself makes the music louder where there's no voice
+    # (intro/outro) and quieter under narration (teaching) — exactly what's wanted.
+    tail = "aresample=async=1:first_pts=0,alimiter=limit=0.95"
     if duck:
-        # music (bg) gently dips under the voice — soft ratio + slow release so it
-        # breathes smoothly instead of "pumping". makeup keeps it audible between lines.
         chain = (f"{bg};{voice};"
-                 f"[bg][voice]sidechaincompress=threshold=0.05:ratio=3:attack=5:release=700:makeup=1[bgd];"
-                 f"[voice][bgd]amix=inputs=2:duration=first:normalize=0,{norm}[a]")
+                 f"[bg][voice]sidechaincompress=threshold=0.035:ratio=6:attack=6:release=650:makeup=1[bgd];"
+                 f"[voice][bgd]amix=inputs=2:duration=first:normalize=0,{tail}[a]")
     else:
-        chain = f"{bg};{voice};[voice][bg]amix=inputs=2:duration=first:normalize=0,{norm}[a]"
+        chain = f"{bg};{voice};[voice][bg]amix=inputs=2:duration=first:normalize=0,{tail}[a]"
 
     cmd = ["ffmpeg", "-y", "-i", video, "-stream_loop", "-1", "-i", music,
            "-filter_complex", chain,

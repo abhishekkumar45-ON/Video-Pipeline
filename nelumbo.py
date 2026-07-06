@@ -152,6 +152,33 @@ def on_logo(scale=0.5):
     return Group(mark, word).arrange(RIGHT, buff=0.24).scale(scale / 0.5)
 
 
+class StepRail:
+    """Left-side numbered step rail (1 · 2 · 3 …): pending = titanium outline, active = ignition
+    fill, done = green fill — with a vertical divider. Advance it as each step completes."""
+    def __init__(self, n, x=-6.0, top=1.5, gap=0.95, size=0.66):
+        self.boxes, self.nums = [], []
+        for i in range(n):
+            num = Text(str(i + 1), font=F_MONO, weight=BOLD, color=TITANIUM).scale(0.46)
+            box = RoundedRectangle(width=size, height=size, corner_radius=0.10,
+                                   stroke_color=TITANIUM, stroke_width=2.2, fill_opacity=0)
+            VGroup(box, num).move_to([x, top - i * gap, 0])
+            self.boxes.append(box); self.nums.append(num)
+        self.divider = Line([x + size / 2 + 0.38, top + 0.6, 0],
+                            [x + size / 2 + 0.38, top - (n - 1) * gap - 0.6, 0],
+                            color=TITANIUM, stroke_width=1.5).set_opacity(0.30)
+
+    def whole(self):
+        return VGroup(self.divider, *self.boxes, *self.nums)
+
+    def active(self, i):
+        return AnimationGroup(self.boxes[i].animate.set_fill(IGNITION, 1).set_stroke(IGNITION, width=0),
+                              self.nums[i].animate.set_color(OBSIDIAN))
+
+    def done(self, i):
+        return AnimationGroup(self.boxes[i].animate.set_fill(CORRECT, 1).set_stroke(CORRECT, width=0),
+                              self.nums[i].animate.set_color(OBSIDIAN))
+
+
 def mchip(latex, color=SIGNAL, tscale=0.40):
     """A small graphite result chip (LaTeX) for the right-side results rail — proper subscripts."""
     m = MathTex(latex, color=color).scale(tscale)
