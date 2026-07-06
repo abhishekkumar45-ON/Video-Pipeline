@@ -77,55 +77,66 @@ _PAGE    = "#EFE6CE"
 _COVER   = "#3A2418"
 
 
-def _petal(length=0.5, width=0.32, fill=IGNITION, sw=2.4):
-    """A single smooth lotus petal, base at origin, pointing up (+y)."""
+def _petal(length, width, fill, sw=3.0):
+    """A single fat, smooth lotus petal with a dark outline, base at origin, pointing up (+y)."""
     w, L = width, length
-    pts = [[0, 0.0, 0], [w * 0.52, L * 0.28, 0], [w * 0.40, L * 0.74, 0],
-           [0, L, 0], [-w * 0.40, L * 0.74, 0], [-w * 0.52, L * 0.28, 0], [0, 0.0, 0]]
+    pts = [[0, 0.0, 0], [w * 0.64, L * 0.22, 0], [w * 0.52, L * 0.66, 0],
+           [0, L, 0], [-w * 0.52, L * 0.66, 0], [-w * 0.64, L * 0.22, 0], [0, 0.0, 0]]
     p = VMobject(fill_color=fill, fill_opacity=1, stroke_color=_OUTLINE, stroke_width=sw)
     p.set_points_smoothly([np.array(x) for x in pts])
     return p
 
 
 def _book():
-    """A small open book beneath the lotus."""
-    cover = Polygon([-0.66, -0.20, 0], [0.66, -0.20, 0], [0.58, -0.34, 0], [-0.58, -0.34, 0],
-                    fill_color=_COVER, fill_opacity=1, stroke_color=_OUTLINE, stroke_width=2.4)
-    lp = Polygon([0, -0.02, 0], [-0.70, 0.10, 0], [-0.66, -0.20, 0], [0, -0.22, 0],
-                 fill_color=_PAGE, fill_opacity=1, stroke_color=_OUTLINE, stroke_width=2.4)
-    rp = Polygon([0, -0.02, 0], [0.70, 0.10, 0], [0.66, -0.20, 0], [0, -0.22, 0],
-                 fill_color=_PAGE, fill_opacity=1, stroke_color=_OUTLINE, stroke_width=2.4)
-    spine = Line([0, -0.02, 0], [0, -0.22, 0], color=_OUTLINE, stroke_width=2.2)
+    """An open book beneath the lotus: cream pages fanning up, dark cover, centre spine."""
+    cover = Polygon([-0.80, -0.30, 0], [0.80, -0.30, 0], [0.66, -0.50, 0], [-0.66, -0.50, 0],
+                    fill_color=_COVER, fill_opacity=1, stroke_color=_OUTLINE, stroke_width=3)
+    lp = Polygon([-0.02, -0.06, 0], [-0.86, 0.08, 0], [-0.80, -0.30, 0], [-0.02, -0.34, 0],
+                 fill_color=_PAGE, fill_opacity=1, stroke_color=_OUTLINE, stroke_width=3)
+    rp = Polygon([0.02, -0.06, 0], [0.86, 0.08, 0], [0.80, -0.30, 0], [0.02, -0.34, 0],
+                 fill_color=_PAGE, fill_opacity=1, stroke_color=_OUTLINE, stroke_width=3)
+    spine = Polygon([-0.02, -0.06, 0], [0.02, -0.06, 0], [0.06, -0.42, 0], [-0.06, -0.42, 0],
+                    fill_color=_COVER, fill_opacity=1, stroke_color=_OUTLINE, stroke_width=2)
     return VGroup(cover, lp, rp, spine)
 
 
 def on_mark():
-    """The Orange Nelumbo symbol: a lotus (tan base leaves, peach mid, ignition front petals)
-    resting on an open book. Built natively so it renders crisp at 4K."""
-    b = UP * 0.10   # base point of the petals, sitting on the book
-    # crown (small petals peeking at the very top, drawn first so mains overlap their base)
-    crown = VGroup(
-        _petal(0.34, 0.22, _PEACH, sw=2.0).rotate(-16 * DEGREES, about_point=ORIGIN).shift(UP * 0.66),
-        _petal(0.40, 0.22, _PEACH, sw=2.0).shift(UP * 0.70),
-        _petal(0.34, 0.22, _PEACH, sw=2.0).rotate(16 * DEGREES, about_point=ORIGIN).shift(UP * 0.66),
-    )
-    base_leaves = VGroup(   # wide outer leaves, nearly horizontal — the bloom
-        _petal(0.56, 0.52, _TAN).rotate(-74 * DEGREES, about_point=ORIGIN),
-        _petal(0.56, 0.52, _TAN).rotate(74 * DEGREES, about_point=ORIGIN),
-    )
-    mid = VGroup(
-        _petal(0.64, 0.34, _PEACH).rotate(-40 * DEGREES, about_point=ORIGIN),
-        _petal(0.64, 0.34, _PEACH).rotate(40 * DEGREES, about_point=ORIGIN),
-    )
-    front = VGroup(
-        _petal(0.74, 0.32, _RUST).rotate(-18 * DEGREES, about_point=ORIGIN),
-        _petal(0.74, 0.32, _RUST).rotate(18 * DEGREES, about_point=ORIGIN),
-        _petal(0.86, 0.34, IGNITION),   # tall centre petal, brightest, in front
-    )
-    lotus = VGroup(crown, base_leaves, mid, front).shift(b)
-    orbit = ArcBetweenPoints([-1.55, 0.62, 0], [1.55, 0.62, 0], angle=-0.55,
-                             color=IGNITION, stroke_width=2)
+    """The Orange Nelumbo symbol: a full front-facing lotus (tan outer → orange centre, dark
+    outlines) resting on an open book, under a faint orbital arc. Built native → crisp at 4K."""
+    C_LT, C_TAN, C_MID, C_RUST, C_HOT = "#E7A868", "#D98A4E", "#E0722F", "#C2410C", "#EF5A22"
+    b = UP * 0.04
+
+    def fan(angles, colors, L, W):
+        g = VGroup()
+        for a, c in zip(angles, colors):
+            g.add(_petal(L, W, c).rotate(a * DEGREES, about_point=ORIGIN))
+        return g
+
+    # back tier: five slender petals fanned wide (outer two lighter)
+    back = fan([-64, -33, 0, 33, 64], [C_LT, C_TAN, C_TAN, C_TAN, C_LT], 0.84, 0.27)
+    # front tier: four petals, slightly upright, orange→rust
+    frontrow = fan([-47, -17, 17, 47], [C_RUST, C_MID, C_MID, C_RUST], 0.76, 0.27)
+    centre = _petal(0.96, 0.33, C_HOT)     # bright central petal, drawn last (front)
+    lotus = VGroup(back, frontrow, centre).shift(b)
+
+    orbit = ArcBetweenPoints([-2.05, 1.2, 0], [2.05, 1.2, 0], angle=-0.38,
+                             color=IGNITION, stroke_width=1.6).set_opacity(0.22)
     return VGroup(orbit, _book(), lotus)
+
+
+def background(scene):
+    """Add the brand ground — obsidian + faint grid + radial ignition glow — behind everything.
+    (YouTube Guidelines: every surface is obsidian with a radial glow and a faint grid.)"""
+    scene.camera.background_color = OBSIDIAN
+    from pathlib import Path
+    p = Path(__file__).resolve().parent / "assets" / "bg.png"
+    if p.exists():
+        bg = ImageMobject(str(p))
+        bg.stretch_to_fit_width(config.frame_width).stretch_to_fit_height(config.frame_height)
+        bg.set_z_index(-100)
+        scene.add(bg)
+        return bg
+    return None
 
 
 def on_logo(scale=0.5):

@@ -39,13 +39,16 @@ def mix(video, music, vol, fin, fout, duck, out):
           f"afade=t=out:st={fade_out_start:.2f}:d={fout},"
           f"aresample=44100,aformat=channel_layouts=stereo[bg]")
     voice = "[0:a]aresample=44100,aformat=channel_layouts=stereo[voice]"
+    # loudness-normalise the master to the YouTube target (−14 LUFS, −1 dB true peak)
+    norm = "aresample=async=1:first_pts=0,loudnorm=I=-14:TP=-1:LRA=11"
     if duck:
-        # music (bg) ducks whenever the voice is loud
+        # music (bg) gently dips under the voice — soft ratio + slow release so it
+        # breathes smoothly instead of "pumping". makeup keeps it audible between lines.
         chain = (f"{bg};{voice};"
-                 f"[bg][voice]sidechaincompress=threshold=0.02:ratio=8:attack=15:release=350[bgd];"
-                 f"[voice][bgd]amix=inputs=2:duration=first:normalize=0[a]")
+                 f"[bg][voice]sidechaincompress=threshold=0.05:ratio=3:attack=5:release=700:makeup=1[bgd];"
+                 f"[voice][bgd]amix=inputs=2:duration=first:normalize=0,{norm}[a]")
     else:
-        chain = f"{bg};{voice};[voice][bg]amix=inputs=2:duration=first:normalize=0[a]"
+        chain = f"{bg};{voice};[voice][bg]amix=inputs=2:duration=first:normalize=0,{norm}[a]"
 
     cmd = ["ffmpeg", "-y", "-i", video, "-stream_loop", "-1", "-i", music,
            "-filter_complex", chain,

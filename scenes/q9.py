@@ -17,7 +17,7 @@ RAIL_Y = [2.35, 1.72, 1.09, 0.46, -0.17]
 
 class Scene_q9(VoiceoverScene):
     def construct(self):
-        apply_bg(self)
+        background(self)
         self.set_speech_service(KokoroService(voice="af_bella"))
 
         # ---------------- persistent chrome ----------------
