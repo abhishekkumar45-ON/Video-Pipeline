@@ -1,0 +1,188 @@
+Bundled Page
+This page requires JavaScript to display.
+// KINEMATICS
+Unpacking...
+Orange Nelumbo
+// Video Design Guideline
+// PHYSICS · CHAPTER 01
+Kinematics
+Frame design system for the Kinematics video series — the visual language of motion.
+VERSION 1.0
+FRAME KIT · 16:9
+DESCRIBE
+THE MOTION.
+// 01 — Chapter Visual Language
+The look of motion
+Every chapter keeps the Orange Nelumbo cockpit — carbon canvas, ignition orange, Space Grotesk + JetBrains Mono. Kinematics adds one chapter signature:
+Velocity Cyan
+for vectors, trails and graph lines, plus a motion-trail language that makes every frame feel like it's moving.
+Chapter accent
+IGNITION
+VELOCITY CYAN
+CARBON
+Orange = the concept in focus. Cyan = motion, vectors & measured data. Never swap the roles.
+Type on frame
+Aa
+Space Grotesk
+Manrope — captions & body
+v = u + at · JetBrains Mono
+All equations, values & units in mono. Headlines in Space Grotesk. Never set formulae in Manrope.
+Motion motifs — the chapter's signatures
+vₓ
+Motion trail + vector
+v–t / x–t graph
+Projectile arc
+Vector components
+Kinematics — Video Design Guideline
+02
+// 02 — Frame Anatomy
+Anatomy & safe zones
+// KINEMATICS
+ORANGE NELUMBO
+LESSON 03
+Equations of motion
+03 / 12
+TITLE-SAFE · 90%
+Persistent chrome
+Top-left chapter tag (mono orange) · top-right mark + wordmark · bottom-left lesson label · progress bar + frame count. Same on every frame.
+Safe zone
+Keep titles & key diagrams inside the 90% title-safe box (dashed). Bottom 12% may be covered by captions/subtitles — never put critical maths there.
+The video arc — 8 frame types
+01 TITLE
+→
+02 HOOK
+→
+03 CONCEPT
+→
+04 FORMULA
+→
+05 EXAMPLE
+→
+06 GRAPH
+→
+07 RECAP
+→
+08 END CARD
+Kinematics — Video Design Guideline
+03
+// 03 — Frames · Open
+Title & hook
+01 · Title frame
+// KINEMATICS
+ORANGE NELUMBO
+PHYSICS · CH 01 · LESSON 01
+Distance vs
+Displacement
+Why "how far" and "how far from start" aren't the same.
+02 · Hook frame — a question that pulls them in
+// KINEMATICS
+ORANGE NELUMBO
+The hook
+You run 400 m around a track and stop where you started. Distance =
+400 m
+. Displacement =
+0
+.
+02 / 12
+Rule —
+Kinematics — Video Design Guideline
+04
+// 03 — Frames · Teach
+Concept & formula
+03 · Concept frame — split: idea left, motion diagram right
+// KINEMATICS
+ORANGE NELUMBO
+Average velocity
+Displacement
+over time.
+v‾ = Δx / Δt
+Direction matters. Velocity is a vector — it points where the displacement points.
+x₀
+x
+v
+04 · Formula frame — the three equations of motion
+// KINEMATICS
+ORANGE NELUMBO
+Equations of motion · constant a
+01
+v = u + at
+02 · IN FOCUS
+s = ut + ½at²
+03
+v² = u² + 2as
+Rule —
+Kinematics — Video Design Guideline
+05
+// 03 — Frames · Apply
+Example & graph
+05 · Worked example — problem left, stepped solution right
+// KINEMATICS
+ORANGE NELUMBO
+Example 01
+A car accelerates from rest at 4 m/s² for 6 s. How far does it travel?
+GIVEN
+u = 0 · a = 4 m/s² · t = 6 s
+FIND
+s = ?
+01
+s = ut + ½at²
+02
+s = 0 + ½(4)(6²)
+03
+s = ½ · 4 · 36
+ANSWER
+s = 72 m
+06 · Graph frame — v–t graph, shaded area = displacement
+// KINEMATICS
+ORANGE NELUMBO
+area = s
+v
+t
+Read the graph
+Slope = a
+Area = s
+Rule —
+Kinematics — Video Design Guideline
+06
+// 03 — Frames · Visualise
+Projectile & annotation
+07 · Projectile frame — the hero motion visual
+// KINEMATICS
+ORANGE NELUMBO
+Projectile motion
+One arc, two motions
+vₓ
+v_y
+v_y = 0
+Range R
+Height H
+On-screen annotation kit
+velocity vector
+accel / force vector
+t = 2.0 s
+Key insight ▸
+Rule —
+Kinematics — Video Design Guideline
+07
+// 03 — Frames · Close
+Recap & end card
+08 · Recap frame — three takeaways
+// KINEMATICS
+ORANGE NELUMBO
+Lock it in
+01
+02
+v–t slope = acceleration · area = displacement.
+03
+Projectiles = independent x and y motion.
+09 · End card — next lesson + subscribe
+Next lesson
+Relative Velocity
+Subscribe
+Start free → orangenelumbo.com
+// KINEMATICS
+Rule —
+recap uses numbered takeaway bars (≤3, orange for concept, cyan for the visual idea). End card always: mark, next-lesson title, one subscribe + one site CTA, orbital motif. Hold 4–5 s for the click.
+Kinematics — Video Design Guideline
+08
+"

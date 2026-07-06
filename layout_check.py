@@ -30,7 +30,7 @@ sys.path.insert(0, str(ROOT))
 
 LABELS = (Text, MarkupText, MathTex, Tex)
 OVERLAP_FRAC = 0.15   # flag if intersection > 15% of the smaller label's area
-EDGE_TOL = 0.05       # units a label may poke past the frame before it's "clipped"
+EDGE_SAFE = 0.34      # DEBRIEF: nothing within ~48px (0.34 units) of the frame edge
 
 
 # ---- mock voice: no TTS, just a short silent clip so timing/layout still runs ----
@@ -113,11 +113,11 @@ def check(scene_path, cls):
         mobs = _labels(scene)
         boxes = [(m, _bbox(m)) for m in mobs]
         boxes = [(m, b) for m, b in boxes if b]
-        # off-frame (clipped)
+        # off-frame / inside the 48px edge safe margin
         for m, b in boxes:
-            if (b[0] < -halfW - EDGE_TOL or b[1] > halfW + EDGE_TOL or
-                    b[2] < -halfH - EDGE_TOL or b[3] > halfH + EDGE_TOL):
-                violations.append(f"[hold {i}] OFF-FRAME: {_txt(m)!r}")
+            if (b[0] < -halfW + EDGE_SAFE or b[1] > halfW - EDGE_SAFE or
+                    b[2] < -halfH + EDGE_SAFE or b[3] > halfH - EDGE_SAFE):
+                violations.append(f"[hold {i}] EDGE/OFF-FRAME: {_txt(m)!r}")
         # pairwise overlap
         for x in range(len(boxes)):
             for y in range(x + 1, len(boxes)):

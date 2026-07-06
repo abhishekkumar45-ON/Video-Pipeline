@@ -1,0 +1,590 @@
+Bundled Page
+This page requires JavaScript to display.
+Unpacking...
+Orange Nelumbo
+Content System
+THE DIAGRAM LIBRARY
+Visual reference · chapter by chapter
+Spec for every diagram the channel draws
+VOL. 1 · PHYSICS P01–P02 · GROWS WITH EVERY CHAPTER
+LIVING DOCUMENT
+JULY 2026
+IN PURSUIT OF
+MASTERY.
+The library
+How to read a spec
+One spec per diagram type. Each spec is the single source of truth for how that diagram looks in every video, thumbnail and card — and later becomes a component in
+nelumbo_diagrams.py
+, built to match this page pixel for pixel.
+Every spec has four parts
+1 · Reference render
+— the diagram in its canonical state, drawn to the frame-construction law. What you see is what ships.
+2 · Construction
+— strokes, weights, geometry rules, and how the diagram is built on screen (draw order for the eventual Create() sequence).
+3 · Colour duty
+— which parts are semantic (fixed everywhere) and which parts take the chapter's combination.
+4 · States
+— the named states the diagram must support (rest → annotated → resolved), so beats transition it instead of redrawing it.
+Universal law — binding on every spec
+SCAFFOLD titanium 3px
+ACTIVE/TARGET ignition 4px
+GIVEN cyan
+CONFIRMED green, once
+WRONG red only
+LABELS Mono/Body ≥28px, never rotated >±30°
+FILLS graphite or chapter secondary ≤20%
+BUILT ONCE, EVOLVED · NO COLLISIONS · PAUSE-TEST CLEAN
+The chapter's combination appears in exactly two places inside a diagram: the
+chapter badge
+and
+non-semantic surfaces
+(media, regions, instrument bodies). Anything that carries meaning keeps the semantic palette — a given is cyan in every chapter of every subject, forever.
+Living document.
+Chapters are added in syllabus order and locked once used in production. Colour assignments come from the Chapter Colour Map — signed off, and changed only with a re-render of that chapter's assets.
+Orange Nelumbo — Diagram Library
+02
+P01
+Units, Measurement & Errors
+10 · TITANIUM IGNITE
+Inventory: vernier calliper · screw gauge · error bars · dimensional table. Instrument bodies take the chapter secondary (titanium/steel); readings are givens (cyan); the quantity being extracted is ignition.
+P01-D1 · VERNIER CALLIPER
+COINCIDENCE → 2.34 cm
+MAIN SCALE — titanium ticks · body steel
+VERNIER TICKS = GIVEN (cyan)
+Construction:
+Colour duty & states:
+vernier ticks cyan (the reading is a given); the coincidence line ignition — it is the extracted quantity. States:
+rest → sliding (SWEEP + live readout) → coincident (line ignites) → read (value chip lands)
+. Zero-error variant: offset shown red.
+P01-D2 · SCREW GAUGE
+SLEEVE — pitch scale, titanium
+THIMBLE — circular scale, cyan
+READING LINE = IGNITION
+Construction:
+States:
+open → closing (SWEEP) → contact → read
+. Reading assembles as an equation morphing from the two scales: main (titanium term) + circular (cyan term) → total (ignition). Backlash/zero error drawn red when taught.
+Orange Nelumbo — Diagram Library · P01
+03
+P01
+UNITS, MEASUREMENT & ERRORS — CONTINUED
+P01-D3 · ERROR BARS & UNCERTAINTY BAND
+BEST-FIT = IGNITION · BAND = IGNITION 12%
+DATA POINTS ± BARS = GIVEN
+Construction:
+graph skeleton (axes titanium 60%, no in-plot grid); points as 9px cyan dots with capped error bars; best-fit line ignition 3px drawn after all points; uncertainty band as ignition fill ≤12%, swept in along the line.
+States:
+points → bars → fit → band → slope-read
+. Slope extraction shows the rise/run triangle in titanium dashes with mono values; the propagated Δ result lands as a chip: value ± uncertainty.
+P01-D4 · DIMENSIONAL TABLE
+QUANTITY
+M
+L
+T
+RESULT
+Force
+1
+1
+−2
+[M L T⁻²]
+Target η
+1
+−1
+−1
+[M L⁻¹ T⁻¹] ✓
+Construction:
+obsidian table, mono throughout; header 40% white; one row per quantity. Exponents count up from 0 (600ms) as the balancing is narrated — the bookkeeping IS the animation. Known rows cyan-named, the target row ignition.
+Reuse:
+this exact table is hack H2 (dimensions from options) in DEBRIEF — same component, options column appended with per-option ✓/✗ landing. States:
+empty → filling → balanced → verdict
+.
+P01 badge.
+Chapter chip on cards and thumbnails: ignition text on obsidian with a titanium keyline — the Titanium Ignite set. Instrument bodies: steel/slate only, never coloured.
+Orange Nelumbo — Diagram Library · P01
+04
+P02
+Kinematics
+14 · VELOCITY DARK
+P02-D1 · MOTION GRAPHS (x–t · v–t · a–t)
+v
+t
+AREA = Δx
+SAME SKELETON FOR x–t · v–t · a–t
+Stacked trio rule:
+when x–t, v–t, a–t appear together they stack vertically, time axes aligned to the pixel, one shared cursor line (ignition, 1px) sweeping all three — differentiation/integration seen as one motion.
+States:
+axes → curve → cursor-sweep → slope-read / area-read → resolved
+. The graph is one object across the whole video; reads accumulate as ghosts at 30%.
+P02-D2 · PROJECTILE TRAJECTORY
+APEX: v = vₓ only
+u, θ = GIVEN
+RANGE R — bracket span below ground line
+Construction:
+States:
+launch → trace (SWEEP, t readout live) → freeze-at-t → decompose → resolved
+. Freeze-at-t is the workhorse: the dot stops, the vector ignites, components split with conservation visible.
+Orange Nelumbo — Diagram Library · P02
+05
+P02
+KINEMATICS — CONTINUED
+P02-D3 · RELATIVE MOTION
+v(A rel B) = v_A − v_B → IGNITION
+A
+B
+The subtraction is animated: −v_B flips visibly (0.4s), then adds tip-to-tail. Never asserted.
+Construction:
+bodies as neutral steel/graphite blocks (cars, trains — always schematic boxes, never illustrations); each body's velocity cyan; the relative vector ignition, built tip-to-tail above the scene with the flip shown.
+Frame-switch state:
+ground-frame → switch (B freezes, world shifts) → B-frame
+— the defining animation of this diagram: B's velocity drains to zero while every other velocity visibly gains −v_B.
+P02-D4 · RIVER–BOAT / RAIN–MAN VECTORS
+v_boat (cyan) + v_river (cyan) → RESULTANT (ignition)
+The river is the chapter surface: cyan fill 8% with drift dashes at 50%. Crossing animates with the drift visible — the boat aims straight, lands downstream, and the triangle explains why.
+Construction:
+States:
+setup → aim (SWEEP θ, drift updates live) → cross → triangle-read
+. The shortest-time vs shortest-path comparison runs both crossings side by side to the same clock — the WRONG-PICTURE pattern reused.
+P02 badge.
+Orange Nelumbo — Diagram Library · P02
+06
+P03
+Laws of Motion & Friction
+01 · IGNITION CORE
+P03-D1 · FREE BODY DIAGRAM — THE ISOLATE MOVE
+ISOLATE →
+N
+mg
+F = GIVEN
+f = TARGET
+CONTEXT GHOSTS TO 30% — THE BODY LIFTS OUT (0.6s)
+Construction:
+Colour duty & states:
+known forces cyan, the unknown/target ignition, components dashed titanium (drawn only when resolving). States:
+context → isolated → forces-on → resolving → balanced
+. Every equation term morphs from its arrow.
+P03-D2 · PULLEY SYSTEMS
+a↓
+a↑
+T
+T
+Ideal string: both tensions labelled T from the start — the constraint is stated visually, not derived twice. Acceleration pair in ignition, opposite arrows, same magnitude readout.
+SAME STRING → SAME T · SAME |a| — THE CONSTRAINT BANNER
+Construction:
+pulley 3px titanium circle with hub dot; strings 2px titanium, always tangent at the rim; masses graphite blocks sized ∝ mass. Compound systems chain the same parts; movable pulleys get a dashed motion guide.
+States:
+static → released (blocks move, SWEEP + a readout) → per-body FBD (each block isolates in place) → solved
+. String-constraint lessons animate the string length ledger live as blocks move.
+Orange Nelumbo — Diagram Library · P03
+07
+P03
+LAWS OF MOTION & FRICTION — CONTINUED
+P03-D3 · WEDGE & INCLINE
+θ
+mg
+N = TARGET
+Wedge body graphite fill, titanium hypotenuse stroke. Rotated axes appear as a separate dashed layer with a 0.4s rotation animation, angle labelled. The angle θ is marked at the base corner in ember.
+SAME SKELETON: BANKED ROADS · WEDGE-ON-WEDGE
+Construction:
+ground → wedge → block → forces → rotated axes, in that draw order. Block rides the hypotenuse exactly (same rotation); forces draw over the wedge surface — annotation layer always above the body fill, per z-order law.
+States:
+setup → axes-rotate → resolve (mg splits into dashed components) → slide/hold verdict
+. The θ SWEEP variant drives "at what angle does it slip?" — friction arrow flips ignition at the critical angle with the readout live.
+P03-D4 · FRICTION GRAPH — f vs APPLIED F
+f_max = μₛN
+KINETIC · μₖN
+STATIC · f = F
+f
+F
+Construction:
+graph skeleton; static ramp white 3px at exactly 45° (f = F is the teaching); peak dot ignition 9px; drop dashed 35% white; kinetic plateau white 3px below the peak. Region names mono at 55%.
+States:
+axes → static-sweep (F grows, f tracks) → break (peak ignites, block lurches) → kinetic
+. The friction-cone variant reuses the wedge skeleton with the cone as a chapter-orange fill ≤14%.
+P03 badge.
+Chapter chip: ignition on obsidian, no keyline — the raw Ignition Core pair. This chapter's diagrams are the canon for every FBD in the channel; other chapters reference P03-D1 rather than re-specifying isolation.
+Orange Nelumbo — Diagram Library · P03
+08
+P04
+Work, Power & Energy
+21 · EMBER MINT
+Inventory: energy bar charts · potential-energy curve · spring–block · work as area. Energy categories take the chapter pair —
+KE ember
+,
+PE mint
+— everywhere in this chapter. Mint (#7CE0A0) is an identity surface only; CORRECT green (#3DE08A) stays reserved for answer boxes and the two never appear in the same frame region.
+P04-D1 · ENERGY BAR CHART — CONSERVATION
+KE    PE    E
+KE    PE    E
+STATE 1
+STATE 2
+TRANSFER
+Bars animate as a MORPH — KE shrinks exactly as PE grows, the dashed total never moves. Conservation is seen, not asserted. Losses (friction) drain into a slate "heat" bar that appears only when real.
+TOTAL BAR DASHED — IT IS A CONSTRAINT, NOT A STORE
+Construction:
+baseline titanium; bars 34px wide, gap 6px, heights ∝ energy to one shared scale; KE ember, PE mint, total dashed titanium outline. Values in mono land above each bar on read.
+States:
+state-1 → morph (SWEEP with both readouts live) → state-2 → ledger
+. The chart docks beside any motion scene (pendulum, track, spring) and morphs in lockstep with it.
+P04-D2 · POTENTIAL-ENERGY CURVE
+E = GIVEN
+STABLE EQM · dU/dx = 0
+TURNING POINTS
+KE = E − U
+U
+x
+A tracer dot rides the well while the docked bar chart (D1) morphs live — the two views of the same energy, in lockstep. Turning points ignite where the E line meets the curve; the trapped region can shade mint ≤10%.
+Construction:
+States:
+curve → E-line → trace (dot SWEEPs, KE/PE readouts live) → turning-point bounce → equilibria-read
+. The E-line itself can SWEEP up/down to show bound → unbound transitions.
+Orange Nelumbo — Diagram Library · P04
+09
+P04
+WORK, POWER & ENERGY — CONTINUED
+P04-D3 · SPRING–BLOCK
+x
+F = −kx
+NATURAL LENGTH DASHED — DISPLACEMENT MEASURED FROM IT, ALWAYS
+The coil texture compresses visibly with the block (stripe pitch tightens). The energy chip fills mint as the spring loads:
+U = ½kx²
+with the value live.
+U = ½kx² · 0.86 J
+Construction:
+wall + ground titanium; spring as the library coil strip (never hand-drawn zigzags); block graphite. Natural-length marker dashed titanium; displacement bracket ember; spring force ignition from the contact face.
+States:
+natural → loading (SWEEP x, U chip fills) → release → launch (U drains into the D1 bars)
+. Oscillation variants hand over to the P09 SHM skeleton — same spring component.
+P04-D4 · WORK AS AREA — F–x GRAPH
+x₁
+x₂
+W = AREA
+F
+x
+SPRING'S ½kx² TRIANGLE IS THIS DIAGRAM AT F = kx
+Construction:
+graph skeleton; F(x) white 3px; work region mint fill ≤14% swept in motion direction; fills abut segment joins exactly — no doubled opacity. Bracketed x₁→x₂ span below the axis.
+States:
+curve → span-set → sweep (W counts up) → read
+. Reused verbatim by P08 (PV work), M14 (definite integrals) and the P02 v–t area — one area-sweep component across the syllabus.
+P04 badge.
+Chapter chip: ember text on obsidian with a mint keyline. KE = ember and PE = mint holds in every P04 asset — bars, wells, chips, thumbnails — and mint never sits adjacent to CORRECT green in any frame.
+Orange Nelumbo — Diagram Library · P04
+10
+P05
+Rotational Motion
+25 · MONO-ORANGE
+Inventory: torque diagram · rolling motion · moment-of-inertia build · angular-momentum conservation. The all-brand ramp:
+ember
+marks rotation sense (ω arcs, axes, r brackets),
+rust
+is the deep fill, and ignition stays what it always is — the target. No decorative orange beyond these three duties.
+P05-D1 · TORQUE DIAGRAM
+τ
+F = GIVEN
+θ
+r
+HINGE DOT = PIVOT · τ ARC SHOWS THE SENSE
+τ = rF sinθ assembles by morph: r from the bracket, F from the arrow, θ from the angle — each term travels from its geometry. The τ result lands beside the sense arc.
+ANGLED-FORCE VARIANT ADDS THE DASHED r⊥ DROP
+Construction:
+States:
+setup → force-on → arm-read (bracket draws) → τ-assemble → balance/spin verdict
+. Multi-force torque balances tally each τ in a signed mono ledger, clockwise negative, before the verdict.
+P05-D2 · ROLLING MOTION
+ω
+2v
+v
+v = 0 · INSTANT REST
+CONTACT POINT = IGNITION — IT IS ALWAYS THE QUESTION
+Construction:
+wheel titanium 3px with hub dot; velocity arrows cyan, lengths in exact 0 : 1 : 2 ratio; ω sense arc ember; the contact point an ignition dot riding the ground. Rolling constraint v = ωR lands as a chip when read.
+States:
+ghosts (translate · spin) → merge → roll (SWEEP, contact dot ticks along ground) → ladder-read
+. Slipping variants break the constraint visibly: the contact dot smears into a short red skid dash.
+Orange Nelumbo — Diagram Library · P05
+11
+P05
+ROTATIONAL MOTION — CONTINUED
+P05-D3 · MOMENT-OF-INERTIA BUILD
+AXIS (cm)
+∥ AXIS
+dm
+r
+SHIFTING THE AXIS ANIMATES — d SWEEPS, I READOUT CLIMBS
+I = Σmᵢrᵢ² + ∫r²dm
+Construction:
+States:
+body → axis-on → sample-sweep (ledger accumulates) → total → axis-shift (+Md²)
+. Standard results (rod, disc, ring, sphere) are recalled as a chip strip, never re-derived mid-question.
+P05-D4 · ANGULAR-MOMENTUM CONSERVATION
+I₁ · ω₁
+PULL IN
+ω₂ ↑
+I₂ω₂ = I₁ω₁
+L = Iω = CONST
+Construction:
+top-view discs titanium with hub dots; movable masses graphite on the rim; ω sense arcs ember — dash density/opacity rises with speed; the causal action (pull in, catch, jump on) ignition. State labels mono beneath.
+States:
+state-1 → action (masses MORPH inward, ω SWEEPs up) → state-2 → ledger (L constant)
+. Collision variants (dart into disc) reuse the skeleton with the projectile entering along a dashed line of action.
+P05 badge.
+Orange Nelumbo — Diagram Library · P05
+12
+P06
+Gravitation
+12 · AMBER ION
+Inventory: orbit diagram · Kepler area sweep · g and V vs r curves · energy ladder. Chapter duties:
+amber
+= the central body and everything it owns (its glow, its field region),
+ion blue
+= orbits and trajectories. Cyan stays reserved for given values; the orbit path is identity, not a given.
+P06-D1 · ORBIT DIAGRAM
+r
+ORBIT — ION 2px
+v = TARGET
+M · CENTRAL BODY
+Perigee/apogee variants mark both ends with mono chips; the satellite's velocity arrow is always tangent, drawn ignition when it is the target. Elliptical orbits keep the central body at a focus — never the centre.
+GEO/POLAR/TRANSFER ORBITS: SAME SKELETON, LABELLED CHIPS
+Construction:
+States:
+system → r-read → v/F-on → orbit-run (satellite SWEEPs the path, r and v readouts live)
+. Transfer-orbit questions overlay the second ellipse dashed ion at 50% until the burn point ignites.
+P06-D2 · KEPLER AREA SWEEP
+A₁
+A₂
+EQUAL t → EQUAL A
+The two swept sectors fill in matched 3s SWEEPs — fast near perigee, slow near apogee — while an area readout proves A₁ = A₂. The satellite visibly speeds up and slows down; the law is watched, not recited.
+dA/dt = L/2m = CONST
+Construction:
+ellipse skeleton from D1; sector fills ≤16% — perigee sector amber (the sun owns it), apogee sector ion; sector edges hairline dashed; labels mono outside the fills, never inside.
+States:
+orbit → sweep-1 (timer chip runs) → sweep-2 (same timer) → equality-read
+. The T² ∝ a³ variant docks a log-log mini-graph right, reusing the graph skeleton.
+Orange Nelumbo — Diagram Library · P06
+13
+P06
+GRAVITATION — CONTINUED
+P06-D3 · g AND V vs r — INSIDE & OUTSIDE
+r = R
+g_max AT SURFACE
+∝ r
+∝ 1/r²
+g
+r
+V(r) TWIN: SAME SKELETON, CURVE BELOW AXIS, −GM/R FLOOR CHIP
+Construction:
+States:
+axes → boundary → inside-draw → outside-draw → kink-read
+. A probe-mass variant drops a test dot down a tunnel through the planet while the g readout tracks the linear regime live.
+P06-D4 · ENERGY LADDER — BOUND TO FREE
+E = 0 · FREE
+E = −GMm/2r · ORBIT
+E = −GMm/R · SURFACE
+LAUNCH COST
+ESCAPE TOP-UP
+ALL BOUND STATES LIVE BELOW ZERO — THE LADDER MAKES NEGATIVE ENERGY VISIBLE
+Escape velocity stops being a formula: it is the ignition rung-jump from surface to zero. Each transition arrow carries its ΔE in mono; v_esc = √(2GM/R) lands only after the jump is seen.
+Construction:
+vertical E-axis; rungs full-width — zero line titanium solid, orbit rungs dashed ion (one per orbit radius), surface rung amber solid; transitions ignition arrows with ΔE mono labels beside them, never crossing a rung.
+States:
+rungs → state-dot-on → transition (dot climbs, ΔE counts) → verdict (bound/free)
+. Reused verbatim as the Bohr-level ladder in P19 Modern Physics — one component, two chapters.
+P06 badge.
+Chapter chip: amber text on obsidian with an ion keyline. Amber glow belongs to central bodies only — satellites, probes and test masses never glow; ion blue never labels a given value (that stays cyan).
+Orange Nelumbo — Diagram Library · P06
+14
+P07
+Solids & Fluids
+20 · PEACH TEAL
+Inventory: pressure column · buoyancy · flow tube (continuity + Bernoulli) · stress–strain. Chapter duties:
+teal
+= every liquid — fills ≤16%, and a liquid surface is always a 2px teal line;
+peach
+= measured lengths — depths, extensions, strains. Solid bodies stay graphite with titanium outlines; cyan and ignition keep their fixed duties.
+P07-D1 · PRESSURE COLUMN
+P₀
+h
+ρ
+DEPTH MARKER PEACH · POINT OF INTEREST IGNITION
+The h marker SWEEPs downward and the pressure chip counts up live — depth is all that matters, and the sweep proves it. U-tube/manometer variants are two of these columns sharing a base.
+P = P₀ + ρgh
+Construction:
+States:
+vessel → fill (liquid pours to level) → marker-sweep (P counts) → read
+. Two-liquid stacks tint each layer's teal at different opacity with its own surface line — never two hues.
+P07-D2 · BUOYANCY — THE FLOATING BLOCK
+SURFACE
+F_B
+W
+ρ_l
+SUBMERGED FRACTION = DENSITY RATIO — READ OFF THE BLOCK
+The submerged band is the answer: its fraction of the block equals ρ_s/ρ_l, and a SWEEP of ρ_l (denser → lighter liquid) sinks the block live while the fraction readout tracks.
+f = ρ_s / ρ_l
+Construction:
+States:
+float → forces-on → fraction-read → ρ-sweep
+. Archimedes displaced-volume variant ghosts the block out and shows the teal void it left, equal in volume — the displaced water made visible.
+Orange Nelumbo — Diagram Library · P07
+15
+P07
+SOLIDS & FLUIDS — CONTINUED
+P07-D3 · FLOW TUBE — CONTINUITY & BERNOULLI
+v₁ = GIVEN
+v₂ = TARGET
+A₁
+A₂
+NARROW = FAST = LOW PRESSURE — ARROW LENGTH ∝ SPEED
+Tracer dots ride the streamlines and visibly accelerate through the throat while both speed readouts run. Bernoulli variants add standpipe columns — liquid height drops over the throat.
+A₁v₁ = A₂v₂
+Construction:
+tube walls titanium 2.5px; liquid teal 12% throughout; flow arrows on the axis — given speed cyan, target ignition, length ∝ speed always. Section labels A₁/A₂ mono outside the tube, clear of the walls.
+States:
+tube → fill → tracers-run (speeds live) → equation-read
+. Venturi, aspirator and aerofoil questions all reuse this skeleton; height-change (y₁≠y₂) variants tilt the whole tube, never bend it mid-frame.
+P07-D4 · STRESS–STRAIN CURVE
+YIELD
+UTS
+✗
+FRACTURE
+ELASTIC
+PLASTIC →
+σ
+ε
+The linear ramp is Hooke's law — its slope IS Young's modulus, read via a peach slope-triangle overlay. Past the ignition yield dot the curve arcs to the peach UTS peak and dies at the red fracture cross.
+E = σ/ε · SLOPE
+Construction:
+States:
+axes → ramp (a rod stretches in lockstep above) → yield → arc → fracture
+. The paired rod visual extends peach by ΔL as the curve draws — stress on the graph, strain on the body, same clock.
+P07 badge.
+Orange Nelumbo — Diagram Library · P07
+16
+P08
+Thermodynamics & KTG
+04 · SUNSET
+Inventory: PV process curves · PV cycle · heat-engine flow · KTG gas box. Chapter duties:
+amber
+= heat in, the hot side, and enclosed-work fills;
+rust
+= heat rejected and the cold side. Semantic warning-amber (#F6C344) lives only in the READ beat, never inside diagrams — no clash. W as area reuses the P04 area-sweep component verbatim.
+P08-D1 · PV PROCESS CURVES — ISOTHERM vs ADIABAT
+STATE 1 = GIVEN
+ISOTHERM
+ADIABAT · STEEPER
+P
+V
+Both expansions leave the same cyan state dot; the adiabat visibly dives under the isotherm — the comparison IS the diagram. The active process re-strokes ignition while it runs; W shades under it via the P04 area sweep.
+PVᵞ = CONST vs PV = CONST
+Construction:
+States:
+axes → state-1 → curve-draw (as narrated) → W-sweep → state-2 read
+. A docked gas-piston mini (from D4's box family) compresses/expands in lockstep with the curve — graph and gas, same clock.
+P08-D2 · PV CYCLE
+1
+2
+3
+4
+W = AREA
+Each leg draws as narrated with its own Q/W ledger row; the enclosed amber fill sweeps in only when the loop closes, then the full cycle re-traces once at 2× to fix the direction. Clockwise = engine, W > 0.
+W_NET = ∮P dV
+Construction:
+legs white 3px with amber mid-leg direction arrowheads; corner states cyan dots, numbered mono outside the loop; enclosed area amber ≤14%, label inside only if ≥3 clear grid cells, else leadered outside.
+States:
+leg-by-leg (ledger fills) → close → area-sweep → direction-trace → η-read
+. Carnot and named cycles use the same build; curved legs come from D1's curve family.
+Orange Nelumbo — Diagram Library · P08
+17
+P08
+THERMODYNAMICS & KTG — CONTINUED
+P08-D3 · HEAT-ENGINE FLOW
+T_H
+T_C
+Q_IN
+Q_OUT
+W = TARGET
+ARROW THICKNESS ∝ ENERGY — THE LEDGER MUST BALANCE
+Energy accounting as a picture: Q_IN arrives thick, W leaves ignition, Q_OUT leaves rust — widths proportional, so η is visible before it's computed. Refrigerators reverse every arrow and W enters.
+η = W/Q_IN
+Construction:
+reservoirs are tinted blocks — hot amber, cold rust — with T labels inside their flat fills; the engine a titanium circle; flow arrows carry their Q/W mono labels above, never crossing the arrow. Widths ∝ energy, always.
+States:
+reservoirs → Q_IN flows → split (W out, Q_OUT on) → ledger → η-read
+. Carnot comparisons run two engines side by side, same Q_IN width, different W.
+P08-D4 · KTG GAS BOX
+ONE MOLECULE IGNITES — ITS WALL HIT IS THE STORY
+T = 300 K · LIVE
+Pressure emerges: molecules jitter, one ignites, its wall collision flashes and a tally counts hits. A T-SWEEP speeds every dot up while P and v_rms readouts climb together — temperature IS motion.
+v_rms = √(3kT/m)
+Construction:
+States:
+box → jitter → sample-one → wall-hit tally → T-sweep
+. Piston variants make one wall movable (graphite piston from D1's docked mini); degrees-of-freedom lessons swap dots for dumbbell pairs.
+P08 badge.
+Orange Nelumbo — Diagram Library · P08
+18
+P09
+Oscillations — SHM
+11 · DUSK
+Inventory: phasor circle · x/v/a triplet · the two oscillators · energy exchange. Chapter duties:
+violet
+= phase machinery — the phasor, phase angles, lead/lag — a duty it keeps in AC (P15);
+ember
+= amplitude markers. Energy colours inherit P04: KE ember, PE mint.
+P09-D1 · PHASOR ↔ MOTION
+ωt
+A
+PHASOR VIOLET · ITS PROJECTION IS THE MOTION
+The phasor rotates uniformly; its projection SWEEPs the ignition dot along the sine as it draws. Every phase question routes through this frame — the circle is the machine, the graph is its shadow.
+x = A sin(ωt + φ)
+Construction:
+circle + radius + phase arc all violet; the moving point ignition; the traced curve white 3px; time midline dashed titanium 35%; amplitude marker ember. The projection dash is titanium — it is scaffold, not phase.
+States:
+circle → phasor-spin (ωt arc grows) → trace → phase-read
+. Two-phasor variants (superposition, phase difference) stack violet phasors on one circle at reduced opacity for the second.
+P09-D2 · x / v / a TRIPLET
+x
+PHASE 0
+v
+LEADS π/2
+a
+INVERTED π
+Three rows, one shared clock. A single phasor drives all three; the phase chips in violet are the answer to every "when is v maximum?" question — read, not derived.
+a = −ω²x
+Construction:
+States:
+x-row → v-row (shifted) → a-row (inverted) → now-dots run
+. Extremum questions freeze the dots and read all three values in one mono ledger.
+Orange Nelumbo — Diagram Library · P09
+19
+P09
+OSCILLATIONS — CONTINUED
+P09-D3 · THE TWO OSCILLATORS
+x = 0
+ω = √(k/m)
+θ
+ω = √(g/L)
+The two canonical oscillators, drawn from P04's spring and a pivot-string-bob kit. Every SHM system on the syllabus is one of these in disguise — the video's job is to show which, then read ω off the system.
+SMALL-ANGLE BADGE REQUIRED ON EVERY PENDULUM
+Construction:
+States:
+system → displace → release (oscillates, x/T readouts live) → ω-read
+. Both oscillators can dock the D1 phasor or the D4 energy curves beside them, in lockstep.
+P09-D4 · ENERGY EXCHANGE — KE/PE vs x
+E
+PE
+KE
+−A
+0
++A
+CROSSINGS IGNITE: KE = PE AT x = ±A/√2
+The mint PE bowl and ember KE dome are mirror curves under the dashed total line — a now-dot pair rides both while the oscillator runs, and the two values always sum to E. Same truth as P04's bars, now as a graph.
+E = ½kA²
+Construction:
+x-axis with −A/0/+A ticks; PE mint 3px bowl, KE ember 3px dome, total dashed titanium tangent to both; the KE=PE crossings ignition dots. Colours are P04's energy pair — never re-assigned.
+States:
+axes → bowl → dome → total-line → now-dots run
+. The time-domain variant (energies vs t, both at 2ω) reuses D2's stacked-row skeleton.
+P09 badge.
+Orange Nelumbo — Diagram Library · P09
+20
+"

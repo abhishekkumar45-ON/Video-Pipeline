@@ -1,0 +1,1408 @@
+Bundled Page
+This page requires JavaScript to display.
+ORANGE NELUMBO
+Unpacking...
+Orange Nelumbo
+Brand System
+ORANGE NELUMBO
+The Brand Guidelines
+VERSION 1.0
+JULY 2026
+IN PURSUIT OF
+MASTERY.
+The book
+Contents
+The complete operating system for the Orange Nelumbo brand — from the core identity to the exact spec for every channel, format and template. Built so the team makes fewer decisions and moves faster.
+01
+Brand Foundation
+03
+02
+Logo & Mark
+06
+03
+Colour System
+10
+04
+Typography
+13
+05
+Iconography & Illustration
+16
+06
+Photography & Imagery
+17
+07
+Layout & Grid
+18
+08
+Social Channels
+19
+09
+Campaign Formats
+25
+10
+Email, Decks & Merch
+28
+11
+Messaging & Copy
+31
+12
+UI & Components
+35
+13
+Data Visualisation
+40
+14
+Motion & Interaction
+41
+15
+Channel Playbook
+42
+16
+Accessibility
+44
+17
+Legal & Compliance
+45
+18
+Co-branding
+47
+19
+Assets & Governance
+48
+★
+Quick reference
+49
+Orange Nelumbo — Brand Guidelines
+02
+01 — Foundation
+Why we exist
+JEE isn't a test of how much you've read. It's a test of how precisely you perform under pressure. Most prep ignores that.
+We engineered for it.
+Mission
+Build the most advanced adaptive prep platform ever made — one that maps every student's mind in real time and engineers the fastest possible path to mastery. Not another content library. A guidance system.
+Vision
+A world where any student with ambition can reach escape velocity — where the ceiling on a rank is talent and effort, never access to great teaching or the right feedback at the right moment.
+Positioning statement
+For serious JEE aspirants chasing a top rank,
+Orange Nelumbo
+Orange Nelumbo — Brand Guidelines
+03
+01 — Foundation
+Personality
+Orange Nelumbo is the engineer in the room who is also your biggest believer. Precise enough to trust with your rank, human enough to keep you going. Five traits govern every expression.
+Precise
+Engineered, exact, data-backed. Every claim has a number behind it. We measure what matters and say it straight.
+Adaptive
+Never one-size-fits-all. The platform bends to the student; so does the brand. Responsive, intelligent, alive.
+Relentless
+Forward motion, always. We push, iterate and never coast. The energy of a launch, not a library.
+Visionary
+We think in decades and light-years. Ambitious about what learning can be — and unafraid to look futuristic.
+Human
+Behind the telemetry is a student who is tired, hopeful and betting their future on us. We are warm, encouraging and on their side — technology in service of a person, never the other way around.
+Orange Nelumbo — Brand Guidelines
+04
+01 — Foundation
+Voice & tone
+We speak like mission control: calm, exact, propulsive. Confidence from precision, not volume. Lead with the outcome, back it with a number, and never talk down to a 16-year-old betting their future.
+We say
+We don't
+"Know exactly what's holding your rank back."
+"Unlock your true potential with our courses."
+"Adaptive to you. Down to the concept."
+"India's #1 most trusted JEE mega-course!"
+"In pursuit of mastery. Engineered for the top."
+"Crack JEE easily with our simple tricks!!!"
+Naming
+Always
+Orange Nelumbo
+(two words). Never "OrangeNelumbo", "ON" in user-facing copy, or lowercase. The mark and wordmark are never restyled.
+Mechanics
+Sentence case in prose; mono UPPERCASE for kickers and telemetry. Use real numbers, ranks and units. Say "JEE Main" / "JEE Advanced" correctly. One exclamation per page, maximum.
+Orange Nelumbo — Brand Guidelines
+05
+02 — Logo & Mark
+The mark
+ORANGE NELUMBO
+A
+The symbol
+Five faceted petals in the ignition gradient, a launch cradle beneath, an orbital ring with a single satellite. Never redraw, recolour, or separate the ring from the lotus.
+B
+The wordmark
+"ORANGE NELUMBO" in Space Grotesk Bold caps,
++0.02em
+tracking. The mark's height is ~2.6× the cap-height of the wordmark — keep this ratio locked.
+Orange Nelumbo — Brand Guidelines
+06
+02 — Logo & Mark
+Variations
+Five approved forms. Choose by space and background; never invent new arrangements.
+ORANGE NELUMBO
+Horizontal · primary
+ORANGE NELUMBO
+Stacked · square spaces
+Symbol · avatars & favicons
+ORANGE NELUMBO
+Reversed · knockout on orange
+ORANGE NELUMBO
+ORANGE NELUMBO
+On light backgrounds use the full-colour mark with charcoal type. Mono (knockout white) is for single-colour print, engraving and low-res only.
+Orange Nelumbo — Brand Guidelines
+07
+02 — Logo & Mark
+Clearspace & size
+Give the mark vacuum. The exclusion zone equals
+x
+— the height of the orbital ring — on every side. Nothing enters it.
+x
+x
+x
+x
+ORANGE NELUMBO
+Minimum — lockup
+Digital
+128 px
+wide · Print
+32 mm
+. Below this, switch to the symbol.
+Minimum — symbol
+Digital
+28 px
+· Print
+9 mm
+. Used for favicons and app icons.
+Orange Nelumbo — Brand Guidelines
+08
+02 — Logo & Mark
+Misuse
+The mark is fixed artwork. These six mistakes break it — never do any of them.
+✕
+✕
+✕
+✕
+✕
+Orange Nelumbo
+✕
+Don't stretch or condense
+Don't recolour the gradient
+Don't rotate or tilt
+Don't place on clashing colour
+Don't fade or add effects
+Don't reset the wordmark in another font
+Orange Nelumbo — Brand Guidelines
+09
+03 — Colour System
+Core palette
+Carbon is the cockpit; ignition orange is the thrust. The dark holds everything calm and precise so a single burst of orange reads as pure energy.
+Carbon
+HEX  #161418
+RGB  22 · 20 · 24
+CMYK 71 · 71 · 60 · 71
+Primary — the default surface.
+Ignition Orange
+HEX  #FF5A1F
+RGB  255 · 90 · 31
+CMYK 0 · 76 · 92 · 0
+Accent — CTAs, the mark, energy.
+Obsidian
+HEX  #0E0D10
+RGB  14 · 13 · 16
+CMYK 74 · 73 · 63 · 82
+Depth — heroes & section bands.
+Ember
+HEX  #FF8A3D
+RGB  255 · 138 · 61
+CMYK 0 · 56 · 79 · 0
+Gradient top & hover glow.
+Orange Nelumbo — Brand Guidelines
+10
+03 — Colour System
+Support tones build depth between the near-blacks. Signal Cyan is the single cool accent — reserved for data and telemetry, never marketing. State colours cover UI feedback only.
+Support tones
+Graphite
+#1E1B20
+Steel
+#2A262E
+Titanium
+#C7C5CC
+Signal Cyan
+#3DE0D0
+Functional — state colours
+Success
+#3DE08A · correct
+Error
+#E0483C · wrong
+Warning
+#F6C344 · review
+State & signal colours are for UI and data only. Ignition orange is the one accent that markets — never dilute it with a rainbow.
+Orange Nelumbo — Brand Guidelines
+11
+03 — Colour System
+Ratios & access
+Aim for roughly 80 / 15 / 5 — carbon dominates, white carries text, orange ignites. Orange is intense; a little goes a long way. Always meet WCAG AA.
+Approved text pairings
+White on carbon
+15.8 : 1 · AAA ✓
+Ember on obsidian
+6.1 : 1 · AA ✓
+Ink on orange
+7.2 : 1 · AAA ✓
+Titanium on carbon
+9.4 : 1 · AAA ✓ (body)
+Avoid
+White on orange
+2.1 : 1 · fails ✕
+Small orange body text
+4.0 : 1 · large only
+On orange grounds always use near-black ink, never white. Orange text works for large headings on dark; for body, use white or titanium.
+Orange Nelumbo — Brand Guidelines
+12
+04 — Typography
+Typefaces
+Three families, each with one job. A geometric grotesque for display, a clean workhorse for text, and a mono for telemetry, labels and data.
+Aa
+Space Grotesk
+Display & headlines
+Weights 400–700. The wordmark, page titles and hero statements. Geometric, engineered, a little futuristic.
+Aa
+Manrope
+Body & UI
+400–800. Body copy, buttons, captions.
+Aa
+JetBrains Mono
+Telemetry, labels & data
+400–600. Uppercase kickers, "// NN" markers, numbers.
+Fallback stack:
+"Space Grotesk", system-ui, sans-serif · "Manrope", system-ui, sans-serif · "JetBrains Mono", ui-monospace, monospace.
+Orange Nelumbo — Brand Guidelines
+13
+04 — Typography
+Scale & hierarchy
+Display · 56/56
+Reach escape velocity
+H1 · 34/38
+Adaptive down to the concept
+H2 · 24/30
+Engineered for the top rank
+Kicker · 11 · .26em
+12 — Telemetry
+Body · 16/26
+The platform reads your performance in real time and targets exactly what is holding your rank back.
+Data · 13 mono
+RANK ▲ 4,120 → 890 · ACCURACY 78.4%
+Minimums:
+never set body below 16px on web. Display tracking stays tight (-0.02em); body stays at default. Mono is always uppercase for labels, with ≥0.1em tracking. Numbers & ranks always in JetBrains Mono.
+Orange Nelumbo — Brand Guidelines
+14
+04 — Typography
+Type in use
+Do
+01 — Adaptive engine
+Know your
+weak point.
+Mono kicker, Space Grotesk headline, Manrope body. Clear three-tier hierarchy.
+Don't
+Know your weak point.
+Don't swap the roles — body in Space Grotesk, headline in Manrope flattens the hierarchy.
+Do
+RANK 4120 → 890
+Data in mono
+Don't
+Outlined, shadowed,
+stretched type
+Rule of thumb —
+one Space Grotesk weight per layout, mono only for labels and data, and never letterspace Manrope body text. Let the ignition gradient and tight tracking carry the character.
+Orange Nelumbo — Brand Guidelines
+15
+05 — Iconography & Illustration
+Icons & art
+Icons are precise monoline drawings. Illustration is dark-canvas schematic art — orbital rings, trajectories, molecular lattices and velocity streaks, lit by a single ignition glow.
+Icon style — 1.6px stroke, orange, rounded joins
+Consistent —
+one 1.6px stroke, geometric, 24px grid, rounded caps. Orange on dark, ink on orange.
+Avoid —
+filled glyphs, multicolour icons, emoji, drop shadows, mixed stroke weights.
+Illustration — schematic / telemetry
+Schematic art lives on obsidian, drawn in thin orange line with one glowing node. Orbits, trajectories, lattices — the language of engineering, never clip-art.
+Orange Nelumbo — Brand Guidelines
+16
+06 — Photography & Imagery
+Imagery
+Two streams: real students in focused motion, and the machinery of ambition — rockets, circuitry, optics, hypercars, telescopes. All graded into carbon with a single ignition light. Never bright, generic classroom stock.
+Photo — student at screen, ignition rim-light
+rocket / machinery
+portrait
+Look for
+Focused intensity, real motion
+Engineering & cosmos — rockets, optics, circuits
+Deep shadow, one ignition light source
+Young, diverse, ambitious Indian faces
+Avoid
+Bright, flat classroom stock
+Staged toppers with trophies & garlands
+Cool blue or grey casts
+Cluttered, busy compositions
+Grade —
+crush shadows to carbon and let one warm ignition light define the subject. A duotone (obsidian → ignition) is approved for full-bleed heroes and ad backgrounds.
+Orange Nelumbo — Brand Guidelines
+17
+07 — Layout & Grid
+Layout & grid
+Three devices give every surface the mission-control rhythm: the numbered mono kicker, a 12-column dark field, and one ignition moment.
+08 — KICKER
+A
+Mono kicker
+— "// NN — Section". Numbered, orange, wide tracking. Opens every block.
+B
+Content field
+— 12 columns, 24px gutter, ~56px outer margin on carbon.
+C
+Ignition moment
+— one gradient band, glow or CTA per view.
+Spacing on an
+8px baseline
+. Cards use a 1px
+orange-22%
+hairline on graphite; square corners throughout.
+Orbit & grid motif —
+faint concentric rings and a fine technical grid are signature background textures on hero surfaces. Keep them low-contrast; they set the scene, they never compete with content.
+Orange Nelumbo — Brand Guidelines
+18
+08 — Social Channels
+The social system
+One identity across every platform. Same avatar, same voice, same carbon-and-ignition world. Handle is
+@orangenelumbo
+everywhere.
+X
+LINKEDIN
+INSTAGRAM
+YOUTUBE
+TIKTOK
+Avatar — the orbital lotus mark, centred, on obsidian (or knockout on the gradient for Instagram). Never the full wordmark; it's illegible small.
+Four content pillars
+Concept
+— one JEE idea, made intuitive
+Strategy
+— exam tactics & the data behind them
+Tech
+— how the adaptive engine works
+Proof
+— rank jumps & student stories
+Caption formula
+HOOK
+— a sharp, precise line.
+VALUE
+— one idea, taught cleanly.
+CTA
+— start free / see your map.
+TAGS
+— 2–4, never a wall.
+Core hashtags
+#OrangeNelumbo · #JEE · #JEEAdvanced · #InPursuitOfMastery
+Orange Nelumbo — Brand Guidelines
+19
+08 — Social · X (Twitter)
+X / Twitter
+Adaptive JEE prep.
+In pursuit of mastery.
+Orange Nelumbo
+@orangenelumbo
+The adaptive JEE prep platform that reads your performance in real time and engineers the shortest path to your rank. 🚀 → orangenelumbo.com
+Orange Nelumbo
+@orangenelumbo
+Solving 500 problems won't raise your rank. Solving the right 50 will. The only question is whether you know which 50. We do.
+Hot take
+Volume is a
+vanity metric.
+IN-STREAM IMAGE · 16:9
+Asset specs
+Header
+1500×500
+Avatar
+400×400
+In-stream
+1600×900
+Card link
+1200×628
+Tone on X
+Sharp, data-driven, a little contrarian. Myth-busting takes and mini-threads that teach. Lead with the counter-intuitive line; pay it off with the number.
+Orange Nelumbo — Brand Guidelines
+20
+08 — Social · LinkedIn
+LinkedIn
+The science of a
+top rank
+Orange Nelumbo
+E-Learning · Adaptive JEE prep · India
+Orange Nelumbo
+Promoted · 12,400 followers
+We analysed 1.2M solved problems. The students who improved fastest all did one counter-intuitive thing. Carousel ↓
+The data
+1.2M problems.
+DOCUMENT CAROUSEL · 1080×1350
+Asset specs
+Banner
+1128×191
+Logo
+300×300
+Single image
+1200×627
+Carousel
+1080×1350
+Tone
+The credibility room — learning science, the engine, outcomes and data. For parents, educators & press. Document carousels for teaching; one idea per slide.
+Orange Nelumbo — Brand Guidelines
+21
+08 — Social · Instagram
+Instagram
+Feed · 1080 × 1080
+Concept
+of the day
+Rotational
+motion
+Quiz
+JEE
+tip
+Rank
+jump
+Alternate carbon, gradient and schematic tiles so the grid reads as one system. Gradient tiles are the loud beats — use sparingly.
+Story / Reel · 1080 × 1920
+JEE tip
+Attempt
+in
+passes.
+Easy marks first. Always.
+See your map →
+Dashed = safe zone. Keep text & CTA clear of top 250px / bottom 320px.
+Reel covers
+use the 1080×1920 frame with a single Space Grotesk line + orange keyword; design the cover so it also reads clean as a 1:1 grid crop.
+Orange Nelumbo — Brand Guidelines
+22
+08 — Social · YouTube
+YouTube
+Channel art · 2560 × 1440
+ORANGE NELUMBO
+In pursuit of mastery.
+Thumbnails · 1280 × 720
+Rotational
+Torque in 5 min
+Strategy
+Drop a
+subject?
+Asset specs
+Channel art
+2560×1440
+TV-safe
+1546×423
+Thumbnail
+1280×720
+Thumbnail rules
+Max
+four
+words. One Space Grotesk headline, obsidian ground, one ignition element, mark badge. Must read at 210px wide.
+Orange Nelumbo — Brand Guidelines
+23
+08 — Social · TikTok & Shorts
+TikTok & Shorts
+60-sec concept
+Why a
+rocket
+curves
+@orangenelumbo · Physics, fast.
+#OrangeNelumbo #JEE
+Tinted zones = UI overlap. Keep key text out of the right rail (~120px) & bottom caption (~320px).
+Asset specs
+Frame
+1080×1920
+· 9:16
+Right-rail safe
+≥120px
+Bottom safe
+≥320px
+Cover
+1080×1920
+Tone shift
+Loosest channel — fast talking-head explainers, on-screen Space Grotesk captions, one concept per clip. Energetic and awe-driven ("space, speed, machines") but never cringe or clickbait.
+Captions
+Always burn in captions — orange keyword highlights on white text, sound-off readable.
+Orange Nelumbo — Brand Guidelines
+24
+09 — Campaign Formats
+Social ads
+Performance creative still behaves. One offer, one headline, one CTA — carbon canvas, ignited by a single orange burst.
+FREE DIAGNOSTIC · KNOW YOUR RANK GAP
+Know your
+rank gap.
+Adaptive JEE prep · free trial
+Start free
+SQUARE · 1080²
+FREE DIAGNOSTIC
+Top
+rank
+Try free
+STORY · 9:16
+Free diagnostic
+Prep that adapts to you
+Start free →
+ORANGE NELUMBO
+LANDSCAPE / FEED · 1200×628
+Do —
+keep ≤20% of the frame as text, one CTA, one ignition element, and a visible mark or wordmark.
+Don't —
+stack multiple offers, use state colours decoratively, or promise a guaranteed rank / selection.
+Orange Nelumbo — Brand Guidelines
+25
+09 — Campaign Formats
+Blog & banners
+Every banner pairs an obsidian ground with a single Space Grotesk headline, a mono category and one ignition accent.
+Article header
+Strategy · 6 min read
+The 90-day plan that moves your rank the most
+Orange Nelumbo Team · 12 July 2026
+Share / OG card · 1200 × 630
+ORANGE NELUMBO
+Strategy
+The 90-day plan
+In-article CTA
+See your own plan
+Free diagnostic — get your rank map in 20 min.
+Start free
+Specs —
+header full-width · OG 1200×630 · in-article CTA full-width or 728×200.
+Orange Nelumbo — Brand Guidelines
+26
+09 — Campaign Formats
+Infographics
+Data is the product's proof. Charts read like telemetry — orange and cyan on obsidian, mono labels, one story each.
+JEE Main · marks vs rank
+Where marks matter
+250+ marks
+AIR < 1K
+200 marks
+~8K
+150 marks
+~28K
+100 marks
+~90K
+orangenelumbo.com
+Chart palette order
+Ignition → Ember → Signal Cyan → Steel. Highlight the hero figure in orange; everything else recedes.
+Anatomy
+Mono kicker → one chart → orange on the hero number → mark + source at the foot. Always cite the source.
+Formats
+Square 1080² for social · Portrait 1080×1350 for carousels · Full-width for blog & PDF.
+Orange Nelumbo — Brand Guidelines
+27
+10 — Email, Decks & Merch
+Email & newsletter
+ORANGE NELUMBO
+Weekly telemetry
+Your rank moved. Here's why.
+Hey Aarav — projected AIR improved 4,120 → 890 this week. Your biggest lever right now is Rotational Motion.
+PROJECTED AIR
+890
+ACCURACY
+78.4%
+NEXT LEVER
+Rotational Motion
+Open your map →
+Orange Nelumbo · In pursuit of mastery
+Unsubscribe · Manage preferences
+Specs
+Body width
+600px
+Header logo
+180px
+CTA gradient, 44px tall
+Min body
+15px
+Rules
+Dark obsidian body works in email (test clients). One gradient CTA. Personalise line one with real telemetry. Arial fallback for both fonts.
+Subject lines
+Precise & personal: "Your projected AIR just moved." Sentence case, no emoji spam, one idea.
+Orange Nelumbo — Brand Guidelines
+28
+10 — Email, Decks & Merch
+Presentations
+16:9 decks in the mission-control world. Three masters: title, content, section divider.
+Title slide
+ORANGE NELUMBO
+Investor & partner deck
+The adaptive engine for JEE mastery.
+Content slide
+The engine
+Three loops
+01
+Diagnose in real time
+02
+Target the weakest link
+03
+Re-test & adapt
+Section divider
+Part two
+The results.
+16:9 · 1920×1080. Body min 18pt. One idea per slide. Footer with mark + slide number. Gradient dividers for impact.
+Orange Nelumbo — Brand Guidelines
+29
+10 — Email, Decks & Merch
+Merch & swag
+Precision hardware energy. Carbon and ignition only; the mark or wordmark leads, the mantra supports.
+Carbon tee
+Ignition chest mark
+Ignition mug
+Knockout mark
+MASTERY
+LOG
+Notebook
+Mantra cover
+Sticker
+Ignition circle badge
+ORANGE NELUMBO
+Laptop sleeve
+Full wordmark
+In pursuit of
+mastery.
+Cap / patch
+Mantra embroidery
+Production —
+single-colour ignition embroidery on carbon, or knockout on the gradient. Keep the full clearspace and one mark per item — let the mantra do the rest.
+Orange Nelumbo — Brand Guidelines
+30
+11 — Messaging & Copy
+The message stack
+Approved, copy-paste language at every length. Use these verbatim — don't rewrite the core lines.
+Tagline · 4 words
+In pursuit of mastery.
+Rally cry · 5 words
+Know exactly what's holding you back.
+One-liner · ≤ 20 words
+The adaptive JEE platform that reads your performance in real time and engineers the shortest path to your rank.
+Boilerplate · 50 words
+Elevator pitch · spoken, ~30 sec
+Orange Nelumbo — Brand Guidelines
+31
+11 — Messaging & Copy
+Who we speak to
+Three audiences, one promise. Lead with the angle that fits — never change the core promise.
+The aspirant
+Class 11–12, chasing a top rank.
+Angle —
+precision & edge. "Know exactly what's capping your rank."
+Lead —
+adaptive engine, rank map, targeted practice.
+The dropper
+Repeating the year, needs a smarter approach.
+Angle —
+diagnosis & efficiency. "Last year you studied hard. This year, study right."
+Lead —
+diagnostics, weak-link targeting, mocks.
+The parent
+Funding it, wants proof it works.
+Angle —
+transparency & science. "See exactly where their time goes and why."
+Lead —
+progress telemetry, the learning science, outcomes.
+Proof points — cite these, not vague claims
+Real-time
+adaptive engine, concept-level
+Full-length
+JEE Main & Advanced mocks
+Projected AIR
+updated every session
+Built for India
+— JEE syllabus, current pattern
+Orange Nelumbo — Brand Guidelines
+32
+11 — Messaging & Copy
+Copy bank
+Pre-approved lines. Pick, don't invent. Keep the precise, propulsive register throughout.
+Headlines
+Know exactly what's holding your rank back.
+In pursuit of mastery.
+Prep that adapts down to the concept.
+Volume is a vanity metric.
+Engineered for the top rank.
+Reach escape velocity.
+Study right, not just hard.
+Email subject lines
+Your projected AIR just moved.
+The one concept capping your rank.
+You're solving the wrong problems.
+90 days out. Here's your plan.
+The mock is live. Are you?
+Calls to action — in priority order
+Start free trial
+See your rank map
+Take the diagnostic
+Explore →
+One CTA per surface.
+"Start free trial" is the default primary action where a first-timer lands. Sentence case, active verb, never more than three words.
+Orange Nelumbo — Brand Guidelines
+33
+11 — Messaging & Copy
+Lexicon & style
+Say this
+aspirant, student
+adaptive, precise, engineered
+rank, mastery, weak link
+diagnose, target, accelerate
+rank map, projected AIR, telemetry
+Not this
+user, kid, child
+easy, simple tricks, shortcuts
+guarantee, sure-shot, 100%
+mega-course, ultimate, revolutionary
+content, material (be specific)
+Product & feature names — exact spelling
+Adaptive Engine · Rank Map
+Projected AIR · Mastery Score
+Diagnostic · Weak-Link Targeting
+JEE Main · JEE Advanced
+Formatting rules
+Brand name
+Orange Nelumbo (two words) · JEE Main / JEE Advanced · NTA · AIR
+Ranks & data
+Always in JetBrains Mono. "AIR 890", "78.4%", "4,120 → 890".
+Currency
+₹ with comma thousands · "/year" or "/once"
+Kickers
+Mono, uppercase, "// NN — Section". Numbered, orange.
+Orange Nelumbo — Brand Guidelines
+34
+12 — UI & Components
+Buttons
+Square corners, Manrope bold label, generous padding. Three roles — never more than one ignition primary per view.
+Start free trial
+Primary · ignition gradient, ink text — the main action
+See your rank map
+Outline · orange border — secondary action
+Explore →
+Ghost · white hairline — tertiary / nav
+Start free trial
+On ignition grounds, primary flips to obsidian fill
+States & specs
+Default
+Hover +glow
+Disabled 35%
+Height
+44px
+min (touch) · padding
+12 × 28
+· radius
+0
+· label Manrope
+700
+, sentence case · hover brightens + ignition glow
+0 0 28px
+· focus ring 2px orange.
+Orange Nelumbo — Brand Guidelines
+35
+12 — UI & Components
+Forms & inputs
+Email address
+you@email.com
+Target exam
+JEE ADVANCED 2027
+▾
+✓
+I agree to the Privacy Policy
+wrong@
+Enter a valid email address.
+⤓
+Drop your marksheet
+— or —
+Select a file
+*Supported: pdf, png, jpg.
+Search
+/ search a concept…
+Label above field, Manrope 600 · field border
+1px orange-40%
+, obsidian fill, square corners · focus border solid orange · placeholder muted white · error border & text in
+#E0483C
+· checkbox checked = ignition fill, ink tick · min target 44px.
+Orange Nelumbo — Brand Guidelines
+36
+12 — UI & Components
+Cards
+The subject card is the workhorse — telemetry label, mastery ring, title, chips, CTA. The active/priority card carries the ignition gradient CTA.
+PHYSICS
+MASTERY 62%
+Rotational Motion
+Your biggest rank lever right now. 24 targeted problems queued.
+24 PROBLEMS
+Start →
+CHEMISTRY
+MASTERY 88%
+Chemical Bonding
+Strong. Maintain with spaced review — next check in 6 days.
+REVIEW IN 6D
+Review →
+Card spec —
+1px orange-22% hairline on graphite, or orange-40% + orbit texture on obsidian for the priority card. No radius, 22px pad. Telemetry label mono-orange, mastery % in cyan/green, hover lifts 2px with a faint ignition glow.
+Orange Nelumbo — Brand Guidelines
+37
+12 — UI & Components
+Tables & status
+Mock results table
+SUBJECT
+Q
+CORRECT
+SCORE
+Physics
+30
+27
+90%
+Chemistry
+30
+24
+80%
+Mathematics
+30
+18
+60%
+Status badges
+MASTERED
+IN PROGRESS
+WEAK LINK
+Chips
+PHYSICS
+TARGETED
+MOCK
+Projected AIR gauge
+4,120 →
+890
+State colours are
+UI-only
+. Green = mastered, amber = mid, red = weak link. Never use them as brand colour.
+Orange Nelumbo — Brand Guidelines
+38
+12 — UI & Components
+Navigation
+Header + promo strip
+ORANGE NELUMBO
+Engine
+Courses
+Mocks
+Pricing
+Start free
+Free diagnostic this week — know your rank gap in 20 minutes.
+Footer
+ORANGE NELUMBO
+The adaptive JEE prep platform. Know exactly what's holding your rank back.
+Start free →
+PLATFORM
+Adaptive Engine
+Mocks
+Rank Map
+COMPANY
+About
+Contact
+Careers
+© 2026 ORANGE NELUMBO
+IN PURSUIT OF MASTERY.
+Header is sticky, translucent obsidian with blur, 74px tall · footer on obsidian with mono-orange column heads · promo strip only for live offers, ignition gradient, dismissible.
+Orange Nelumbo — Brand Guidelines
+39
+13 — Data Visualisation
+Charts & data
+Data is the product's signature — charts should read like flight telemetry. Ignition and cyan on obsidian, mono labels, one message each.
+Mastery by week
+W1 · W2 · W3 · W4
+Mastery
+72%
+Rank trajectory
+Series order
+Ignition →
+Ember →
+Cyan →
+Steel.
+Rules
+Mono labels, hairline gridlines, numbers in JetBrains Mono. No 3D, no gradients on bars (gauges OK). Red only for a drop.
+Orange Nelumbo — Brand Guidelines
+40
+14 — Motion & Interaction
+Motion
+Motion is precision in flight — smooth accelerations, orbital paths, ignition glows. It communicates that the system is alive and computing, and it always serves comprehension.
+Propulsive
+Elements accelerate in and settle — ease-out curves, never linear. The feel of thrust, then lock.
+Orbital
+Loaders and accents move on arcs and rings, not straight lines. The mark's orbit is the signature loop.
+Ignition-lit
+Glow blooms on hover and on key state changes — the single warm light in a dark cockpit.
+Accessible
+Honour
+prefers-reduced-motion
+— replace orbital moves and glows with simple fades.
+Timing tokens
+Hover / press
+140ms · ease-out · brighten + glow
+Reveal on scroll
+600ms · ease-out · fade + 20px rise
+Data count-up
+900ms · ease-out · numbers roll to value
+Standard easing
+cubic-bezier(.16, 1, .3, 1)
+Never —
+gratuitous parallax on text, motion longer than 400ms for UI feedback, or autoplay that can't be paused. Futuristic ≠ chaotic.
+Orange Nelumbo — Brand Guidelines
+41
+15 — Channel Playbook
+Cadence & mix
+A sustainable weekly rhythm. Teach four times for every one time you sell — the 80/20 of content.
+CHANNEL
+CADENCE
+PRIMARY FORMAT
+X / Twitter
+5–7 / week
+Hot takes, myth-busts, threads
+LinkedIn
+3 / week
+Data carousels, science, outcomes
+Instagram
+4 / week + stories
+Concept tiles, reels, rank jumps
+YouTube
+1 / week
+Concept explainers, walkthroughs
+TikTok / Shorts
+3–5 / week
+60-sec concepts, awe hooks
+Content mix — every week
+40% · Concept
+30% · Strategy
+20% · Proof
+10% · Sell
+Orange Nelumbo — Brand Guidelines
+42
+15 — Channel Playbook
+Community & replies
+In comments and DMs we're mission control on comms: precise, encouraging, never defensive or hype. There's a real, anxious teenager on the other end.
+Reply like this
+"Totally normal to feel behind in Physics right now. Start with Rotational Motion — it's high-weight and fixable fast. Want the 2-week plan we'd build for you?"
+Not like this
+"Just join our course and your rank is guaranteed!! 🚀🔥 Link in bio, don't miss out!!!"
+Response principles
+Help first, sell never
+— answer the real question before mentioning the product.
+Be specific & calm
+— one concrete next step; never fuel exam panic.
+Encourage honestly
+— acknowledge the struggle, then give a plan.
+Speed matters
+— reply within 4 working hours on weekdays.
+Escalation & care —
+refunds, complaints and legal go to
+help@orangenelumbo.com
+. If a student signals real distress or burnout, respond with empathy and point to support resources — never a sales link.
+Orange Nelumbo — Brand Guidelines
+43
+16 — Accessibility
+Inclusive by default
+Students study on cheap phones, on patchy data, late at night. The dark cockpit must stay legible everywhere. Target WCAG 2.1 AA.
+Contrast
+Body ≥ 4.5:1 on carbon. Never white on orange, never small orange body on dark. Don't rely on colour alone — pair state with a label.
+Focus & targets
+Visible 2px orange focus ring on every interactive element. Touch targets ≥ 44 × 44px.
+Text & reading
+Min 16px body. Line length 60–75 chars. Never lock zoom. Mono only for short labels & data — never long body.
+Motion & media
+Honour reduced-motion (no orbital sweeps), caption all video, never autoplay sound, always offer a skip.
+Inclusive language —
+Orange Nelumbo — Brand Guidelines
+44
+17 — Legal & Compliance
+JEE & NTA
+We prepare students for JEE; we are an independent platform, not affiliated with the NTA, the IITs or JEE Apex Board. Get this right on every asset — it protects the business.
+Required disclaimer — footers, ads, course pages
+No outcome guarantees
+Never promise a rank, a score, or admission. "Projected AIR" is always labelled a model estimate, not a prediction. Student results are illustrative, not typical or guaranteed.
+Do
+Say "JEE prep", "JEE Main", "JEE Advanced"
+Label projected AIR as a model estimate
+Keep the disclaimer visible where we promote
+Don't
+Imply NTA / IIT endorsement or tie-up
+Use NTA, JEE or IIT logos or crests
+Guarantee a rank, selection or score
+Use a real topper's name/photo without consent
+When in doubt, route the asset to legal before publishing. For minors, follow data-consent and advertising rules; parental consent flows apply on sign-up.
+Orange Nelumbo — Brand Guidelines
+45
+17 — Legal & Compliance
+Pricing & offers
+Be transparent about money — especially for families making a real investment. Every price and promo follows the same rules.
+Price format
+₹ with comma thousands, "/year" — inclusive of all taxes
+Tax line
+"Final price is inclusive of all taxes." Shown at checkout.
+Coupons
+Code in CAPS. State the % and a real end date, not "limited time".
+Free trial
+"Free trial — no card required." *T&C apply, linked.
+Refunds
+Link the Refund Policy on every paid surface.
+Show the value.
+Always pair price with what's included (engine, mocks, mentoring) — never a bare number.
+No false scarcity.
+No fake countdowns or "only 2 seats" unless literally true.
+Payments —
+show the secure-checkout mark: "Your payment information is encrypted and secure." Offer EMI clearly where available.
+Orange Nelumbo — Brand Guidelines
+46
+18 — Co-branding
+Partner lockups
+When we partner — a school, a scholarship body, a creator — the two logos sit as equals, divided by an ignition hairline.
+ORANGE NELUMBO
+PARTNER LOGO
+Rules
+Equal visual weight — match cap-heights
+Divider = 1px ignition hairline, full clearspace
+Lead with Orange Nelumbo when we host
+Use "in partnership with" where space is tight
+Never
+Merge, overlap or lock the marks together
+Recolour a partner logo to orange
+Co-brand without a signed agreement
+Imply NTA or an IIT is a partner
+Orange Nelumbo — Brand Guidelines
+47
+19 — Assets & Governance
+Assets & files
+Where things live, how they're named, and who signs off — so the system stays consistent as the team grows.
+Formats
+SVG
+— mark, icons (web)
+PNG
+— mark on raster, social
+PDF
+— print & vendors
+WOFF2
+— web fonts
+File naming
+on_mark_gradient.svg
+on_wordmark_white.svg
+on_ig_concept_rotational.png
+Pattern:
+on_[type]_[name]_[variant].[ext]
+— lowercase, underscores, no spaces.
+Governance
+Source of truth
+This document + the shared brand drive (logos, fonts, templates)
+Sign-off
+New templates, partner lockups & campaigns reviewed by brand owner
+Questions
+brand@orangenelumbo.com
+Version this document. Record version and date on the cover; archive superseded versions. This is v1.0 — propose changes, don't fork the file.
+Orange Nelumbo — Brand Guidelines
+48
+At a glance
+The one-page brand
+Colour
+CARBON #161418
+#FF5A1F
+0E0D10
+FF8A3D
+3DE0D0
+Type
+Space Grotesk
+Display & headlines
+Manrope
+Body · JetBrains Mono for data
+Logo
+ORANGE NELUMBO
+Clearspace = ring height. Never restyle, recolour or stretch. Symbol-only below 128px.
+Voice
+Precise, adaptive, relentless, human.
+Mission control: calm, exact, propulsive. Back claims with numbers. One ignition CTA — "Start free trial".
+If you remember one thing —
+we're the mission control for a top rank. Carbon is the cockpit, ignition orange is the thrust, data is the proof. Precise, futuristic, and always on the student's side. In pursuit of mastery.
+Orange Nelumbo — Brand Guidelines
+49
+20 — Colour Library
+The colour
+library
+62 brand-tuned colours across eight families, then 25 ready-to-use combinations for content. Ignition orange stays the hero; everything here is chosen to sit beside it.
+Orange Nelumbo — Brand Guidelines
+55
+20 — Colour Library
+Core & warm families
+Neutrals carry every layout; the ignition and warm families are the brand voice. Reach for these first.
+Neutrals — surfaces, text & scaffold
+Obsidian
+#0E0D10
+Carbon
+#161418
+Graphite
+#1E1B20
+Steel
+#2A262E
+Slate
+#3A3640
+Ash
+#55505C
+Pewter
+#736E7C
+Titanium
+#C7C5CC
+Silver
+#DAD8DE
+Fog
+#E6E4EA
+Cream
+#F1EFE8
+Paper
+#FAF8F2
+Ignition — the hero warm ramp
+Char
+#5E2008
+Mahogany
+#8A2F0A
+Rust
+#B23C0C
+Burnt
+#C7440E
+Ignition
+#FF5A1F
+Flare
+#FF6A2E
+Ember
+#FF8A3D
+Tangerine
+#FF9F52
+Amber
+#FFB020
+Apricot
+#FFC24D
+Peach
+#FFD285
+Sand
+#F5D9A8
+Warm accents — reds, clays & deep browns
+Coral
+#FF6B5B
+Salmon
+#FF8A6B
+Signal Red
+#E0483C
+Crimson
+#C4342A
+Clay
+#C4633E
+Terracotta
+#D97845
+Cocoa
+#5C3A24
+Espresso
+#3A2418
+Orange Nelumbo — Brand Guidelines
+51
+20 — Colour Library
+Accent families
+Cool and vivid accents for data, categories and variety. Use sparingly — one accent family per layout, always beside a neutral.
+Cyan & teal — motion & data
+Velocity
+#3DE0D0
+Aqua
+#5BD3E0
+Teal
+#2FB8AC
+Pine
+#1E8A80
+Ocean
+#145C55
+Ice
+#C8F0EC
+Green & lime — success & growth
+Q-Lime
+#A0E85B
+Lime
+#8ACF35
+Fern
+#5BA83C
+Moss
+#3A6B28
+Success
+#3DE08A
+Mint
+#7CE0A0
+Blue — trust & depth
+Ion Blue
+#6BA8FF
+Sky
+#5BC8FF
+Azure
+#3D8AE0
+Cobalt
+#2A5FC4
+Midnight
+#1A2C5C
+Frost
+#B0D0FF
+Violet & blush — feature accents
+Prism
+#B48CFF
+Amethyst
+#9B8CFF
+Plum
+#7A5CC4
+Indigo
+#4A3C8A
+Orchid
+#C88CFF
+Blush
+#F5C6B0
+Gold & warm neutrals — highlight & paper
+Amber Gold
+#FFC24D
+Gold
+#F6B01E
+Honey
+#E8A317
+Brass
+#C4922A
+Wheat
+#EBD6B0
+Linen
+#F3E9D6
+Orange Nelumbo — Brand Guidelines
+52
+20 — Colour Library
+25 combinations
+Curated 2–3 colour sets for content — decks, posts, cards, banners. Each is safe to use as-is; the first colour leads, the rest support.
+01 · Ignition Core
+Primary CTA on dark
+#FF5A1F
+#0E0D10
+02 · Ignition Paper
+CTA on light layouts
+#FF5A1F
+#F1EFE8
+03 · Ember Trio
+Warm hero block
+#FF8A3D
+#161418
+#F1EFE8
+04 · Sunset
+Rich editorial header
+#B23C0C
+#FFB020
+#0E0D10
+05 · Signature
+Brand + data accent
+#FF5A1F
+#3DE0D0
+#161418
+06 · Gold Night
+Premium highlight
+#FFC24D
+#0E0D10
+07 · Tangerine Sheet
+Friendly content card
+#FF9F52
+#1E1B20
+#F1EFE8
+08 · Coral Calm
+Soft callout
+#FF6B5B
+#F1EFE8
+#161418
+09 · Earthen
+Warm, grounded feature
+#B23C0C
+#EBD6B0
+10 · Titanium Ignite
+Neutral UI + accent
+#FF5A1F
+#C7C5CC
+#0E0D10
+11 · Dusk
+Moody dual-accent
+#FF8A3D
+#B48CFF
+#161418
+12 · Amber Ion
+Warm + cool balance
+#FFB020
+#6BA8FF
+#0E0D10
+Orange Nelumbo — Brand Guidelines
+53
+20 — Colour Library
+25 combinations — continued
+13 · Quantum
+Energetic tech
+#A0E85B
+#161418
+#F1EFE8
+14 · Velocity Dark
+Data on obsidian
+#3DE0D0
+#0E0D10
+15 · Terracotta
+Organic warmth
+#D97845
+#F5D9A8
+#3A2418
+16 · Ignition Sky
+Bright, open
+#FF5A1F
+#5BC8FF
+#161418
+17 · Apricot Plum
+Playful contrast
+#FFC24D
+#7A5CC4
+#F1EFE8
+18 · Heritage
+Classic warm + cream
+#8A2F0A
+#F6B01E
+#F1EFE8
+19 · Signal
+Alert + neutral
+#E0483C
+#161418
+#C7C5CC
+20 · Peach Teal
+Fresh pairing
+#FFD285
+#2FB8AC
+#1E1B20
+21 · Ember Mint
+Warm + fresh
+#FF8A3D
+#7CE0A0
+#0E0D10
+22 · Deep Sea Gold
+Refined contrast
+#FFC24D
+#1E8A80
+#F1EFE8
+23 · Kiln
+Toasty neutral trio
+#FF6A2E
+#5C3A24
+#EBD6B0
+24 · Ignition Amethyst
+Feature spotlight
+#FF5A1F
+#9B8CFF
+#161418
+25 · Mono-Orange
+All-brand ramp
+#FF8A3D
+#FF5A1F
+#B23C0C
+Usage —
+pick one combination per piece and hold it. Lead with the first colour, keep neutrals dominant (~70%), and never mix two vivid accent families in one layout. Ignition orange may join any set.
+Orange Nelumbo — Brand Guidelines
+54
+ORANGE NELUMBO
+In pursuit of mastery.
+Questions about the brand? Write to us.
+brand@orangenelumbo.com
+· orangenelumbo.com
+BRAND GUIDELINES · V1.0
+© 2026 ORANGE NELUMBO
+"

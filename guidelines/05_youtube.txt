@@ -1,0 +1,558 @@
+Bundled Page
+This page requires JavaScript to display.
+Unpacking...
+Orange Nelumbo
+Channel System
+ORANGE NELUMBO
+The YouTube Guidelines
+LONG-FORM 16:9 · SHORTS 9:16
+VERSION 1.0
+JULY 2026
+IN PURSUIT OF
+MASTERY.
+The book
+Contents
+Everything the channel ships — thumbnails, art, in-video graphics, copy, motion and cadence — specified once, so every upload looks like mission control and none of it gets re-decided at midnight before a launch.
+01
+The Channel
+03
+02
+Formats, Specs & Safe Zones
+05
+03
+Thumbnail System
+08
+04
+Channel Art
+16
+05
+In-Video Graphics
+18
+06
+Titles & Metadata
+23
+07
+Motion & Pacing
+25
+08
+Playlists & Series
+27
+★
+Publishing Checklist
+28
+Companion volume.
+This book extends the Orange Nelumbo Brand Guidelines v1.0. Colour, type, logo and voice rules live there and are not repeated here — this book covers only what is specific to YouTube.
+Orange Nelumbo — YouTube Guidelines
+02
+01 — The Channel
+Mission control,
+on air
+YouTube is where aspirants meet the brand before they meet the product. Every video is a transmission from mission control: calm, exact, and unmistakably on the student's side.
+Orange Nelumbo — YouTube Guidelines
+03
+01 — The Channel
+Five content pillars
+Every upload belongs to exactly one pillar. The pillar decides its thumbnail layout, series prefix, pacing profile and end card — set once here, referenced through the rest of the book.
+P1 · PROOF
+Rank results & testimonials
+Real students, real ranks, real telemetry. The channel's credibility engine. Series:
+MISSION LOG
+.
+P2 · TEACH
+Study tips & educational
+Concept breakdowns, strategy, problem drills. The volume driver. Series:
+DRILL
+and
+FLIGHT PLAN
+.
+P3 · LAUNCH
+Feature announcements
+Product launches and platform updates, shown in the product — never described in the abstract. Series:
+IGNITION
+.
+P4 · OFFER
+Offers & pricing
+Plans, scholarships, limited windows. The only pillar allowed an orange-flood thumbnail. One CTA: Start free trial.
+P5 · COUNTDOWN
+Exam countdowns & motivation
+T-minus content keyed to the JEE calendar. Urgent but never panicked — mission control does not shout. Series:
+T-MINUS
+.
+If a video idea doesn't fit a pillar, it doesn't ship. New pillars are a brand decision, not a channel decision.
+Orange Nelumbo — YouTube Guidelines
+04
+02 — Formats & Specs
+Two formats, one system
+Long-form carries depth; Shorts carry reach. They share the same type, colour and telemetry language — only the geometry and pacing change.
+LONG-FORM
+12:41
+RATIO   16:9
+MASTER  3840×2160 (4K)
+MIN     1920×1080
+LENGTH  8–20 min target
+Lessons, mission logs, launches, deep strategy. Full graphics package: intro sting, lower thirds, telemetry overlays, end card.
+SHORTS
+RATIO   9:16
+MASTER  1080×1920
+LENGTH  20–45 s target
+MAX     60 s
+One idea per Short. Burned-in captions, no intro sting, logo watermark only.
+Delivery — both formats
+VIDEO
+H.264 / MP4 · 24 or 30 fps, constant · 4K ≥ 45 Mbps, 1080p ≥ 12 Mbps
+AUDIO
+AAC stereo 48 kHz · loudness −14 LUFS · true peak −1 dB
+THUMBNAIL
+1280×720 PNG · under 2 MB · sRGB
+Orange Nelumbo — YouTube Guidelines
+05
+02 — Formats & Specs
+Safe zones — 16:9
+YouTube's own UI sits on top of both the thumbnail and the player. Nothing that must be read may live in the covered corners.
+Thumbnail · 1280×720
+TEXT SAFE — 64px INSET (5%)
+DURATION
+HEADLINE ZONE
+Red = covered.
+Duration badge (bottom-right) and watched-progress bar (bottom edge). Never place text or the mark here.
+Cyan = text safe.
+All headlines, numbers and the mark stay inside the 64px inset. Test legibility at 320px wide — feed size.
+Player · end-of-video overlays
+PLAYER CONTROLS — keep captions & lower thirds above this band
+CARDS / i-BUTTON
+Lower third sits here
+Orange Nelumbo — YouTube Guidelines
+06
+02 — Formats & Specs
+Safe zones — Shorts
+The Shorts player buries the right rail and the bottom fifth in UI. Design for the centre column — everything critical lives in the safe core.
+TOP UI — 176px
+RAIL — 190px
+TITLE + AUDIO — 420px
+SAFE CORE
+Headline
+lives here
+Measurements · 1080×1920 master
+TOP UI       176px — search, camera
+RIGHT RAIL   190px — like, comment, share
+BOTTOM      420px — title, audio, channel
+SAFE CORE    approx. 830×1220, left-biased
+Captions: bottom of the safe core, never below it. Max 2 lines on screen, Manrope 700, white on 80% obsidian bar.
+The mark: top-left of safe core at 96px, 60% opacity. Never bottom-right — the rail eats it.
+Vertical crops of 16:9 masters must re-frame, not letterbox. Black bars are an automatic reject.
+Orange Nelumbo — YouTube Guidelines
+07
+03 — Thumbnail System
+Won or lost
+at 320 pixels
+The thumbnail is the most-seen brand asset we make. One anatomy, five pillar layouts — so the feed reads as a fleet, not a flea market.
+Orange Nelumbo — YouTube Guidelines
+08
+03 — Thumbnail System
+Anatomy
+Every thumbnail is built from the same six parts on a 1280×720 canvas. The pillar changes what fills the subject slot — never the skeleton.
+DRILL · MATHS
+SOLVE IT
+IN 40 SEC
+SUBJECT SLOT
+photo / product / number
+1 · GROUND
+Obsidian + radial orange glow + faint grid. Offers may flood orange instead.
+2 · EYEBROW
+Series + subject. Space Grotesk 600, tracked wide, ember orange, 28px.
+3 · HEADLINE
+Space Grotesk 700, 96–140px, white, max 2 lines × 12 characters.
+4 · SUBJECT
+Right third: student photo, product frame, or a giant number. One subject only.
+5 · IGNITION BAR
+The 2–3px gradient divider anchors the text block. One per thumbnail.
+6 · MARK
+Symbol only, 88px, bottom-right inside text safe. Never the full lockup.
+Rule of one: one headline, one subject, one accent. If a thumbnail needs a second sentence, the video needs a better title.
+Orange Nelumbo — YouTube Guidelines
+09
+03 — Thumbnail System
+Type & colour on thumbnails
+Thumbnails are read at 320px wide on a phone in sunlight. The scale below is the minimum that survives that.
+Type scale · on the 1280×720 master
+HEADLINE
+Space Grotesk 700 · 96–140px · −2% tracking
+EYEBROW · SERIES
+Space Grotesk 600 · 28px · +24% tracking · uppercase
+AIR 99.2 · DATA CALLOUT
+JetBrains Mono 500 · 32–44px · cyan or white
+Grounds — pick one
+GLOW
+Default. Obsidian + radial glow. All pillars.
+GRID
+Carbon + grid. Educational and telemetry-heavy.
+FLOOD
+Ignition flood, near-black ink.
+Offers only
+— max 1 in feed at a time.
+Hard rules.
+Orange Nelumbo — YouTube Guidelines
+10
+03 — Thumbnail System
+P1 · Proof — rank results
+The student is the hero; the rank is the headline. Photo right, telemetry left. Warm, direct eye contact — no fake shock faces.
+STUDENT PHOTO
+chest-up · warm light
+looking at camera
+MISSION LOG · 2026
+AIR
+247
++38 percentile in 14 weeks
+Do
+Rank or delta as the biggest element after the face
+One cyan telemetry line — the improvement, with numbers
+Real student photos, consistent warm grade
+Don't
+Shock faces, red arrows, circled heads
+More than one student per thumbnail
+Claims without a number behind them
+SPEC — photo cutout right third · rank 140px max · eyebrow "MISSION LOG · [year]" · telemetry line in Signal Cyan 32px
+Orange Nelumbo — YouTube Guidelines
+11
+03 — Thumbnail System
+P2 · Teach — study tips
+Carbon grid ground, headline left, one piece of subject matter right — a formula, a diagram fragment, a single question. It should look like the smartest page of someone's notes.
+DRILL · ROTATIONAL MECHANICS
+THE 40-SEC
+TORQUE TRICK
+τ = Iα
+step 1 → axis
+step 2 → moment
+step 3 → solve
+Do
+Benefit + time in the headline ("in 40 sec", "3 steps")
+One formula or diagram fragment, mono type, cyan on obsidian
+Subject named in the eyebrow — Physics / Chem / Maths
+Don't
+Whole worked solutions — one fragment, cropped
+"SECRET / BANNED / 99% FAIL" clickbait framing
+More than one formula block
+SPEC — grid ground 44px · formula block on obsidian, cyan border · headline ≤ 5 words · eyebrow "DRILL · [topic]"
+Orange Nelumbo — YouTube Guidelines
+12
+03 — Thumbnail System
+P3 · Launch — features
+Show the product, not a metaphor. A cropped UI frame floats over the glow ground; the headline names the capability in the student's words.
+IGNITION · NEW
+YOUR RANK,
+PREDICTED
+Rank projection
+LIVE
+AIR 812 ± 90
+confidence 72% · 41 tests ingested
+Do
+Real product UI, cropped to the one new element
+Headline = outcome, eyebrow = "IGNITION · NEW"
+Live telemetry numbers inside the frame
+Don't
+Abstract rocket/space stock imagery
+Full dashboard screenshots — illegible at feed size
+Version numbers in the headline
+SPEC — UI frame right third, 1px ignition border, deep shadow · glow anchored to the frame corner · mark moves bottom-left
+Orange Nelumbo — YouTube Guidelines
+13
+03 — Thumbnail System
+P4 · Offer — pricing
+The one pillar that floods ignition orange — which is exactly why it's rationed. Near-black ink, the offer in plain numbers, the deadline in mono.
+SCHOLARSHIP WINDOW
+50% OFF
+YEAR ONE
+closes 15 Aug · 2,000 seats
+Do
+State the offer as a number — % or ₹, nothing vague
+Deadline + quantity in JetBrains Mono, near-black
+Mark on an obsidian chip so it never sits raw on orange
+Don't
+White text on orange — ever
+Starbursts, price-slash strikethroughs, "HURRY!!"
+Two orange-flood thumbnails live in the feed at once
+SPEC — ignition gradient 135° · ink #2b1204 / #3a1806 · orbital arcs at 18–25% ink · headline 110–150px
+Orange Nelumbo — YouTube Guidelines
+14
+03 — Thumbnail System
+P5 · Countdown — motivation
+A giant mono number carries the whole thumbnail. The countdown is the subject — no photo, no product. Calm urgency.
+T-MINUS · JEE MAIN
+60
+d
+One revision cycle. Run it right.
+Do
+Centre-aligned — the only pillar that centres
+Number in mono, unit letter in ignition orange
+One calm imperative line beneath
+Don't
+Ticking-bomb / alarm-clock imagery
+Fear framing — "TOO LATE?", "LAST CHANCE"
+Red anywhere — error colour is UI-only
+SPEC — number 340–420px JetBrains Mono 600 · glow rises from bottom · orbital ring behind the number
+Orange Nelumbo — YouTube Guidelines
+15
+04 — Channel Art
+Banner
+One 2560×1440 master crops down to every device. Everything that matters lives in the 1546×423 safe area — the only region guaranteed visible everywhere.
+ORANGE NELUMBO
+IN PURSUIT OF MASTERY
+2560×1440 — TV
+DESKTOP
+SAFE 1546×423 — MOBILE
+Contents of the safe area
+Mark + wordmark lockup, tagline eyebrow beneath. Nothing else — no upload schedule, no social handles, no CTA. The banner states identity; the videos do the selling.
+Ground
+Obsidian, centred radial glow, 44px grid, one orbital ring circling the lockup. The glow centre sits behind the mark so every crop stays balanced.
+EXPORT — PNG · sRGB · under 6 MB · test crops: TV 2560×1440 / desktop 2560×423 / mobile 1546×423
+Orange Nelumbo — YouTube Guidelines
+16
+04 — Channel Art
+Avatar & watermark
+Both are symbol-only. The avatar renders as small as 24px in comments; the watermark sits over moving footage — neither survives a wordmark.
+Avatar · 800×800
+Mark centred at 64% of canvas width on obsidian with a soft top glow. YouTube crops to a circle — keep the ring fully inside 80% diameter. Never add text.
+Watermark · 150×150
+video frame
+Symbol on transparency, displayed by YouTube at bottom-right of every long-form video. Set to 60% opacity, shown for the entire video. It doubles as a subscribe button on hover.
+One mark everywhere.
+Avatar, watermark and thumbnail mark are the identical asset at different sizes — never redraw, re-crop or restyle the lotus. Source:
+assets/orange-nelumbo-mark.png
+Orange Nelumbo — YouTube Guidelines
+17
+05 — In-Video Graphics
+The graphics
+package
+Sting, lower thirds, captions, telemetry overlays and the end card — five elements that make any footage read as Orange Nelumbo within two seconds.
+Orange Nelumbo — YouTube Guidelines
+18
+05 — In-Video Graphics
+Intro sting
+2.5 seconds, after the cold-open hook — never before it. The mark ignites, the series card states the mission, we cut to content.
+0.0–0.6s
+Mark fades in from black at 35%, ring begins a slow clockwise sweep.
+0.6–1.4s
+Ignition: glow blooms behind the mark, single low engine-thrum note.
+MISSION LOG · 014
+AIR 247, EXPLAINED
+1.4–2.5s
+Series card slides in from left; hard cut to content on the beat.
+Rules
+Hook first.
+The sting never opens the video — 5–15 seconds of cold-open content run before it. Viewers decide in the first 5 seconds; give them substance, not a logo.
+2.5s hard cap.
+Shorts skip the sting entirely — the watermark carries the brand there.
+One sound.
+The engine-thrum ignition note is the channel's audio logo. No music bed under the sting.
+Orange Nelumbo — YouTube Guidelines
+19
+05 — In-Video Graphics
+Lower thirds & captions
+Lower third — speaker
+Dr. Kavya Menon
+PHYSICS · IIT-B '11 · 14 YRS TEACHING
+Obsidian chip at 92%, 3px ignition left border, square corners. Name in Space Grotesk 700; credential line in mono, ember. Slides in from the left over 400ms, holds 4s, slides out.
+Position: 36px from the left, clear of player controls. Show once at first appearance, again after any chapter jump. Never two lower thirds on screen.
+Captions — burned-in
+attempt the
+easy 60%
+first — every time
+Manrope 700 white on 80% obsidian bar, centred. Max 2 lines, max 32 characters per line, sentence case. Key phrase — one per sentence — in ember orange.
+Burned-in captions are mandatory on Shorts, optional on long-form (closed captions always uploaded). Never karaoke-style word-pop colouring in rainbow palettes.
+Orange Nelumbo — YouTube Guidelines
+20
+05 — In-Video Graphics
+Telemetry overlays
+When the video shows data — scores, timings, accuracy — it renders in the telemetry style: mono type, signal cyan, obsidian chips. This is where cyan lives, and the only place it lives.
+ACCURACY · MECHANICS
+61% → 88%
+TIME / Q
+1:42
+STREAK
+12
+PERCENTILE
+97.4
+Do
+Obsidian chip at 92%, 1px cyan border, square corners
+Label in 40% white mono caps, value in cyan
+Numbers count up over 600ms when they enter
+Don't
+Cyan for anything that isn't a measured number
+More than two telemetry chips on screen
+Invented or unverifiable statistics — every figure must be real
+SPEC — JetBrains Mono only · label 20px / value 44–64px on 1080p · chips inset 48px from frame edges
+Orange Nelumbo — YouTube Guidelines
+21
+05 — In-Video Graphics
+End card
+The final 20 seconds of every long-form video. Voiceover continues over it — never dead air. Fixed layout: next mission left, subscribe right, one CTA line below.
+NEXT MISSION
+VIDEO ELEMENT — next up
+SUBSCRIBE ELEMENT
+Your rank is waiting.
+Start free trial →
+TIMING
+Final 20s. Elements fade in staggered, 200ms apart, left to right.
+LINKS
+One video element (same pillar or series), one subscribe element. Never four slots.
+CTA
+"Start free trial" — the one ignition CTA, spoken and on screen. No competing asks.
+Orange Nelumbo — YouTube Guidelines
+22
+06 — Titles & Metadata
+Titles
+The thumbnail carries emotion; the title carries information. They must never say the same thing. Formula:
+outcome + specificity + constraint.
+Rules
+≤ 55 characters — nothing truncates in the feed. Front-load the keyword in the first 30.
+Sentence case. Caps only for series prefixes and exam names (JEE, AIR, NTA).
+Numbers as digits — "7 mistakes", never "seven". Real numbers only; every figure defensible.
+No clickbait grammar: no ALL-CAPS words, no "(GONE WRONG)", max one "?" and zero "!".
+Patterns by pillar
+P1 PROOF
+How Ananya went from 71 to 96 percentile in 14 weeks
+P2 TEACH
+Rotational mechanics: the 3-step method for every torque problem
+P3 LAUNCH
+Your JEE rank, predicted live — inside the new telemetry engine
+P4 OFFER
+The 2026 scholarship window: who qualifies and how to apply
+P5 T-MINUS
+60 days to JEE Main: the only revision plan you need
+The pairing test.
+Read thumbnail and title together. If either repeats the other, one of them is wasted. Thumbnail: "AIR 247". Title: how it happened.
+Orange Nelumbo — YouTube Guidelines
+23
+06 — Titles & Metadata
+Descriptions & metadata
+Fixed skeleton, filled per video. The first 125 characters show before the fold — they are a second title, not a summary.
+// HOOK — ≤125 chars, above the fold
+Ananya's telemetry showed one weak cluster.
+Fixing it moved her 25 percentile points.
+// CTA — one link
+Start your free trial → on.app/trial
+// CHAPTERS — from 00:00
+00:00 The starting rank
+01:14 Reading the telemetry
+04:32 The weak cluster
+09:05 The 14-week plan
+// BOILERPLATE + TAGS
+Orange Nelumbo — adaptive JEE prep...
+#JEE2026 #JEEMain #OrangeNelumbo
+HOOK
+Two sentences, mission-control voice, a number in the first line.
+ONE LINK
+A single trial link above the fold. Link dumps dilute clicks and trust.
+CHAPTERS
+Mandatory over 6 minutes. Chapter names use lesson language, not "part 1".
+HASHTAGS
+Exactly three: #JEE[year] + subject/series + #OrangeNelumbo.
+Compliance.
+Every results claim in a description needs a real, verifiable student behind it. No "guaranteed rank" language anywhere — see the Legal chapter of the Brand Guidelines.
+Orange Nelumbo — YouTube Guidelines
+24
+07 — Motion & Pacing
+Motion principles
+Graphics move like instruments, not confetti: fast in, precise stop, quiet exit. Everything eases on the launch curve.
+Launch curve
+cubic-bezier(.2, .8, .2, 1)
+The one easing for every graphic entrance and exit. Hard thrust, soft dock. No bounce, no elastic, no spring.
+Durations
+Chips / captions   200–300ms
+Lower thirds     400ms
+Count-ups        600ms
+Sting ignition   800ms
+Direction
+Text enters from the left (reading direction). Telemetry fades and counts in place. Nothing rotates, nothing zooms past 105%, nothing shakes.
+Restraint
+Max one animated graphic at a time. If footage and a graphic compete, the graphic waits. Motion signals precision — it never begs for attention.
+Transitions between scenes
+HARD CUT
+Default. 95% of all edits.
+DIP TO OBSIDIAN
+Chapter changes only, 300ms.
+EVERYTHING ELSE
+Wipes, spins, glitches, zooms — banned.
+Orange Nelumbo — YouTube Guidelines
+25
+07 — Motion & Pacing
+Pacing per pillar
+Structure is fixed; the clock changes by pillar. Every long-form video opens with a cold-open hook and closes with the 20-second end card.
+Long-form skeleton
+HOOK
+STING
+CONTENT — chapters every 2–4 min, telemetry beat each chapter
+END CARD
+0:00
+0:15 sting
+content
+−0:20 → end
+The clock, by pillar
+P1 PROOF
+10–15 min · conversational cuts 6–10s · hook = the rank on screen in second one
+P2 TEACH
+8–20 min · cuts 3–6s during solving · hook = the problem, posed to the viewer
+P3 LAUNCH
+3–6 min · product-led cuts 2–4s · hook = the feature doing the impossible thing
+P4 OFFER
+≤ 90s · brisk 2–3s cuts · terms on screen long enough to read aloud twice
+P5 T-MINUS
+4–8 min · steady 4–6s cuts, no music spikes · hook = the number of days, plainly
+Shorts:
+hook ≤ 2s, one idea, loop-friendly ending (last frame answers the first). No end card — pinned comment carries the link.
+Music:
+low-energy electronic beds, −24 LUFS under voice. No trending audio on long-form; Shorts may use it when native to the format.
+Orange Nelumbo — YouTube Guidelines
+26
+08 — Playlists & Series
+Series & naming
+Five named series map one-to-one onto the pillars. The series name appears in the thumbnail eyebrow, the sting card and the playlist title — identically.
+MISSION LOG
+P1 · student result stories. Numbered: MISSION LOG · 014.
+DRILL
+P2 · single-topic problem technique. Tagged by subject: DRILL · MATHS.
+FLIGHT PLAN
+P2 · strategy & planning: schedules, revision systems, exam-day protocol.
+IGNITION
+P3 · product launches and platform updates.
+T-MINUS
+P5 · countdown checkpoints keyed to the JEE calendar.
+Playlist naming
+Format
+DRILL — Maths · Calculus
+MISSION LOG — 2026 results
+T-MINUS — JEE Main 2027
+Rules
+Series name first, em-dash, scope
+Descriptions: one sentence, mission-control voice
+Playlist order: curriculum order, not upload order
+New series names require a brand review — they are product names, not video titles. Retired series stay listed but pinned closed.
+Orange Nelumbo — YouTube Guidelines
+27
+Pre-flight
+Publishing checklist
+Run before every upload. All boxes or no launch.
+Asset
+Thumbnail legible at 320px; text inside 64px safe inset
+Correct pillar layout; mark at 88px in the right corner
+Hook before sting; sting ≤ 2.5s; end card final 20s
+Captions burned in (Shorts) / CC uploaded (long-form)
+Audio at −14 LUFS; music −24 LUFS under voice
+Metadata & compliance
+Title ≤ 55 chars, sentence case, doesn't repeat thumbnail
+Description skeleton complete; chapters from 00:00; 3 hashtags
+Every number on screen or in copy is real and verifiable
+Student consent on file for any face or result shown
+Added to the correct series playlist, curriculum order
+If you remember one thing —
+the feed is the brand. One anatomy, five pillars, one accent, real numbers. When in doubt, calmer and more precise wins.
+Orange Nelumbo — YouTube Guidelines
+28
+ORANGE NELUMBO
+In pursuit of mastery.
+Questions about the channel system? Write to us.
+brand@orangenelumbo.com
+· orangenelumbo.com
+YOUTUBE GUIDELINES · V1.0
+© 2026 ORANGE NELUMBO
+"

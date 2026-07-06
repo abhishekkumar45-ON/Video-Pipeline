@@ -1,0 +1,285 @@
+Bundled Page
+This page requires JavaScript to display.
+// KINEMATICS 3D
+Unpacking...
+Orange Nelumbo
+// 3D Manim Guideline
+// PHYSICS · CH 01 · 3D · V3
+Kinematics
+manim · 3d scenes
+Motion in three dimensions — ThreeDScene recipes, camera orbits and depth, rendered entirely in Manim.
+VERSION 3.0
+ThreeDScene · 1080p60
+MOTION IN
+SPACE.
+// 01 — 3D Scene Setup
+ThreeDScene & camera
+Every 3D lesson subclasses
+ThreeDScene
+. The camera is set by three angles —
+phi
+(tilt from vertical),
+theta
+(spin around),
+gamma
+(roll). A default three-quarter view reads as space without confusing the student.
+the standard view
+class Kin3D(ThreeDScene):
+def construct(self):
+self.set_camera_orientation(
+phi=
+70
+*DEGREES,
+theta=
+-45
+*DEGREES)
+axes = ThreeDAxes(
+"color"
+self.add(axes)
+x
+y
+z
+phi 70° · theta -45°
+Axis convention
+Fixed chrome
+2D chrome (tag, mark, labels) via
+add_fixed_in_frame_mobjects
+so it never rotates with the camera.
+Kinematics — 3D Manim Guideline
+02
+// 02 — Depth & Colour
+Reading depth
+3D can confuse fast. Four depth cues keep it legible while the colour law carries over: cyan for motion, orange for acceleration, titanium for the scaffold.
+Ground grid
+A faint x–y
+NumberPlane
+on the floor anchors everything. Depth is obvious the moment there's a grid to sit on.
+Dropated shadow
+Project the moving object straight down to the floor as a dim dot — the shadow tells height at a glance.
+Fade with distance
+Gentle orbit
+A slow ambient rotation resolves any ambiguity — parallax reveals the true shape.
+v
+grid + shadow + component vectors
+Rule —
+never show 3D without at least a ground grid and a shadow. If depth is still unclear after 2 seconds, add a slow orbit — don't add more labels.
+Kinematics — 3D Manim Guideline
+03
+// 03 — 3D Recipe A
+Projectile in space
+launch · set_camera
+MoveAlongPath + shadow
+orbit to reveal drift
+LAUNCH → FLIGHT → ORBIT
+scene stub
+def traj(t):
+return np.array([vx*t, vy*t, vz*t -
+0.5
+*g*t**2])
+arc = ParametricFunction(traj, t_range=[
+0
+,T], color=IGNITION)
+ball = Sphere(radius=
+0.12
+).set_color(WHITE)
+shadow = always_redraw(lambda: Dot(
+[*ball.get_center()[:2],
+0
+], fill_opacity=
+0.3
+))
+self.play(MoveAlongPath(ball, arc), run_time=
+4
+, rate_func=linear)
+self.move_camera(theta=
+30
+*DEGREES, run_time=
+3
+)
+Beat
+Front view first (looks 2D — familiar),
+then
+orbit to reveal the sideways drift that was hidden. The "it was 3D all along" reveal is the payoff.
+Kinematics — 3D Manim Guideline
+04
+// 03 — 3D Recipe B
+Resolving a 3D vector
+A velocity vector drops dashed projections onto each axis, building the box that shows vₓ, v_y, v_z. Rotating the camera makes the components unmistakable.
+x
+y
+z
+vₓ
+v_y
+v_z
+v
+scene stub
+v = Arrow3D(ORIGIN, [
+3
+,
+2
+,
+2.5
+], color=WHITE)
+comps = VGroup(
+Line3D(ORIGIN, [
+3
+,
+0
+,
+0
+], color=VELOCITY),
+Line3D([
+3
+,
+0
+,
+0
+], [
+3
+,
+2
+,
+0
+], color=VELOCITY),
+Line3D([
+3
+,
+2
+,
+0
+], [
+3
+,
+2
+,
+2.5
+], color=IGNITION))
+self.begin_ambient_camera_rotation(rate=
+0.2
+)
+Beat
+|v|² = vₓ²+v_y²+v_z²
+.
+Kinematics — 3D Manim Guideline
+05
+// 03 — 3D Recipe C
+Orbit & frame change
+three-quarter
+move_camera top-down
+rel. frame
+ride object A
+3⁄4 VIEW → TOP-DOWN → RELATIVE FRAME
+scene stub
+# orbit to bird's-eye
+self.move_camera(phi=
+0
+*DEGREES, theta=
+-90
+*DEGREES,
+run_time=
+3
+)
+# ride A's frame: shift world by -A
+world.add_updater(lambda m:
+m.shift(-A.get_center()))
+Beat
+Top-down flattens it to the familiar 2D plane (reassuring), then the frame-ride shows B's
+relative
+Kinematics — 3D Manim Guideline
+06
+// 03 — 3D Recipe D
+Surfaces & families
+A
+Surface
+range surface R(θ,v)
+45° max
+trajectory family
+scene stub
+surface = Surface(
+lambda u,v: axes.c2p(u, v, R(u,v)),
+u_range=[
+0
+,PI/
+2
+], v_range=[
+1
+,
+9
+],
+fill_opacity=
+0.7
+, checkerboard_colors=[IGNITION, EMBER])
+self.play(Create(surface), run_time=
+3
+)
+self.begin_ambient_camera_rotation(rate=
+0.15
+)
+Beat
+Surfaces use an ignition→ember checkerboard so gradient reads without a rainbow. Keep opacity ≤0.7 so the grid shows through. Reserve surfaces for "why 45°" moments — don't over-use.
+Kinematics — 3D Manim Guideline
+07
+// 04 — Camera & Performance
+Choreography & render
+The camera is the narrator in 3D. A tight set of moves, and a few settings that keep 3D renders fast enough to iterate.
+MOVE
+USE FOR
+set_camera_orientation
+the opening establishing view
+move_camera
+deliberate cut to a new angle (~3s)
+begin_ambient_camera_rotation
+slow idle orbit while explaining
+stop_ambient + move_camera
+settle back for the key reveal
+performance
+Surface(resolution=(
+24
+,
+24
+))
+# draft
+manim -qm
+# medium while iterating
+manim -qk
+# 4K only for final
+Avoid
+No continuous spinning under narration (nausea). Low surface resolution while drafting — high res is slow. Never more than one camera move per idea.
+Kinematics — 3D Manim Guideline
+08
+// 05 — End & 3D Starter
+End card & base scene
+End scene — mark bloom over orbiting axes
+Next · 3D scene
+Circular Motion
+Subscribe
+orangenelumbo.com
+// KINEMATICS · 3D
+base_3d.py — inherit for every 3D lesson
+class
+Kin3DScene
+(ThreeDScene):
+def setup_space(self):
+self.set_camera_orientation(phi=
+70
+*DEGREES, theta=
+-45
+*DEGREES)
+"color"
+floor = NumberPlane().set_opacity(
+0.15
+)
+# ground grid
+self.add(floor, axes)
+# chrome stays flat, never rotates:
+self.add_fixed_in_frame_mobjects(chrome_group())
+return axes
+Ship checklist —
+ground grid + shadow on every 3D shot · chrome fixed in frame · one camera move per idea · draft at
+-qm
+, final
+-qk
+· colour law holds (cyan motion, orange accel/vertical) · always open on a familiar view before revealing depth.
+Kinematics — 3D Manim Guideline
+09
+"

@@ -1,0 +1,47 @@
+Bundled Page
+This page requires JavaScript to display.
+Unpacking...
+Orange Nelumbo · Diagram Library
+Chapter colour map
+Every chapter of the JEE syllabus is assigned one combination from the brand's 25 curated sets. The combination is the chapter's
+identity
+— it colours the scaffold and packaging, never the meaning. Combinations repeat across subjects (25 combos, 60 chapters) but are unique within each subject.
+What the chapter combination controls
+Chapter badge & eyebrow tint
+— the topic chip on question cards, thumbnail eyebrows, series cards and playlist art for that chapter.
+Diagram secondary family
+— fills, media, field regions, shaded areas and other non-semantic surfaces inside that chapter's diagrams.
+Recap-card & top-up accents
+— the chapter's cards carry its combo as border/fill tints, so a feed of revision cards reads as a syllabus.
+In-app chapter surfaces
+— chapter headers, progress tiles and any future chapter-scoped asset.
+What it never touches — the fixed semantic layer
+WHITE — working math
+SIGNAL — givens & telemetry
+IGNITION — the active move
+TITANIUM — scaffold & ghosts
+CORRECT — the answer, once
+ERROR — traps & misfires
+AMBER — trigger words, READ only
+Chapter grouping.
+The syllabus is consolidated to 20 chapters per subject (JEE Main + Advanced). If your curriculum splits differently, sub-chapters inherit their parent's combination — the map stays stable.
+Orange Nelumbo — Chapter Colour Map
+01
+Subject 01
+Physics
+Mechanics runs warm (ignition family), electricity & magnetism runs cool (cyan, blue, violet), modern physics takes the lime "Quantum" set.
+Orange Nelumbo — Chapter Colour Map
+02
+Subject 02
+Chemistry
+Physical chemistry mirrors its physics siblings (thermo → Sunset, kinetics → Velocity), inorganic takes the earthen and metallic sets, organic runs the warm clay-to-heritage ramp.
+Orange Nelumbo — Chapter Colour Map
+03
+Subject 03
+Mathematics
+Algebra takes the violet-and-gold feature sets, coordinate geometry runs cool (Velocity, Dusk, Signature), calculus mirrors its physics partners, vectors & 3D go Quantum and Amber Ion.
+Sign-off gate.
+This map locks before the diagram library is drawn — every chapter's diagrams, badges and cards inherit from this table. Changing a chapter's combo later means re-rendering that chapter's assets.
+Orange Nelumbo — Chapter Colour Map
+04
+"
