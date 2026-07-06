@@ -66,6 +66,45 @@ def kicker(nn, section, color=IGNITION):
     return Mono(f"// {nn} — {section}", color=color).scale(0.4)
 
 
+import numpy as np
+
+
+def on_mark():
+    """The Orange Nelumbo symbol, built in Manim: a lotus of five ignition petals in a
+    launch cradle, wrapped by an orbital ring with a single satellite."""
+    petals = VGroup()
+    base = np.array([0.0, -0.04, 0.0])
+    for ang, h, col in [(-40, 0.26, EMBER), (-20, 0.40, IGNITION), (0, 0.50, IGNITION),
+                        (20, 0.40, IGNITION), (40, 0.26, EMBER)]:
+        a = np.deg2rad(90 + ang)
+        tip = base + h * np.array([np.cos(a), np.sin(a), 0.0])
+        perp = 0.055 * np.array([np.cos(a - np.pi / 2), np.sin(a - np.pi / 2), 0.0])
+        petals.add(Polygon(base + perp, tip, base - perp,
+                           fill_color=col, fill_opacity=1, stroke_width=0))
+    cradle = Arc(radius=0.30, start_angle=PI + 0.5, angle=PI - 1.0,
+                 color=EMBER, stroke_width=3).move_to(base + DOWN * 0.16)
+    ring = Ellipse(width=1.05, height=0.40, color=IGNITION, stroke_width=2.5).rotate(-0.2)
+    ring.move_to(base + DOWN * 0.02)
+    sat = Dot(color=EMBER, radius=0.045).move_to(ring.point_from_proportion(0.07))
+    return VGroup(ring, cradle, petals, sat)
+
+
+def on_logo(scale=0.5):
+    """Top-left video lockup: the mark + 'ORANGE NELUMBO' wordmark (Space Grotesk bold)."""
+    mark = on_mark().scale(0.62)
+    word = Text("ORANGE NELUMBO", font=F_DISPLAY, weight=BOLD, color=WHITE).scale(0.30)
+    return VGroup(mark, word).arrange(RIGHT, buff=0.22).scale(scale / 0.5)
+
+
+def chip(text, color=SIGNAL, tscale=0.34):
+    """A small graphite result chip for the right-side results rail."""
+    t = Mono(text, color=color).scale(tscale)
+    box = RoundedRectangle(width=t.width + 0.3, height=t.height + 0.22, corner_radius=0.07,
+                           color=GRAPHITE, fill_color=GRAPHITE, fill_opacity=0.92,
+                           stroke_color=color, stroke_width=1.2)
+    return VGroup(box, t)
+
+
 # Type floors (never scale below these): MathTex >= 40pt long-form, >= 56pt Shorts.
 MATHTEX_FLOOR_LONG  = 40
 MATHTEX_FLOOR_SHORT = 56

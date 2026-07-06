@@ -31,7 +31,8 @@
     "question": "Charge q=1uC, mass m=1mg, v0=(i+2j) m/s at origin (y0=0). For 0<=t<0.2s: E=1i V/m with gravity -10j. At t=0.2s E off, B=6j T on. q/m=1. Phase1: a=(1i-10j); at 0.2s v=(1.2,0,0), y=0.2m. Phase2: y free-falls y=0.2-5t'^2, xz circle R=v_perp/omega=1.2/6=0.2m, omega=6. Pick correct statement(s).",
     "options": "(A) at t=0.3s, y=15 cm  (B) at t=0.4s, distance from XZ plane =10 cm  (C) radius = 20 cm  (D) returns to XZ plane at t=0.35 s",
     "answer": "A and C",
-    "status": "pending"
+    "status": "done",
+    "video_url": "https://drive.google.com/open?id=1Rk2ccXLkCc00wh4hSb8jL653uEVnd0d_"
   },
   {
     "id": "q7",
@@ -40,5 +41,22 @@
     "options": "(A) m=-1 => line ax+by=0  (B) m=2 => circle center (2a/3,2b/3) radius (2/3)sqrt(a^2+b^2)  (C) m=-2 => circle center (2a,2b) radius 2 sqrt(a^2+b^2)  (D) m=-3 => straight line 3bx+3ay=0",
     "answer": "A, B and C",
     "status": "pending"
+  },
+  {
+    "id": "q8",
+    "chapter": "Kinematics",
+    "question": "A particle projected from ground with speed u at angle theta explodes at the highest point into two equal masses. One fragment loses all KE and falls vertically; the other continues. Which statements are correct? At apex vx=ucosθ, vy=0, apex (R/2, H). Momentum: (M/2)V = M u cosθ => V = 2u cosθ. Time to fall t = u sinθ/g. 2nd fragment horizontal dist = R, total = 3R/2. Landing speed = u sqrt(4cos^2θ+sin^2θ). COM unaffected (internal forces).",
+    "options": "(A) 2nd fragment lands at 3R/2 from projection  (B) lands with speed u sqrt(cos^2θ+4sin^2θ)  (C) COM follows original projectile trajectory  (D) time for 2nd fragment to reach ground = 2u sinθ/g",
+    "answer": "A and C",
+    "status": "pending"
+  },
+  {
+    "id": "q9",
+    "chapter": "Kinematics",
+    "question": "A ball is thrown from (0,0) with speed v0 at angle theta0 from +x. At the same time a stone is thrown from (L,0) at angle (180-theta1) with a suitable speed so as to hit the ball. For fixed v0: (theta0,theta1)=(45,45) hit after T1; (60,30) after T2. Find (T1/T2)^2. Key: equal heights need v0 sin th0 = v1 sin th1, so collision is horizontal catch-up; T = L sin th1 / (v0 sin(th0+th1)). Both cases th0+th1=90 so T ∝ sin th1: T1/T2 = sin45/sin30 = sqrt2.",
+    "options": "NUMERICAL",
+    "answer": "(T1/T2)^2 = 2",
+    "status": "done",
+    "video_url": "https://drive.google.com/open?id=1b4_L2B7Fg1Ik81zDIv-QqSynujU7kWUW"
   }
 ]

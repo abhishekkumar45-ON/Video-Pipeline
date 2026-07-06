@@ -21,6 +21,21 @@ TITANIUM = scaffold/axes/ghosts (45%/30%) · AMBER = trigger words in the READ b
 CORRECT(green) = the final answer, once · ERROR(red) = misfire/trap/eliminations · GRAPHITE = cards.
 Ratio ~80/15/5 (obsidian/white/orange). Never rainbow; orange is the one accent.
 
+## PERSISTENT CHROME & SOLVE LAYOUT (every video — from YouTube Guidelines; NON-NEGOTIABLE)
+- **TOP-LEFT: the Orange Nelumbo LOGO** — `on_logo()` (mark + wordmark). NOT a "// CHAPTER" tag.
+  There is NO "//" kicker at the top of frame. (The mono `// NN — SECTION` kicker is only a small
+  in-beat section label, never the top-of-frame brand slot.)
+- **BOTTOM-LEFT: the chapter name** (e.g. `Kinematics`), small, Body/Mono muted.
+- **TOP-RIGHT: progress** `NN / total`, small mono.
+- **RIGHT-SIDE RESULTS RAIL:** as each key result is derived (v₁, T, T₁, T₂, the answer), drop a
+  small `chip("…")` into a right-side column so a student can read the results at a glance.
+  Chips persist through the solve. Keep the work area to the LEFT ~60% so it never touches the rail.
+- **DIAGRAM DOCKS BOTTOM-RIGHT:** draw the diagram centre-frame in its own beat, then shrink it and
+  dock it to the BOTTOM-RIGHT as a reference thumbnail for the solve beats (never redraw it).
+- **END CARD (last ~20s):** a "Like & Subscribe for more" line + a next-video CTA, on brand. Every
+  video ends this way (these go to YouTube).
+- Only ever ship WITH background music. Clean, zero overlap — the layout_check gate is binding.
+
 ## THE NINE BEATS (fixed order; 5b/6/7 are conditional — include only if the question has them)
 1. **QUESTION** (0–15s) — cold-open question card in the right format variant (MCQ / numerical /
    multi-correct / paragraph / match-list), badge (exam·year·paper), format tag, marking scheme,
