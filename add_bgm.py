@@ -45,7 +45,7 @@ def mix(video, music, vol, fin, fout, duck, out):
     tail = "aresample=async=1:first_pts=0,alimiter=limit=0.95"
     if duck:
         chain = (f"{bg};{voice};"
-                 f"[bg][voice]sidechaincompress=threshold=0.035:ratio=6:attack=6:release=650:makeup=1[bgd];"
+                 f"[bg][voice]sidechaincompress=threshold=0.02:ratio=9:attack=5:release=450:makeup=1[bgd];"
                  f"[voice][bgd]amix=inputs=2:duration=first:normalize=0,{tail}[a]")
     else:
         chain = f"{bg};{voice};[voice][bg]amix=inputs=2:duration=first:normalize=0,{tail}[a]"
