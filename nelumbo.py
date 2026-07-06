@@ -62,47 +62,86 @@ def apply_bg(scene):
 
 
 def kicker(nn, section, color=IGNITION):
-    """The mono '// NN — SECTION' kicker that opens a block."""
-    return Mono(f"// {nn} — {section}", color=color).scale(0.4)
+    """A small mono section label (no '//' — the brand tag lives only in the top-left logo)."""
+    return Mono(section, color=color).scale(0.44)
 
 
 import numpy as np
 
 
+_OUTLINE = "#17151A"
+_TAN     = "#C88A4A"
+_PEACH   = "#E0965A"
+_RUST    = "#C7440E"
+_PAGE    = "#EFE6CE"
+_COVER   = "#3A2418"
+
+
+def _petal(length=0.5, width=0.32, fill=IGNITION, sw=2.4):
+    """A single smooth lotus petal, base at origin, pointing up (+y)."""
+    w, L = width, length
+    pts = [[0, 0.0, 0], [w * 0.52, L * 0.28, 0], [w * 0.40, L * 0.74, 0],
+           [0, L, 0], [-w * 0.40, L * 0.74, 0], [-w * 0.52, L * 0.28, 0], [0, 0.0, 0]]
+    p = VMobject(fill_color=fill, fill_opacity=1, stroke_color=_OUTLINE, stroke_width=sw)
+    p.set_points_smoothly([np.array(x) for x in pts])
+    return p
+
+
+def _book():
+    """A small open book beneath the lotus."""
+    cover = Polygon([-0.66, -0.20, 0], [0.66, -0.20, 0], [0.58, -0.34, 0], [-0.58, -0.34, 0],
+                    fill_color=_COVER, fill_opacity=1, stroke_color=_OUTLINE, stroke_width=2.4)
+    lp = Polygon([0, -0.02, 0], [-0.70, 0.10, 0], [-0.66, -0.20, 0], [0, -0.22, 0],
+                 fill_color=_PAGE, fill_opacity=1, stroke_color=_OUTLINE, stroke_width=2.4)
+    rp = Polygon([0, -0.02, 0], [0.70, 0.10, 0], [0.66, -0.20, 0], [0, -0.22, 0],
+                 fill_color=_PAGE, fill_opacity=1, stroke_color=_OUTLINE, stroke_width=2.4)
+    spine = Line([0, -0.02, 0], [0, -0.22, 0], color=_OUTLINE, stroke_width=2.2)
+    return VGroup(cover, lp, rp, spine)
+
+
 def on_mark():
-    """The Orange Nelumbo symbol, built in Manim: a lotus of five ignition petals in a
-    launch cradle, wrapped by an orbital ring with a single satellite."""
-    petals = VGroup()
-    base = np.array([0.0, -0.04, 0.0])
-    for ang, h, col in [(-40, 0.26, EMBER), (-20, 0.40, IGNITION), (0, 0.50, IGNITION),
-                        (20, 0.40, IGNITION), (40, 0.26, EMBER)]:
-        a = np.deg2rad(90 + ang)
-        tip = base + h * np.array([np.cos(a), np.sin(a), 0.0])
-        perp = 0.055 * np.array([np.cos(a - np.pi / 2), np.sin(a - np.pi / 2), 0.0])
-        petals.add(Polygon(base + perp, tip, base - perp,
-                           fill_color=col, fill_opacity=1, stroke_width=0))
-    cradle = Arc(radius=0.30, start_angle=PI + 0.5, angle=PI - 1.0,
-                 color=EMBER, stroke_width=3).move_to(base + DOWN * 0.16)
-    ring = Ellipse(width=1.05, height=0.40, color=IGNITION, stroke_width=2.5).rotate(-0.2)
-    ring.move_to(base + DOWN * 0.02)
-    sat = Dot(color=EMBER, radius=0.045).move_to(ring.point_from_proportion(0.07))
-    return VGroup(ring, cradle, petals, sat)
+    """The Orange Nelumbo symbol: a lotus (tan base leaves, peach mid, ignition front petals)
+    resting on an open book. Built natively so it renders crisp at 4K."""
+    b = UP * 0.10   # base point of the petals, sitting on the book
+    # crown (small petals peeking at the very top, drawn first so mains overlap their base)
+    crown = VGroup(
+        _petal(0.34, 0.22, _PEACH, sw=2.0).rotate(-16 * DEGREES, about_point=ORIGIN).shift(UP * 0.66),
+        _petal(0.40, 0.22, _PEACH, sw=2.0).shift(UP * 0.70),
+        _petal(0.34, 0.22, _PEACH, sw=2.0).rotate(16 * DEGREES, about_point=ORIGIN).shift(UP * 0.66),
+    )
+    base_leaves = VGroup(   # wide outer leaves, nearly horizontal — the bloom
+        _petal(0.56, 0.52, _TAN).rotate(-74 * DEGREES, about_point=ORIGIN),
+        _petal(0.56, 0.52, _TAN).rotate(74 * DEGREES, about_point=ORIGIN),
+    )
+    mid = VGroup(
+        _petal(0.64, 0.34, _PEACH).rotate(-40 * DEGREES, about_point=ORIGIN),
+        _petal(0.64, 0.34, _PEACH).rotate(40 * DEGREES, about_point=ORIGIN),
+    )
+    front = VGroup(
+        _petal(0.74, 0.32, _RUST).rotate(-18 * DEGREES, about_point=ORIGIN),
+        _petal(0.74, 0.32, _RUST).rotate(18 * DEGREES, about_point=ORIGIN),
+        _petal(0.86, 0.34, IGNITION),   # tall centre petal, brightest, in front
+    )
+    lotus = VGroup(crown, base_leaves, mid, front).shift(b)
+    orbit = ArcBetweenPoints([-1.55, 0.62, 0], [1.55, 0.62, 0], angle=-0.55,
+                             color=IGNITION, stroke_width=2)
+    return VGroup(orbit, _book(), lotus)
 
 
 def on_logo(scale=0.5):
     """Top-left video lockup: the mark + 'ORANGE NELUMBO' wordmark (Space Grotesk bold)."""
-    mark = on_mark().scale(0.62)
+    mark = on_mark().scale(0.34)
     word = Text("ORANGE NELUMBO", font=F_DISPLAY, weight=BOLD, color=WHITE).scale(0.30)
-    return VGroup(mark, word).arrange(RIGHT, buff=0.22).scale(scale / 0.5)
+    return VGroup(mark, word).arrange(RIGHT, buff=0.24).scale(scale / 0.5)
 
 
-def chip(text, color=SIGNAL, tscale=0.34):
-    """A small graphite result chip for the right-side results rail."""
-    t = Mono(text, color=color).scale(tscale)
-    box = RoundedRectangle(width=t.width + 0.3, height=t.height + 0.22, corner_radius=0.07,
+def mchip(latex, color=SIGNAL, tscale=0.40):
+    """A small graphite result chip (LaTeX) for the right-side results rail — proper subscripts."""
+    m = MathTex(latex, color=color).scale(tscale)
+    box = RoundedRectangle(width=m.width + 0.34, height=m.height + 0.26, corner_radius=0.08,
                            color=GRAPHITE, fill_color=GRAPHITE, fill_opacity=0.92,
                            stroke_color=color, stroke_width=1.2)
-    return VGroup(box, t)
+    return VGroup(box, m)
 
 
 # Type floors (never scale below these): MathTex >= 40pt long-form, >= 56pt Shorts.
