@@ -19,7 +19,7 @@ fi
 # shellcheck disable=SC1091
 source .venv/bin/activate
 pip install --upgrade pip
-pip install manim manim-voiceover
+pip install manim manim-voiceover pillow openpyxl
 deactivate
 
 echo "==> [3/4] Kokoro voice venv (.venv-kokoro) — heavy (torch), one time ..."
@@ -32,13 +32,11 @@ fi
 echo "==> [4/4] Done."
 cat <<'EOF'
 
-Setup complete. To render in 4K (each in its own terminal, in parallel):
+Setup complete.  Build a finished 4K video (render -> intro/outro -> music -> Drive) with:
 
-  source .venv/bin/activate
-  manim -qk --media_dir build/media scenes/q5.py Scene_q5
-  manim -qk --media_dir build/media scenes/q6.py Scene_q6
-  manim -qk --media_dir build/media scenes/q7.py Scene_q7
+  ./.venv/bin/python orchestrator.py build q10 --quality=-qk --music --drive=gdrive:JEE-Videos/Thermodynamics
 
-First render downloads the ~330 MB Kokoro model once, then it's offline.
-For the Indian-accent Google voice instead, see RENDER_UBUNTU.md (Voice options).
+(swap q10 for any id in questions.json whose scenes/<id>.py exists).
+First render downloads the ~330 MB Kokoro voice model once, then it's offline.
+Full guide: README.md.  Google Drive upload needs `rclone config` (remote named 'gdrive').
 EOF

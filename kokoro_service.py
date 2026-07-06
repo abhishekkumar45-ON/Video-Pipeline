@@ -26,7 +26,7 @@ KOKORO_SCRIPT = ROOT / "kokoro_tts.py"
 
 
 class KokoroService(SpeechService):
-    def __init__(self, voice="af_nova", lang="a", speed=0.9, **kwargs):
+    def __init__(self, voice="af_bella", lang="a", speed=0.9, **kwargs):
         self.voice = voice
         self.lang = lang
         self.speed = speed
