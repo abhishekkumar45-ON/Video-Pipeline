@@ -41,7 +41,7 @@ import sys
 ROOT = os.path.dirname(os.path.abspath(__file__))
 QUESTIONS = os.path.join(ROOT, "questions.json")
 BRAND = os.path.join(ROOT, "brand_system.md")
-EXEMPLAR = os.path.join(ROOT, "scenes", "q1.py")
+EXEMPLAR = os.path.join(ROOT, "scenes", "q10.py")   # current gold example (all rules)
 SCENES_DIR = os.path.join(ROOT, "scenes")
 PROMPTS_DIR = os.path.join(ROOT, "prompts")
 OUT_DIR = os.path.join(ROOT, "outputs")

@@ -7,12 +7,17 @@ rulebook exactly. Full source specs live in `guidelines/` (03_debrief_format, 04
 scene is appended after these rules.
 
 ## OUTPUT CONTRACT
-- Return ONLY the file content in ONE ```python block. One class, named exactly as instructed.
-- Subclass `VoiceoverScene`; `from nelumbo import *` (palette + Label/Body/Mono); `apply_bg(self)` first.
-- Voice: `from kokoro_service import KokoroService` → `self.set_speech_service(KokoroService())`
-  (default af_bella — locked). Audio-first timing: run_times driven by `t.duration`.
-- 4K master: 16:9 1920×1080 scene units (renders at -qk 2160p). MathTex never below ~0.7 scale
-  (type floor 40pt). Numbers/units/labels use Mono(); headlines Label(); prose Body().
+- Return ONLY the file content in ONE ```python block. One class, named exactly `Scene_<id>`.
+- `from manim import *` then `from nelumbo import *`; `from manim_voiceover import VoiceoverScene`;
+  `from kokoro_service import KokoroService`. Subclass `VoiceoverScene`.
+- First two lines of construct: `background(self)` (obsidian + grid + glow ground) and
+  `self.set_speech_service(KokoroService(voice="af_bella"))`. Audio-first: run_times use `t.duration`.
+- **The pipeline adds the intro bumper, the outro bumper, and the background music automatically.**
+  So the SCENE itself must NOT include an intro, an outro, a "like & subscribe" end card, or music —
+  it is ONLY the solution. It starts on the question and ends on the answer/takeaway.
+- 4K master: 16:9 1920×1080 scene units (renders at -qk 2160p). MathTex ≥ ~0.5 scale. Numbers/units/
+  labels use Mono(); headlines Label(); prose Body(). **All maths uses LaTeX (MathTex) — `v_0` not
+  "v0", `T_1` not "T1"; never write subscripts as plain digits in Mono text.**
 
 ## COLOUR — semantic, FIXED, never repurpose (from nelumbo.py)
 OBSIDIAN bg · IGNITION = the active move/target/emphasis (ONE at a time) · EMBER = secondary
@@ -21,20 +26,24 @@ TITANIUM = scaffold/axes/ghosts (45%/30%) · AMBER = trigger words in the READ b
 CORRECT(green) = the final answer, once · ERROR(red) = misfire/trap/eliminations · GRAPHITE = cards.
 Ratio ~80/15/5 (obsidian/white/orange). Never rainbow; orange is the one accent.
 
-## PERSISTENT CHROME & SOLVE LAYOUT (every video — from YouTube Guidelines; NON-NEGOTIABLE)
-- **TOP-LEFT: the Orange Nelumbo LOGO** — `on_logo()` (mark + wordmark). NOT a "// CHAPTER" tag.
-  There is NO "//" kicker at the top of frame. (The mono `// NN — SECTION` kicker is only a small
-  in-beat section label, never the top-of-frame brand slot.)
-- **BOTTOM-LEFT: the chapter name** (e.g. `Kinematics`), small, Body/Mono muted.
-- **TOP-RIGHT: progress** `NN / total`, small mono.
-- **RIGHT-SIDE RESULTS RAIL:** as each key result is derived (v₁, T, T₁, T₂, the answer), drop a
-  small `chip("…")` into a right-side column so a student can read the results at a glance.
-  Chips persist through the solve. Keep the work area to the LEFT ~60% so it never touches the rail.
-- **DIAGRAM DOCKS BOTTOM-RIGHT:** draw the diagram centre-frame in its own beat, then shrink it and
-  dock it to the BOTTOM-RIGHT as a reference thumbnail for the solve beats (never redraw it).
-- **END CARD (last ~20s):** a "Like & Subscribe for more" line + a next-video CTA, on brand. Every
-  video ends this way (these go to YouTube).
-- Only ever ship WITH background music. Clean, zero overlap — the layout_check gate is binding.
+## PERSISTENT CHROME & SOLVE LAYOUT (every video — NON-NEGOTIABLE; copy exactly from scenes/q10.py)
+- **TOP-LEFT: the real logo** — `logo = on_logo(0.5).to_corner(UL, buff=0.45)` then `self.add(logo)`.
+  There is **NO "//"** before any on-screen text, ever. (`kicker()` is a plain section label, no "//".)
+- **BOTTOM-LEFT: the chapter name** — `Body("<Chapter>", color=TITANIUM).scale(0.4).to_corner(DL, buff=0.45)`.
+- **NO progress counter.** Do NOT put "NN / total" anywhere. (Removed by user request.)
+- **STEP RAIL (left) during the solve** — `rail = StepRail(n)`; `self.play(FadeIn(rail.whole()), rail.active(0))`;
+  then `rail.done(i)` / `rail.active(i+1)` as each step completes. n = number of solve steps.
+  (Boxes: pending = titanium outline, active = ignition fill, done = green fill.)
+- **RIGHT-SIDE RESULTS RAIL** — as each key result is derived, drop a **LaTeX** chip:
+  `mchip(r"T_b = 624\ \mathrm{K}", color=...)` placed at `RIGHT*RAIL_X + UP*RAIL_Y[i]` (see q10 helper).
+  Chips persist. Keep the work area (equations) LEFT of centre (`WORKC = LEFT*1.2`) so it never
+  touches the rail.
+- **DIAGRAM DOCKS BOTTOM-RIGHT:** draw the diagram/visual centre-frame in its own beat, then
+  `diagram.animate.scale(0.4).to_corner(DR, buff=0.4)` and keep it as a reference thumbnail through
+  the solve (never redraw it).
+- **NO end card / no like-subscribe in the scene** — the pipeline's outro video handles that.
+  The scene ends on the answer box + one takeaway line.
+- Clean, zero overlap — `layout_check.py` is binding.
 
 ## THE NINE BEATS (fixed order; 5b/6/7 are conditional — include only if the question has them)
 1. **QUESTION** (0–15s) — cold-open question card in the right format variant (MCQ / numerical /
@@ -86,13 +95,26 @@ No overlapping elements, no overflowing text, no intersecting graphics, no graph
 - Diagrams: `Create()` once early, then only annotate / change state / morph — NEVER redraw mid-video.
 - Every scene is auto-checked by `layout_check.py`; it FAILS the build on any overlap or off-frame.
 
-## MATHTEX SAFETY (basictex only)
-Allowed: \frac \tfrac \mathrm \sqrt ^ _ greek \cdot \times \vec \hat \le \ge \sin \cos.
-FORBIDDEN: \boxed \text{ (multi-word) } \begin{cases} exotic packages. Boxed answer = SurroundingRectangle.
+## TEACHING DEPTH (what the user demands)
+- **Concept-first:** before solving, EXPLAIN the governing concepts with a small animation/visual
+  (e.g. mini-diagrams + the law), so the student understands the idea, THEN solve the question.
+- **Detailed step-by-step:** every step shows LAW → SUBSTITUTION → RESULT, not just the final formula.
+  More steps is better; a longer video is fine. Step titles are decisions.
+- **Live readouts / working visualisation:** when a quantity varies (piston volume, a moving point,
+  a field), show it MOVE, and show the numbers change with `DecimalNumber` + a `ValueTracker`
+  (NEVER `always_redraw` a MathTex — it re-compiles LaTeX every frame and is far too slow). e.g. a
+  piston-cylinder compressing in lockstep with the P–V point while V, P, T count live (see q10).
+
+## MATHTEX SAFETY (this project's basictex + amsmath)
+Allowed: \frac \tfrac \mathrm \sqrt ^ _ greek \cdot \times \vec \hat \le \ge \ne \sin \cos \gamma
+\Delta \Rightarrow \checkmark \times \text{...} (works here). FORBIDDEN: \boxed, \begin{cases},
+exotic packages. Boxed answer = SurroundingRectangle. Unicode ✓/✗ do NOT render in MathTex — use
+\checkmark / \times. Avoid en-dash "–" inside \text{} (use a hyphen).
 
 ## LEGAL / SOURCING
 Independent JEE-prep brand — NOT affiliated with NTA/IIT/JEE Apex Board; never imply endorsement.
 Never guarantee a rank/score. Question shown verbatim with exam·year·shift; solution re-derived.
 
 ---
-## GOLD EXAMPLE — study, then write at this level (note: predates full DEBRIEF spec):
+## GOLD EXAMPLE — this is the CURRENT correct format. Copy its chrome, StepRail, results rail,
+## docked diagram, concept-first teaching, live readouts and detailed steps. Write at this level:
