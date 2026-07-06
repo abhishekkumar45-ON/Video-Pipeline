@@ -123,11 +123,18 @@ Fix it and return the FULL corrected file in one ```python block. Keep the class
 
 # ---------------- deterministic gates + render ----------------
 def render_env():
+    """Self-contained env: project root on PYTHONPATH; venv bin + Homebrew + LaTeX on PATH.
+    Lets `.venv/bin/python orchestrator.py build ...` run from any cwd with no `source`/`export`."""
     env = dict(os.environ)
     env["PYTHONPATH"] = ROOT + os.pathsep + env.get("PYTHONPATH", "")
-    texbin = "/Library/TeX/texbin"
-    if os.path.isdir(texbin) and texbin not in env.get("PATH", ""):
-        env["PATH"] = texbin + os.pathsep + env.get("PATH", "")
+    extra = [os.path.dirname(sys.executable),   # the venv's bin (manim lives here)
+             "/opt/homebrew/bin",               # ffmpeg, ffprobe, rclone
+             "/Library/TeX/texbin"]             # latex for MathTex
+    path = env.get("PATH", "")
+    for d in extra:
+        if os.path.isdir(d) and d not in path:
+            path = d + os.pathsep + path
+    env["PATH"] = path
     return env
 
 
@@ -164,6 +171,41 @@ def render(path, cls, quality):
     if not hits:
         return False, "render succeeded but mp4 not found"
     return True, sorted(hits, key=os.path.getmtime)[-1]
+
+
+def wrap_intro_outro(video, qid):
+    """Prepend assets/intro.mp4 and append assets/outro.mp4 (both silent 4K/30) to the video.
+    Returns the wrapped path, or None if the bumpers are missing / it fails."""
+    intro = os.path.join(ROOT, "assets", "intro.mp4")
+    outro = os.path.join(ROOT, "assets", "outro.mp4")
+    if not (os.path.exists(intro) and os.path.exists(outro)):
+        return None
+
+    def dur(p):
+        o = subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                            "-of", "default=noprint_wrappers=1:nokey=1", p],
+                           capture_output=True, text=True)
+        return float(o.stdout.strip())
+
+    idur, odur = dur(intro), dur(outro)
+    out = os.path.join(OUT_DIR, f"{qid}_full.mp4")
+    vf = "scale=3840:2160,setsar=1,fps=30,format=yuv420p"
+    fc = (f"[0:v]{vf}[v0];[1:v]{vf}[v1];[2:v]{vf}[v2];"
+          f"[3:a]aresample=48000,aformat=channel_layouts=stereo[a0];"
+          f"[1:a]aresample=48000,aformat=channel_layouts=stereo[a1];"
+          f"[4:a]aresample=48000,aformat=channel_layouts=stereo[a2];"
+          f"[v0][a0][v1][a1][v2][a2]concat=n=3:v=1:a=1[v][a]")
+    cmd = ["ffmpeg", "-y", "-i", intro, "-i", video, "-i", outro,
+           "-f", "lavfi", "-t", str(idur), "-i", "anullsrc=r=48000:cl=stereo",
+           "-f", "lavfi", "-t", str(odur), "-i", "anullsrc=r=48000:cl=stereo",
+           "-filter_complex", fc, "-map", "[v]", "-map", "[a]",
+           "-c:v", "libx264", "-crf", "16", "-preset", "medium", "-pix_fmt", "yuv420p",
+           "-c:a", "aac", "-b:a", "192k", out]
+    r = subprocess.run(cmd, cwd=ROOT, env=render_env(), capture_output=True, text=True)
+    if r.returncode == 0 and os.path.exists(out):
+        return out
+    print(f"  (intro/outro wrap failed: {(r.stderr or '')[-300:]})")
+    return None
 
 
 def upload_to_drive(local_path, remote_dir):
@@ -259,6 +301,28 @@ def cmd_build(args):
     final = os.path.join(OUT_DIR, f"{q['id']}.mp4")
     shutil.copy(msg, final)
     print(f"  OK -> {os.path.relpath(final, ROOT)}")
+
+    # background music (same track/level for the whole batch until told otherwise)
+    if args.music:
+        print("  adding background music ...", flush=True)
+        r = subprocess.run(
+            [sys.executable, os.path.join(ROOT, "add_bgm.py"), final,
+             "--volume", str(args.music_vol), "--fadeout", "4", "--duck", "--suffix", "_music"],
+            cwd=ROOT, env=render_env(), capture_output=True, text=True)
+        music_out = os.path.join(OUT_DIR, f"{q['id']}_music.mp4")
+        if r.returncode == 0 and os.path.exists(music_out):
+            final = music_out
+            print(f"  + music -> {os.path.relpath(final, ROOT)}")
+        else:
+            print(f"  (music step failed — shipping no-music version)\n{r.stderr[-300:]}")
+
+    # intro + outro bumpers (brand) — for every video
+    print("  wrapping intro + outro ...", flush=True)
+    wrapped = wrap_intro_outro(final, q["id"])
+    if wrapped:
+        final = wrapped
+        print(f"  + intro/outro -> {os.path.relpath(final, ROOT)}")
+
     url = upload_to_drive(final, args.drive) if args.drive else None
     if url:
         print(f"  Drive: {url}")
@@ -290,11 +354,13 @@ def main():
     p.add_argument("--id", default="")
     p.set_defaults(func=cmd_prompt)
 
-    p = sub.add_parser("build", help="gate + render + upload a saved scene")
+    p = sub.add_parser("build", help="gate + render + music + upload a saved scene")
     p.add_argument("id", help="question id whose scenes/<id>.py to build")
-    p.add_argument("--quality", default="-ql", help="-ql fast, -qm medium, -qh final")
+    p.add_argument("--quality", default="-ql", help="-ql fast, -qm medium, -qk 4K final")
     p.add_argument("--drive", default="", metavar="REMOTE:FOLDER",
                    help="rclone remote for finals, e.g. gdrive:JEE-Videos/Kinematics")
+    p.add_argument("--music", action="store_true", help="mix in assets/bgm.mp3 (ducked)")
+    p.add_argument("--music-vol", type=float, default=0.08, dest="music_vol")
     p.set_defaults(func=cmd_build)
 
     p = sub.add_parser("status", help="show all questions + states")

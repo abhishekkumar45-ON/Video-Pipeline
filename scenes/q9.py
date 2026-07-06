@@ -227,39 +227,19 @@ class Scene_q9(VoiceoverScene):
         self.play(FadeOut(tlbl), FadeOut(trap), FadeOut(trapc), FadeOut(strike), FadeOut(why),
                   FadeOut(diagram), FadeOut(self._collect_rail()))
 
-        # ============ 12 · LOCK-IN + END CARD ============
+        # ============ 12 · LOCK-IN (the outro video plays after this — no like/subscribe card) ============
         set_prog(12)
-        box_ans = MathTex(r"\left(\frac{T_1}{T_2}\right)^2 = 2", color=CORRECT).scale(1.3).move_to(UP * 1.4)
+        box_ans = MathTex(r"\left(\frac{T_1}{T_2}\right)^2 = 2", color=CORRECT).scale(1.3).move_to(UP * 1.2)
         box = SurroundingRectangle(box_ans, color=CORRECT, buff=0.3, corner_radius=0.1)
-        take = Label("Shared vertical motion → collision is pure horizontal catch-up.", color=WHITE).scale(0.44).next_to(box, DOWN, buff=0.6)
+        take = Label("Shared vertical motion → collision is pure horizontal catch-up.", color=WHITE).scale(0.46).next_to(box, DOWN, buff=0.7)
         with self.voiceover(text="Lock it in — the answer is two. And the one thing to carry away: when two "
                                  "projectiles share their vertical motion, the collision is nothing but a horizontal "
-                                 "catch-up.") as t:
+                                 "catch-up. That's it — solved, completely.") as t:
             self.play(FadeIn(box_ans, shift=DOWN * 0.1), run_time=0.9); self.play(Create(box), run_time=0.8)
             self.play(FadeIn(take, shift=UP * 0.1), run_time=0.9)
-            self.wait(max(0.2, t.duration - 2.6))
+            self.wait(max(0.4, t.duration - 2.6))
         self.play(FadeOut(box_ans), FadeOut(box), FadeOut(take))
-
-        # end card — clean like / subscribe buttons
-        big = on_logo(0.66).move_to(UP * 2.0)
-        head_e = Label("Enjoyed the breakdown?", color=WHITE).scale(0.6).move_to(UP * 0.55)
-
-        def button(label_txt, filled):
-            lt = Label(label_txt, color=(OBSIDIAN if filled else IGNITION)).scale(0.5)
-            bx = RoundedRectangle(width=lt.width + 0.85, height=lt.height + 0.55, corner_radius=0.22,
-                                  fill_color=IGNITION, fill_opacity=(1 if filled else 0),
-                                  stroke_color=IGNITION, stroke_width=(0 if filled else 3))
-            return VGroup(bx, lt)
-        btns = VGroup(button("LIKE", False), button("SUBSCRIBE", True)).arrange(RIGHT, buff=0.55).move_to(DOWN * 0.75)
-        mantra = Mono("In pursuit of mastery.", color=EMBER).scale(0.44).move_to(DOWN * 2.15)
-        with self.voiceover(text="If this made it click, hit like and subscribe — we solve one JEE problem, "
-                                 "completely, every single time. In pursuit of mastery.") as t:
-            self.play(FadeIn(big, shift=DOWN * 0.15), run_time=0.9)
-            self.play(Write(head_e), run_time=0.8)
-            self.play(FadeIn(btns[0], shift=UP * 0.1), FadeIn(btns[1], shift=UP * 0.1), run_time=0.7)
-            self.play(FadeIn(mantra), run_time=0.5)
-            self.wait(max(0.4, t.duration - 2.9))
-        self.wait(0.7)
+        self.wait(0.5)
 
     # collect all rail chips currently on screen for a clean fade
     def _collect_rail(self):

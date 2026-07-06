@@ -140,10 +140,16 @@ def background(scene):
 
 
 def on_logo(scale=0.5):
-    """Top-left video lockup: the mark + 'ORANGE NELUMBO' wordmark (Space Grotesk bold)."""
-    mark = on_mark().scale(0.34)
+    """Top-left lockup: the REAL Orange Nelumbo mark (assets/on_logo.png, transparent) +
+    'ORANGE NELUMBO' wordmark. Falls back to the built mark only if the asset is missing."""
+    from pathlib import Path
+    p = Path(__file__).resolve().parent / "assets" / "on_logo.png"
+    if p.exists():
+        mark = ImageMobject(str(p)); mark.height = 0.72
+    else:
+        mark = on_mark().scale(0.34)
     word = Text("ORANGE NELUMBO", font=F_DISPLAY, weight=BOLD, color=WHITE).scale(0.30)
-    return VGroup(mark, word).arrange(RIGHT, buff=0.24).scale(scale / 0.5)
+    return Group(mark, word).arrange(RIGHT, buff=0.24).scale(scale / 0.5)
 
 
 def mchip(latex, color=SIGNAL, tscale=0.40):
