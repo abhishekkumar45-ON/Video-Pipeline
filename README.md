@@ -83,9 +83,8 @@ layout_check.py        deterministic overlap / off-frame gate (renders with a mo
 add_bgm.py             mixes assets/bgm.mp3 under the narration (sidechain-ducked), limiter
 kokoro_service.py      voice (Kokoro af_bella) — shells out to .venv-kokoro (isolated torch)
 kokoro_tts.py          the Kokoro CLI run inside .venv-kokoro
-brand_system.md        the coder rulebook (9-beat DEBRIEF, colour law, animation grammar, collision law)
-kinematics_guidelines.md   decoded Kinematics design system
-guidelines/            decoded source guideline docs (brand, DEBRIEF, diagram library, YouTube, colour map)
+guidelines/masterclass/  the operative rulebook (per-frame PYQ Masterclass spec + script/frame agents)
+guidelines/            supporting brand/colour/diagram/YouTube specs
 questions.json         source of truth: id / chapter / question / options / answer / status / video_url
 scenes/<id>.py         one Manim scene per question (q1, q3, q5-q10, samples)
 assets/                on_logo.png (real logo, transparent) . bg.png (grid+glow ground) .
@@ -111,7 +110,7 @@ gcloud_tts_service.py / polly_service.py / elevenlabs_service.py / mac_say_servi
 - **Collision-clean** (the gate blocks any overlap), MathTex basictex-safe, banned animations
   (Flash/Wiggle/spins) not used.
 
-Full rules: `brand_system.md` and `guidelines/`.
+Full rules: `guidelines/masterclass/` (and the supporting `guidelines/` specs).
 
 ---
 

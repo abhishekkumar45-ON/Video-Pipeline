@@ -1,14 +1,19 @@
 # CLAUDE.md — read this fully before writing any scene
 
-This repo turns a JEE question into a brand-perfect 4K **DEBRIEF** video (Orange Nelumbo).
+This repo turns a JEE question into a brand-perfect 4K **PYQ Masterclass** video (Orange Nelumbo).
 Your job when asked to make a video is to write `scenes/<id>.py` — a Manim scene — that follows
 **every** rule below. Then the user runs one command and the pipeline renders it, adds the intro
 and outro bumpers, mixes music, and uploads it. If you skip any rule, the video ships wrong.
 
-## Before you write a scene, READ these three (in order)
-1. **`brand_system.md`** — the full rulebook (colour law, 9 beats, animation grammar, collision law).
-2. **`scenes/q10.py`** — the GOLD EXAMPLE. Copy its structure, chrome, and helpers exactly.
-3. **`guidelines/03_debrief_format.txt`** (and the others in `guidelines/`) — the source specs.
+## Before you write a scene, READ these (in order)
+1. **`guidelines/masterclass/03_video_guidelines.txt`** — the per-frame video spec (slot layout, question
+   card, pause screen, decode blocks, caption band). This is the operative source of truth.
+2. **`guidelines/masterclass/01_script_agent.md`** and **`02_frame_progression_agent.md`** — the two-agent
+   authoring pipeline (script beats → frame progression).
+3. **`scenes/t1.py`** — the current GOLD EXAMPLE (Masterclass format: live piston+graph rig, de-boxed
+   concept blocks, top-right solution steps, ≤2-line captions). Copy its structure, chrome, helpers.
+4. The remaining `guidelines/` files (`01_brand`, `02_chapter_color_map`, `04_diagram_library`,
+   `05_youtube`) — supporting brand/colour/diagram/metadata specs.
 
 ## The workflow (codegen is done here, in chat — the pipeline can't call an LLM)
 1. Add the question to `questions.json` (`id, chapter, question, options, answer, status:"pending"`).
@@ -25,6 +30,10 @@ and outro bumpers, mixes music, and uploads it. If you skip any rule, the video 
 - [ ] First lines: `background(self)`  then  `self.set_speech_service(KokoroService(voice="af_bella"))`.
 - [ ] **Chrome:** `on_logo(0.5).to_corner(UL, buff=0.45)` (real logo, top-left) + a `Body("<Chapter>")`
       bottom-left. **NO progress counter. NO "//" before any text.**
+- [ ] **Logo clearance:** every centred top-of-frame element (beat headings, question head row, PAUSE
+      ring, concept titles) sits ~1.5 cm below the logo — anchor top content with
+      `.to_edge(UP, buff=1.65)` (NOT `1.0`; the logo band runs ~0.45–1.17 units from the top, so 1.0
+      collides). The title directly below the logo needs the gap too, not just the left column.
 - [ ] **Solve uses `StepRail(n)`** on the left — `rail.active(i)` / `rail.done(i)` as steps complete.
 - [ ] **Results rail** on the right — `mchip(r"...latex...", color=...)` for each key result (LaTeX).
 - [ ] **Diagram/visual:** draw it centre, then dock bottom-right (`.animate.scale(0.4).to_corner(DR)`).

@@ -43,8 +43,8 @@ import tempfile
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 QUESTIONS = os.path.join(ROOT, "questions.json")
-BRAND = os.path.join(ROOT, "brand_system.md")
-EXEMPLAR = os.path.join(ROOT, "scenes", "q10.py")   # current gold example (all rules)
+BRAND = os.path.join(ROOT, "guidelines", "masterclass", "03_video_guidelines.txt")
+EXEMPLAR = os.path.join(ROOT, "scenes", "t1.py")    # current gold example (Masterclass format)
 SCENES_DIR = os.path.join(ROOT, "scenes")
 PROMPTS_DIR = os.path.join(ROOT, "prompts")
 OUT_DIR = os.path.join(ROOT, "outputs")
@@ -96,6 +96,32 @@ def find_q(qs, qid):
         if q["id"] == qid:
             return q
     return None
+
+
+# Cross-process lock so parallel `build`s never clobber each other's status in questions.json.
+_QLOCK = os.path.join(ROOT, ".questions.lock")
+
+
+@contextlib.contextmanager
+def questions_lock():
+    with open(_QLOCK, "w") as lf:
+        fcntl.flock(lf, fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(lf, fcntl.LOCK_UN)
+
+
+def update_question(qid, **fields):
+    """Re-read questions.json fresh, patch ONLY this id, write back — all under an
+    exclusive lock. Safe when several builds finish at once (avoids stale-snapshot clobber)."""
+    with questions_lock():
+        qs = load_questions()
+        q = find_q(qs, qid)
+        if q is None:
+            return
+        q.update(fields)
+        save_questions(qs)
 
 
 def class_name_for(qid):
@@ -187,18 +213,50 @@ def layout_check(path, cls):
     return False, "\n".join(lines) or proc.stdout[-1500:]
 
 
-def render(path, cls, quality):
-    """Render <cls> from <path>. Returns (ok, mp4_path_or_error_tail)."""
+def burn_captions(video, srt):
+    """Burn the auto-generated narration SRT into the scene video, in the bottom caption band
+    (white with a black outline, centred). Returns the captioned path, or the original on failure.
+    Captions go on the SCENE only, before intro/outro are wrapped around it (guideline: never over
+    the sting or outro)."""
+    if not (srt and os.path.exists(srt)):
+        return video
+    out = os.path.splitext(video)[0] + "_cc.mp4"
+    # libass scales Fontsize/margins by the ASS script height (SRT default PlayResY=288),
+    # NOT the output resolution — so these values are resolution-independent (Fontsize 12 renders
+    # ~90px at 2160p). Do NOT use output-pixel numbers here.
+    # Caption look: SMALL, brand off-white text, in the SAME font the scene body renders in
+    # (Manrope/Space Grotesk fall back to Noto Sans on this box), NO background band — just text
+    # at the very bottom with a hairline outline for legibility.
+    style = ("Fontname=Noto Sans,Fontsize=12,"
+             "PrimaryColour=&H00E8EFF1&,"          # brand WHITE #F1EFE8 (ASS is BGR)
+             "OutlineColour=&H00141414&,"          # near-obsidian hairline (not a box)
+             "BorderStyle=1,Outline=1,Shadow=0,"
+             "Alignment=2,MarginV=14,MarginL=150,MarginR=150")   # MarginV small -> hug the very bottom
+    # escape the srt path for the ffmpeg filter
+    srt_esc = srt.replace("\\", "/").replace(":", "\\:").replace("'", "\\'")
+    cmd = ["ffmpeg", "-y", "-i", video,
+           "-vf", f"subtitles='{srt_esc}':force_style='{style}'",
+           "-c:a", "copy", "-c:v", "libx264", "-crf", "16", "-preset", "medium", "-pix_fmt", "yuv420p", out]
+    r = subprocess.run(cmd, cwd=ROOT, env=render_env(), capture_output=True, text=True)
+    if r.returncode == 0 and os.path.exists(out):
+        return out
+    print(f"  (caption burn failed: {(r.stderr or '')[-300:]})")
+    return video
+
+
+def render(path, cls, quality, media=MEDIA):
+    """Render <cls> from <path>. Returns (ok, mp4_path_or_error_tail).
+    `media` can be a per-build dir so parallel renders never share the LaTeX cache."""
     proc = subprocess.run(
-        ["manim", quality, "--media_dir", MEDIA, path, cls],
+        ["manim", quality, "--media_dir", media, path, cls],
         cwd=ROOT, env=render_env(), capture_output=True, text=True,
     )
     if proc.returncode != 0:
         return False, (proc.stdout + "\n" + proc.stderr)[-2500:]
     stem = os.path.splitext(os.path.basename(path))[0]
-    hits = glob.glob(os.path.join(MEDIA, "videos", stem, "*", cls + ".mp4"))
+    hits = glob.glob(os.path.join(media, "videos", stem, "*", cls + ".mp4"))
     if not hits:
-        hits = glob.glob(os.path.join(MEDIA, "videos", "**", cls + ".mp4"), recursive=True)
+        hits = glob.glob(os.path.join(media, "videos", "**", cls + ".mp4"), recursive=True)
     if not hits:
         return False, "render succeeded but mp4 not found"
     return True, sorted(hits, key=os.path.getmtime)[-1]
@@ -311,18 +369,22 @@ def cmd_build(args):
         emit_prompt(q, error=msg, prior_code=read(scene_path), tag="repair")
         update_question(q["id"], status="review"); return
 
-    print("  layout gate (overlap / off-frame) ...", flush=True)
-    ok, report = layout_check(scene_path, cls)
-    if not ok:
-        print("  LAYOUT FAILED:")
-        for ln in report.splitlines():
-            print("   ", ln)
-        emit_prompt(q, error="Layout gate failed — FIX THESE overlaps/clipping:\n" + report,
-                    prior_code=read(scene_path), tag="repair")
-        update_question(q["id"], status="review"); return
+    if getattr(args, "skip_gate", False):
+        print("  layout gate SKIPPED (--skip-gate; scene pre-verified)")
+    else:
+        print("  layout gate (overlap / off-frame) ...", flush=True)
+        ok, report = layout_check(scene_path, cls)
+        if not ok:
+            print("  LAYOUT FAILED:")
+            for ln in report.splitlines():
+                print("   ", ln)
+            emit_prompt(q, error="Layout gate failed — FIX THESE overlaps/clipping:\n" + report,
+                        prior_code=read(scene_path), tag="repair")
+            update_question(q["id"], status="review"); return
 
-    print(f"  rendering {args.quality} ...", flush=True)
-    ok, msg = render(scene_path, cls, args.quality)
+    media_dir = getattr(args, "media", "") or MEDIA
+    print(f"  rendering {args.quality} (media={os.path.relpath(media_dir, ROOT)}) ...", flush=True)
+    ok, msg = render(scene_path, cls, args.quality, media=media_dir)
     if not ok:
         print("  render FAILED — writing repair prompt")
         emit_prompt(q, error=msg, prior_code=read(scene_path), tag="repair")
@@ -332,6 +394,16 @@ def cmd_build(args):
     solo = os.path.join(OUT_DIR, f"{q['id']}.mp4")
     shutil.copy(msg, solo)
     print(f"  OK -> {os.path.relpath(solo, ROOT)}")
+
+    # 0) burn narration subtitles into the scene (before wrapping, so they cover the scene
+    #    only, never the sting/outro). The SRT sits next to the rendered mp4.
+    if getattr(args, "captions", False):
+        srt = os.path.splitext(msg)[0] + ".srt"
+        print("  burning captions ...", flush=True)
+        capped = burn_captions(solo, srt)
+        if capped != solo:
+            shutil.copy(capped, solo)   # keep the wrap step pointed at outputs/<id>.mp4
+            print(f"  + captions -> {os.path.relpath(solo, ROOT)}")
 
     # 1) wrap intro + outro (silent bumpers) around the voice-only solution
     print("  wrapping intro + outro ...", flush=True)
@@ -394,6 +466,10 @@ def main():
                    help="rclone remote for finals, e.g. gdrive:JEE-Videos/Kinematics")
     p.add_argument("--music", action="store_true", help="mix in assets/bgm.mp3 (ducked)")
     p.add_argument("--music-vol", type=float, default=0.08, dest="music_vol")
+    p.add_argument("--skip-gate", action="store_true", dest="skip_gate",
+                   help="skip the layout gate (use only for pre-verified scenes / parallel batches)")
+    p.add_argument("--media", default="", help="per-build media dir (isolates the LaTeX cache in parallel runs)")
+    p.add_argument("--captions", action="store_true", help="burn the narration SRT into the scene (Masterclass)")
     p.set_defaults(func=cmd_build)
 
     p = sub.add_parser("status", help="show all questions + states")

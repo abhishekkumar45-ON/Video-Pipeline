@@ -23,7 +23,7 @@
     "question": "Two isosceles prisms 1 and 2 (angles A1,A2; indices n1,n2) have inner faces a1b1, a2b2 parallel and both perpendicular to a horizontal mirror M. A ray enters a1c1, leaves prism 1 at a1b1, reflects off M, enters prism 2 at a2b2, emerges from a2c2. Pick correct statement(s). Key link: i2 = e1.",
     "options": "(A) both at min deviation => n2/n1 = sin(A1/2)/sin(A2/2)  (B) sin i1 = n2 sin(A2/2)  (C) theta = (1/2)[dm1/(n1-1)+dm2/(n2-1)]  (D) if prism1 at min deviation, sin i2 = n1 sin(A1/2)",
     "answer": "A and D",
-    "status": "prompted"
+    "status": "pending"
   },
   {
     "id": "q6",
@@ -71,82 +71,95 @@
   {
     "id": "t1",
     "chapter": "Thermodynamics",
-    "question": "JEE Advanced 2025 P2 · Monatomic gas, adiabatic+isobaric V-T cycle WXYZ (V=64,125,250). Heat absorbed along X->Y, given nRT_W=1 J.",
-    "options": "Numerical",
+    "question": "An ideal monatomic gas of n moles is taken through the cycle W-X-Y-Z-W of consecutive adiabatic and isobaric quasi-static processes, shown on a schematic V-T diagram. The volumes at W, X, Y are 64, 125, 250 cm^3. If nRT_W = 1 J, find the heat absorbed (in J) along the path X-Y.",
+    "options": [],
     "answer": "1.6 J",
+    "source": "JEE Advanced 2025 · Paper 2 · Numerical",
     "status": "done",
-    "video_url": "https://drive.google.com/open?id=10rbZ7BruncLsS_rZ41o-JJiJzVdPngCh"
+    "video_url": "https://drive.google.com/open?id=1B153CFVDbURWx33qdX7e0fu1vyWqdgih"
   },
   {
     "id": "t2",
     "chapter": "Thermodynamics",
-    "question": "JEE Advanced 2025 P2 · Thermally-conducting spring-loaded piston between 3/2 mol and 1 mol; piston L/2 from each edge, spring natural length 2L/5. Right pressure P=(kL/A)alpha, find alpha.",
-    "options": "Numerical",
+    "question": "A thermally isolated container of length L is divided by a thermally conducting, movable piston of area A. Left holds 3/2 mol, right holds 1 mol of ideal gas. On the left a spring (constant k, natural length 2L/5) connects piston to the wall. At equilibrium the piston sits L/2 from each edge. If the right pressure is P = alpha*kL/A, find alpha.",
+    "options": "NUMERICAL",
     "answer": "alpha = 0.2",
-    "status": "pending"
+    "status": "done",
+    "format": "masterclass",
+    "subject": "Physics",
+    "sub_subject": "Thermodynamics",
+    "video_url": "https://drive.google.com/open?id=1keW2q80N3MMnTb5B5iV_9oP5uuD7MxCq"
   },
   {
     "id": "t3",
     "chapter": "Thermodynamics",
-    "question": "JEE Advanced 2025 P1 · Black-body plates P,Q net flux W0; insert 2 plates (3 gaps in series), steady flux Ws. Find W0/Ws.",
-    "options": "Numerical",
-    "answer": "3",
-    "status": "pending"
+    "question": "Two identical perfect black-body plates P and Q in vacuum at fixed temperatures T_P > T_Q; net power per unit area from P to Q is W0. Two more identical plates are inserted between them (heat only between adjacent plates). If the steady-state power per unit area from P to Q is W_S, find W0/W_S.",
+    "options": "NUMERICAL",
+    "answer": "W0/W_S = 3 (with m plates inserted, ratio = m+1)",
+    "status": "done",
+    "video_url": "https://drive.google.com/open?id=1BZVJR15r9tWp2843tp9II2vPYIgErxTh"
   },
   {
     "id": "t4",
     "chapter": "Thermodynamics",
-    "question": "JEE Advanced 2024 P2 · Soap bubble in air chamber, dP=4S/r=144 Pa; chamber P0 reduced to 8P0/27 isothermally. Find new excess pressure.",
-    "options": "Numerical",
-    "answer": "96 Pa",
-    "status": "pending"
+    "question": "A spherical soap bubble inside an air chamber at P0 = 1e5 Pa has excess pressure dP = 144 Pa. The chamber pressure is reduced to 8P0/27; temperature constant and dP << chamber pressure. Find the new excess pressure dP (in Pa).",
+    "options": "NUMERICAL",
+    "answer": "dP = 96 Pa",
+    "status": "done",
+    "video_url": "https://drive.google.com/open?id=1XamK00CtbJvif9MaMTRbJjqKvn-8FPVB"
   },
   {
     "id": "t5",
     "chapter": "Thermodynamics",
-    "question": "JEE Advanced 2023 P2 · n degrees of freedom: U_n=(n/2)RT, v=sqrt(gamma RT/M), gamma=1+2/n. Which is correct? (A) v3<v6,U3>U6 (B) v5>v3,U3>U5 (C) v5>v7,U5<U6 (D) v6<v7,U6<U7",
-    "options": "MCQ Single",
-    "answer": "C",
-    "status": "pending"
+    "question": "An ideal gas is in thermodynamic equilibrium; a molecule has n degrees of freedom. Internal energy of one mole is U_n and speed of sound is v_n. At fixed T and P, which is correct?",
+    "options": "(A) v3<v6 and U3>U6  (B) v5>v3 and U3>U5  (C) v5>v7 and U5<U7  (D) v6<v7 and U6<U7",
+    "answer": "(C) v5 > v7 and U5 < U7",
+    "status": "done",
+    "video_url": "https://drive.google.com/open?id=1Si2r-LZU_Sebsayv827rrcjPvWxMNzC8"
   },
   {
     "id": "t6",
     "chapter": "Thermodynamics",
-    "question": "JEE Advanced 2023 P1 · Adiabatic (T_A,V0)->(T_f,5V0) vs isothermal (T_B,V0)->(T_f,5V0). Find T_A/T_B. (A) 5^(g-1) (B) 5^(1-g) (C) 5^g (D) 5^(1+g)",
-    "options": "MCQ Single",
-    "answer": "A (5^(gamma-1))",
-    "status": "pending"
+    "question": "One mole of an ideal gas expands adiabatically from (T_A, V0) to (T_f, 5V0). Another mole of the same gas expands isothermally from (T_B, V0) to the same final state (T_f, 5V0). With gamma = C_P/C_V, find T_A/T_B.",
+    "options": "(A) 5^(gamma-1)  (B) 5^(1-gamma)  (C) 5^gamma  (D) 5^(1+gamma)",
+    "answer": "(A) 5^(gamma-1)",
+    "status": "done",
+    "video_url": "https://drive.google.com/open?id=1H6ugcUMK5d2CrXdyzaSJDHR-ERN8OSrr"
   },
   {
     "id": "t7",
     "chapter": "Thermodynamics",
-    "question": "JEE Advanced 2023 P1 · Match black-body T (P 2000,Q 3000,R 5000,S 10000 K) to List-II via Wien/Stefan/photoemission. (Wien b=2.9e-3, hc/e=1.24e-6).",
-    "options": "MCQ Single",
-    "answer": "C (P->3,Q->4,R->2,S->1)",
-    "status": "pending"
+    "question": "Match each black-body temperature (List-I) with the correct statement (List-II). Wien's constant = 2.9e-3 m.K, hc/e = 1.24e-6 V.m. List-I: (P) 2000 K, (Q) 3000 K, (R) 5000 K, (S) 10000 K. List-II: (1) peak ejects photoelectrons from a 4 eV metal; (2) peak visible to the eye; (3) peak gives widest single-slit central maximum; (4) power/area is 1/16 of a body at 6000 K; (5) peak can image bones.",
+    "options": "Match List-I to List-II; answer is option (C).",
+    "answer": "(C) P->3, Q->4, R->2, S->1",
+    "status": "done",
+    "video_url": "https://drive.google.com/open?id=16OKFcaojxeijRKzEqhChuw3h1HUBSWh7"
   },
   {
     "id": "t8",
     "chapter": "Thermodynamics",
-    "question": "JEE Advanced 2022 P2 · 5 mol monatomic + 1 mol rigid diatomic, adiabatically compressed V0->V0/4 (2^1.2=2.3, 2^3.2=9.2). (A) |W|=13RT0 (B) avg KE 18-19RT0 (C) Pf between 9-10 P0 (D) gamma=1.6",
-    "options": "MCQ Multiple",
-    "answer": "A, C, D",
-    "status": "pending"
+    "question": "A mixture of 5 moles of monatomic gas and 1 mole of rigid diatomic gas is initially at P0, V0, T0. It is adiabatically compressed to V0/4. Given 2^1.2 = 2.3, 2^3.2 = 9.2. Which statement(s) is/are correct?",
+    "options": "(A) |W| done = 13 R T0  (B) average KE of mixture after compression is between 18 R T0 and 19 R T0  (C) final pressure is between 9 P0 and 10 P0  (D) adiabatic constant of the mixture is 1.6",
+    "answer": "A, C and D (B is the trap). gamma=1.6, T_f=2.3 T0, P_f=9.2 P0, |W|=13 R T0",
+    "status": "done",
+    "video_url": "https://drive.google.com/open?id=1RWRT7h2i5QSMHwDDYSZy_2zeQahadsh8"
   },
   {
     "id": "t9",
     "chapter": "Thermodynamics",
-    "question": "JEE Advanced 2020 P1 · 1 mol He isothermal V1->4V1 then adiabatic ->32V1. W_iso/W_adia=f*ln2. Find f.",
-    "options": "Numerical",
-    "answer": "f = 16/9 (approx 1.78)",
-    "status": "pending"
+    "question": "One mole of helium at (P1, V1) expands isothermally to 4V1, then adiabatically to 32V1. If the work done in the two steps satisfies W_iso / W_adia = f ln 2, find f.",
+    "options": "NUMERICAL",
+    "answer": "f = 16/9 approx 1.78",
+    "status": "done",
+    "video_url": "https://drive.google.com/open?id=19Fw58PBwolfFPPhYsu7UJ9Ojg9vGeEj5"
   },
   {
     "id": "t10",
     "chapter": "Thermodynamics",
-    "question": "JEE Advanced 2018 P2 · 1 mol monatomic adiabatic expansion V->8V, T_i=100 K, R=8.0. Find decrease in internal energy.",
-    "options": "Numerical",
-    "answer": "900 J",
-    "status": "pending"
+    "question": "One mole of a monatomic ideal gas expands adiabatically so its volume becomes eight times the initial value. Initial temperature is 100 K and R = 8.0 J/mol/K. Find the decrease in internal energy (in J).",
+    "options": "NUMERICAL",
+    "answer": "decrease in U = 900 J (Delta U = -900 J)",
+    "status": "done",
+    "video_url": "https://drive.google.com/open?id=1YK9XLswqldbYz-j68st6rwaSDP8D-7m0"
   }
 ]
