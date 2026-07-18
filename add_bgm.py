@@ -44,9 +44,12 @@ def mix(video, music, vol, fin, fout, duck, out):
     # (intro/outro) and quieter under narration (teaching) — exactly what's wanted.
     tail = "aresample=async=1:first_pts=0,alimiter=limit=0.95"
     if duck:
-        chain = (f"{bg};{voice};"
-                 f"[bg][voice]sidechaincompress=threshold=0.02:ratio=9:attack=5:release=450:makeup=1[bgd];"
-                 f"[voice][bgd]amix=inputs=2:duration=first:normalize=0,{tail}[a]")
+        # the voice feeds TWO filters (sidechain key + final mix); a filter pad can only be
+        # consumed once, so split it into [vmain] and [vkey].
+        voice_split = "[0:a]aresample=44100,aformat=channel_layouts=stereo,asplit=2[vmain][vkey]"
+        chain = (f"{bg};{voice_split};"
+                 f"[bg][vkey]sidechaincompress=threshold=0.02:ratio=9:attack=5:release=450:makeup=1[bgd];"
+                 f"[vmain][bgd]amix=inputs=2:duration=first:normalize=0,{tail}[a]")
     else:
         chain = f"{bg};{voice};[voice][bg]amix=inputs=2:duration=first:normalize=0,{tail}[a]"
 

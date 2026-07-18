@@ -1,0 +1,902 @@
+Bundled Page
+This page requires JavaScript to display.
+VIDEO GUIDELINES
+Unpacking...
+Orange Nelumbo
+Video System
+f150
+Video
+Guidelines
+The visual authority for PYQ Masterclass videos. Every screen state, component, variant and edge case the frame progression agent and the renderer obey.
+1920 × 1080
+30 FPS
+ON-VID-VG · v1.0
+In pursuit of mastery
+2026
+Contents
+01 · Foundations
+The pipeline · 03
+The four laws · 04
+The frame & grid · 05
+Screen real estate · 06
+Colour on video · 07
+Type on video · 08
+Motion doctrine · 09
+Timeline anatomy · 10
+02 · Components
+Sting & handoff · 11
+Question card · 12–13
+Attempt pause · 14–15
+Decode blocks · 16
+Agenda tracker · 17–18
+Working canvas · 19–20
+Equation stack · 21–22
+Block space · 23
+Block arc phases · 24–27
+Return & carryback · 28–29
+Variant sweep · 30
+Exam craft · 31
+Compression · 32
+Outro · 33
+Captions · 34
+Emphasis moves · 35
+03 · Edge cases
+Long questions · 36
+Three-concept videos · 37
+Figure-heavy & figure-less · 38
+Two-part splits · 39
+Physics & Chemistry · 40
+Options with figures · 41
+04 · Worked exemplar
+The specimen question · 42
+Plate — question card · 43
+Plate — pause & decode · 44
+Plate — spine & wall · 45
+Plate — block internals · 46
+Plate — the return · 47
+Plate — closing run · 48
+05 · Gatekeeping
+Renderer QC gate · 49
+Back cover · 50
+How to read this book
+Orange Nelumbo — Video Guidelines
+02
+01 — Foundations
+The pipeline
+Three documents run every Masterclass video. Each owns one thing. This book is the third: it owns what the screen looks like — nothing more, nothing less.
+Script agent
+· ON masterclass script instructions
+Owns WORDS and STRUCTURE. Writes the master timing document: segments, walls, blocks, word budgets, SCREEN intents. Names objects by role, never by look.
+Frame progression agent
+· ON masterclass frame instructions
+Owns TIMING, SEQUENCE, SYNC and STATE. Converts script plus word-level audio timestamps into the progression manifest: every element's birth, life and death, pinned to spoken words.
+This book
+· ON video guidelines
+Division of authority
+What is said, when
+Script agent. Nobody downstream rewrites narration.
+What appears, on which frame
+Frame agent. Anchors, durations, state snapshots.
+What it looks like, how it moves
+This book. Obeyed by the renderer without further decisions.
+Conflicts
+Escalate upstream with the exact reference. Never patch by bending a rule.
+Naming is law.
+03
+The four laws
+SPOKEN BEFORE SEEN
+SEEN WHEN SPOKEN
+THE THING DESCRIBED IS THE THING THAT MOVES
+STATE IS CONTINUOUS
+Visually: components never cut. They transform in place — park, recede, compress, restore — with visible spatial logic, so the learner always knows where everything went. A restore returns pixel-identical to its snapshot.
+The single-subject rule is this book's core contribution to Law 3:
+orange is attention, and attention is singular.
+04
+The frame & grid
+SAFE AREA · 96PX ALL SIDES
+CAPTION BAND · Y 920–1010
+1920 × 1080 · 30 FPS
+Frame constants
+Render standard
+Ground
+96 px. No text or live element crosses it. Orbital decoration may bleed.
+Layout unit
+Everything is engineered for the smallest real screen: a phone at 360 px wide. If a frame fails at phone size, the frame is wrong — see type minimums on page 08.
+05
+Screen real estate
+Four persistent state objects share the frame, each with a fixed home slot. Slots are logical: a component may be absent, but nothing else may squat in its slot.
+AGENDA RAIL · X96 W300
+WORKING CANVAS
+X456–1330
+EQUATION STACK
+X1390–1824
+PARKED SLOT · 22%
+CAPTION BAND
+Slot registry
+agenda
+Left rail, x 96–396, top-aligned at y 96. Lives from decode to compression.
+canvas
+Centre field, x 456–1330. The question's diagram or setup. Born once, never redrawn.
+eqstack
+Right column, x 1390–1824, grows downward from y 200. Max six visible lines.
+parked slot
+blockspace
+Overlay panel, 1520 × 840 centred, carbon surface over dimmed base. Opens on wall cues only.
+y 920–1010, centred, max width 1400. Reserved even when captions are absent.
+06
+Colour on video
+The brand palette becomes a grammar: on video, colour is meaning first and decoration never. Each colour has exactly one job, so the learner reads state without thinking.
+The current subject. Singular — one element at a time, per Law 3.
+Kickers, labels, secondary accents, resolved agenda ticks.
+Given data: known values, given conditions, annotations carried from the question.
+Constructions and text at rest — everything already discussed.
+Confirmed results, the correct option, sanity checks that pass.
+Rejected branches, eliminated options, the trap's visible break.
+Edge-case markers, boundary conditions, guard rules.
+Surfaces
+Rules
+Ratio
+80 / 15 / 5 holds on video: dark surfaces dominate, white and titanium carry content, ignition is scarce.
+Cooling
+When narration moves on, the previous subject cools ignition → titanium over 400 ms. Nothing stays orange out of turn.
+Never
+White text on ignition. Small orange body text. Cyan for emphasis. More than one state colour on a single element.
+Contrast
+All narration-critical text ≥ AA on its surface. White on carbon 15.8:1 · titanium on carbon 9.4:1 · ember on obsidian 6.1:1.
+07
+Type on video
+The brand's three families keep their jobs. All sizes are full-frame pixels at 1920 × 1080, tuned to survive a phone screen at 360 px wide.
+Video type scale
+Segment title · 72/76
+Space Grotesk 700, −0.02 em. Question card header, block titles, compression title.
+Question text · 44/62
+Manrope 500, white. Options at 40/54. Max measure 1100 px.
+Mathematics · 48/68
+Teaching text · 36/52
+Manrope 500. Result cards, block statements, variant cards. Never below 32.
+Kicker / label · 24
+JetBrains Mono 500, uppercase, +0.2 em tracking, ember. Agenda entries, canvas annotations, phase labels.
+Caption · 42/54
+Hard minimum · 28
+Nothing narration-critical below 28 px. Decorative telemetry may go to 20 px but must remain non-essential.
+Do
+Step 02 — Radius
+Distance centre to chord
+Mono kicker, Grotesk headline, Manrope body. The three-tier hierarchy, unchanged on video.
+Don't
+No decorative display faces for math. No italic emphasis in equations — ignition colour is the only emphasis. No all-caps body text. No text baked into diagrams at unreadable sizes.
+Reading pace rule: any text the narration reads verbatim appears at the size tier above its role, and holds for at least the time the narration takes to say it plus one second.
+08
+Motion doctrine
+Propulsive, orbital, ignition-lit — the brand's motion character, retimed for narration sync. Every duration below is a token the manifest can reference by name.
+Video timing tokens
+enter-fast · 300ms
+Text lines, labels, agenda entries. Fade + 20 px rise, ease-out.
+enter-build · 500ms
+Cards, panels, geometric constructions. Constructions draw in stroke order.
+transform · ≤800ms
+In-place morphs: an equation rearranging, a diagram gaining a value. Never exceeds the gap to the next anchor.
+highlight · 240ms
+Ignition pulse: colour shift + 1 px glow bloom. The Law 3 baton pass.
+cool · 400ms
+Previous subject fades ignition → titanium as the baton passes.
+park / restore · 600ms
+block open / close · 500ms
+Block space expands from the agenda entry that triggered it, and collapses back into it.
+easing · standard
+Beats are payoff room
+One mover at a time
+Never —
+bounces or overshoots on math, motion for its own sake over static narration, camera moves during equations, entrances longer than the gap to the next anchor. Precision in flight, not spectacle.
+09
+Timeline anatomy
+Nine locked segments, 3:00 to 8:00 total. Each row names the visual mode the segment runs in and the component pages that govern it.
+STING
+QCARD
+PAUSE
+DECODE
+VARIANTS
+CRAFT
+COMPRESS
+OUTRO
+Intro sting · 0:05
+Cached asset, frames 0–149. No captions, no narration. Page 11.
+Question card · 0:12–0:18
+Full-frame mode. Read-synced highlights. Pages 12–13.
+Attempt pause · 0:05
+150 motionless frames, countdown only. Pages 14–15.
+Decode + agenda · 0:20–0:30
+Slot system boots: given/find, agenda born. Pages 16–18.
+Spine + blocks · 2:00–5:45
+Canvas + eqstack alternate with block space. Pages 19–29.
+Variant sweep · 0:20–0:35
+Compact cards or canvas mutations. Page 30.
+Exam craft · 0:12–0:25
+Fast replay strip + option elimination. Page 31.
+Compression · 0:15–0:20
+Full-frame revision asset, standalone-legible. Page 32.
+Outro · 0:08–0:10
+Three visual modes cover all nine segments:
+full-frame
+slot mode
+block mode
+10
+02 — Components
+Sting & handoff
+The sting is a fixed cached asset — frames 0 to 149, exactly five seconds, never re-rendered per video. This page governs only its final frame: the handoff state every video inherits.
+PYQ MASTERCLASS
+F149 · HANDOFF FRAME
+Handoff contract
+Frame 149 state
+Obsidian ground with the ignition bloom fully faded to 8% and the mark settled top-centre. This exact state is state_in for scene 001.
+Frame 150
+Corner badge
+Forbidden
+Captions over the sting. Narration over the sting. Editing the sting per video. A hard cut at the handoff — the card assembles out of the sting's ground, continuous.
+The sting and outro are the only cached assets in the system. Everything between them is rendered from the manifest, and everything between them obeys this book.
+11
+02 — Components · qcard
+Question card
+Full-frame mode. The question is the hero: metadata rides above it, options assemble below it, each on its own spoken anchor. Text regions highlight in sync with the read.
+JEE ADVANCED
+2019 · P1
+4 MARKS
+COORDINATE GEOMETRY
+If a chord of the circle
+subtends a right angle at the centre, then the locus of its
+midpoint
+is
+— NOT YET READ —
+subtends a right angle at the centre, then the locus
+QCARD · FULL-FRAME MODE
+Anatomy & behaviour
+meta strip
+question body
+Manrope 500, 44/62, max measure 1100 px. Given values render cyan on first read. Read-sync: an ignition underline sweep tracks the phrase being spoken.
+options
+lifetime
+The qcard never scrolls. If the question cannot fit at spec sizes, use the overflow treatments on page 36 — shrinking text below minimums is not one of them.
+12
+Approved variants
+Three legal layouts. The frame agent picks by content shape and states the choice in the manifest. No fourth layout exists.
+QC-A
+QC-A · Stacked
+— DEFAULT
+Meta strip, question body, 2 × 2 option grid. For text questions with short options. Chosen unless a condition below fires.
+FIGURE
+REDRAWN TO SPEC
+QC-B
+QC-B · Split with figure
+QC-C
+QC-C · Dense
+Question at 38/54, single-column options. Fires when the question exceeds 60 words or options exceed 12 words each. Below this density, page 36's two-stage read applies.
+Selection rule
+Figure present → QC-B. Else word count > 60 or long options → QC-C. Else QC-A. The manifest header records the choice:
+layout: QC-B
+13
+02 — Components · countdown
+Attempt pause
+TRY IT FIRST
+COUNTDOWN · 150F EXACT · NO CAPTIONS
+Specification
+trigger
+Cue line's final word onset + 0 ms. Duration 150 frames exactly, then decode begins.
+geometry
+motion
+Ring sweep is linear, 30 frames per second-mark. Digits swap instantly on the second boundary — no roll, no fade. Nothing else on screen moves, per QC gate check 6.
+exit
+At frame 149 of the pause the ring completes and fades out over the first 10 frames of decode. The question returns to full opacity in the same move.
+a beeping or pulsing countdown, a blurred question, captions or UI chrome during the pause, or any duration other than 150 frames. The stillness is the design.
+14
+CD-A
+CD-A · Orbital ring
+The signature orbit as a timer. Used with QC-A and QC-C, sitting in whichever gutter the layout leaves free.
+00:03
+.4
+CD-B
+CD-B · Baseline bar
+A depleting bar riding the caption band's reserved slot, mono digits left. Used with QC-B, where the figure occupies the ring's gutter space.
+Shared constraints
+Digits
+Label
+Audio
+Why two variants exist: the countdown must never cover question content, and the two qcard geometries leave different free space. Fit decides, not taste — the rule keeps every video consistent without a human call.
+15
+02 — Components · given / find
+Decode blocks
+The decode's locked grammar — you are given, you need — becomes two cards that assemble on their spoken anchors, in reading order, above the canvas as it is born.
+GIVEN
+FIND
+Locus of the chord's midpoint
+CANVAS BIRTH · PAGE 19
+DECODE · SLOT MODE BOOTS
+given card
+find card
+placement
+Side by side above the canvas field, each 420 px wide. After decode they compress to a single 64 px strip so the canvas gets the field — the strip persists to compression.
+agenda birth
+SOLUTION: 3 LINES
+under the find card. It stays until the walk proves it true — an honesty device the learner can hold the channel to.
+16
+02 — Components · agenda
+Agenda tracker
+1 · BORN
+C1
+Chord midpoint property
+2 · ARMED
+C1 · NOW
+3 · RESOLVED
+C1 ✓
+On the return cue's anchor word: success tick fills, entry cools. Resolves exactly once.
+4 · DEAD
+SLOT EMPTY
+Anatomy
+entry
+home
+block linkage
+QC hooks: one armed entry maximum at any frame · every entry resolves exactly once · tracker dead before compression's first anchor. A tracker violation is a manifest bug, not a styling choice.
+17
+C2 · NOW
+AG-A
+AG-A · Left rail
+Vertical cards in the agenda rail slot. For 1–3 concepts with a centre-weighted canvas. Full concept names visible at all times.
+C3
+AG-B
+AG-B · Top chips
+C2 · TANGENCY CONDITION
+AG-C
+AG-C · Progress ticks
+1 concept → AG-C. Wide canvas or crowded 3-concept frame → AG-B. Otherwise AG-A. One tracker per video — it never switches variants mid-video.
+18
+02 — Components · canvas
+The question's diagram, born once at decode and alive until compression. It only ever gains, annotates, or visibly rejects — it is never cleared, never redrawn.
+M — MIDPOINT
+CHORD · GIVEN
+Drawing grammar
+strokes
+entrances
+annotations
+Mono 24 px labels with a 2 px leader tick, never crossing a stroke. Values arrive next to their element and stay — the canvas accumulates truth.
+rejection
+camera
+One camera move type: a push to 130% max on the region under discussion, 800 ms, and a return to the home framing before the next entrance. Never during an equation.
+19
+The parked state
+During a concept block the canvas survives, visibly, in the parked slot — the learner never doubts the question still exists. Parking is a snapshot operation, not a redraw.
+BLOCK SPACE · OPEN
+OUR QUESTION · S3
+PARKED · 22% · TOP-RIGHT
+Park / restore choreography
+park · 600ms
+parked life
+restore · 600ms
+On the return cue: the reverse arc, verified against the snapshot — position, scale, every element. Pixel-identical or the render fails QC. Carrybacks arrive after the restore lands, not during.
+eqstack & strip
+The equation stack and given/find strip dim to 35% behind the block space but keep their slots. They brighten on restore. They never park — only the canvas parks.
+park to off-screen, park behind the block, shrink below 20%, or restore with a crossfade. The learner must be able to track the object through space both ways.
+20
+02 — Components · eqstack
+Solution lines accumulate in the right column, newest at the bottom, history legible above. The stack is the written record of the walk — it earns the solution-size promise.
+SOLUTION
+Behaviour
+Each line enters on its spoken anchor, enter-fast, at full prominence: white, 48/68, ignition left rule. Lines write left to right when the narration derives them term by term.
+recede
+When a new line enters, the previous one recedes: 48 → 36 px, white → titanium, rule fades. Two steps back it settles at 32 px, 40% white. History stays readable until the segment ends.
+supersede
+result line
+The final line gets the answer treatment: ignition left rule, 7% ignition wash, then a copy travels to the find card and the option grid lights its match in success green.
+capacity
+Six visible lines maximum. Overflow behaviour is on page 22 — the stack never scrolls and lines never silently vanish.
+21
+Stack overflow
+When line seven wants in, the stack compresses deliberately. Two legal moves, chosen by whether the old lines will be needed again.
+SOLUTION · CHAPTER 1 ▸
+3 LINES — SETUP ✓ · COLLAPSED
+EQ-FOLD
+EQ-FOLD · Chapter fold
+EQ-LADDER
+EQ-LADDER · Graduated recede
+Timing
+Identity
+Escalation
+A walk needing more than two folds means the script over-narrates arithmetic — flag it upstream, per the frame agent's escalation rules. Do not invent a third compression move.
+22
+02 — Components · blockspace
+Block space
+The teaching room. It opens on the wall cue, hosts the four-phase arc, and collapses on the return cue. Its whole visual job: feel like a deliberate aside, never a scene change.
+CONCEPT BLOCK · C2
+REACTIVATE
+RESULTS
+EDGES
+JEE
+Tangency condition
+PHASE CONTENT · PAGES 24–27
+BLOCKSPACE · 1520 × 840 · BASE DIMMED 35%
+Choreography
+open · 500ms
+surface
+phase rail
+collapse · 500ms
+Inside the block, the block's own content follows canvas grammar: one subject ignited, constructions draw in stroke order, annotations in mono. The block is a room, not a different house.
+23
+02 — Components · block arc 1 / 4
+Reactivation
+The concept's core intuition, animated fast. The visual leads with the sub-subject's philosophy: picture-first shows the picture moving, cause-first shows the cause firing.
+Philosophy → visual lead
+Picture-first · Maths CG
+The defining picture animates through its family: a chord sweeping the circle, a parameter sliding, the invariant visibly not changing. The invariant gets the ignition.
+Situation-first · Mechanics
+Cause-first · Organic
+Definition-led concepts
+The definition materialises as a formula card while its terms light up on a minimal picture beneath — never a wall of text alone.
+Pace
+Revision pace: the intuition animation completes within the reactivation sentences — typically 8 to 15 seconds total. One continuous motion sequence, not a montage.
+Economy
+Maximum one picture + one formula card in reactivation. If the intuition needs more objects, the script is teaching from step zero — flag upstream.
+Loop rule
+The reactivation is the block's thesis picture. Everything later in the block — results, edge cases, the JEE angle — annotates or breaks THIS picture. It never leaves the block's frame while the block lives.
+24
+02 — Components · block arc 2 / 4
+Working results
+The 2–4 statements the learner actually uses, as result cards. One card per anchor, each visibly tagged with its epistemic tier — justify, derive, or recall.
+R1
+JUSTIFY
+Semi-latus rectum equals the harmonic mean of the focal segments
+Because both segments subtend the same semi-latus rectum…
+R2
+DERIVE
+Derivation runs live in the block — the derivation is the exam skill.
+R3
+RECALL
+Honest recall — flagged as such, no fake reason attached.
+Card behaviour
+layout
+Cards row up along the block's bottom third, left to right, 420 px wide. The reactivation picture stays above — each card's key element flashes on the picture as the card lands.
+tier tags
+derive mode
+registry text
+25
+02 — Components · block arc 3 / 4
+Edge cases & the four-beat trap
+BEAT 1
+The reflex
+The tempting move draws on the picture in titanium, exactly as a real attempt would write it. It looks normal — that is the point.
+BEAT 2
+Why it feels right
+The plausible logic highlights in ember — the true statement the reflex borrows its confidence from lights up beside the move.
+BEAT 3
+The break
+BEAT 4
+The guard
+Edge cases without a trap
+Degenerate / boundary
+Animate the parameter to the edge and hold the broken state 800 ms with a warning marker. The boundary value gets a mono callout pinned to the picture.
+Forgotten condition
+a text-only edge case, a break narrated over a static frame, or red used anywhere else in the block. The break must be witnessed, and red must mean exactly one thing.
+26
+02 — Components · block arc 4 / 4
+The JEE angle
+One or two sentences on how the exam tests this concept. Visually minimal by design — it rides the last edge-case frame rather than claiming new space.
+LAST EDGE-CASE FRAME · HELD
+JEE ANGLE
+Tested as a one-liner: spot the condition, skip the derivation.
+2019
+2022
+JEE ANGLE · SIDE RAIL, NO NEW SCENE
+Form
+An ignition-ruled side card, max 20 words, entering on its anchor. Year chips only for years the script names — the renderer never adds years.
+No new scene
+The edge-case picture holds behind it. If the JEE angle sentence needs its own visual, the block is over-designed — the phase's whole identity is economy.
+Phase rail state at this moment: REACTIVATE ✓ · RESULTS ✓ · EDGES ✓ ·
+JEE armed
+. When the angle lands, the rail completes and the return cue is the only place left to go — the visual structure makes the format's promise audible before it is spoken.
+27
+02 — Components · return
+The return — payoff beat
+The five-move sequence
+t+0ms
+Carrybacks detach from the block and hold. Block space begins its collapse into the agenda entry.
++500ms
+Agenda resolves
+The entry ticks green as the block lands inside it. Simultaneously the canvas restore arc starts.
++1.1s
+Canvas restored
+Verified against snapshot, brightened to full. Eqstack and strip return to full opacity in the same frame.
++1.4s
+Carryback lands
+≤2 sent.
+The step resolves
+The blocked step executes in ONE visible move — one line entering the stack, one construction completing — with the carryback card flashing as its source. Fast is the design: this is the payoff.
+Speed budget
+Collapse-to-resolution must complete inside the two-sentence window the script guarantees. If the audio gap is tight, moves overlap harder — the sequence compresses, it never truncates.
+The one-line moment
+a cut back to the canvas, a re-drawn canvas, a return without the agenda tick, or a resolution that dribbles across three moves. One collapse, one restore, one line.
+28
+02 — Components · carryback
+Carryback artifacts
+What a block explicitly sends home with the solution: a formula card, a guard rule, an edge-case marker. Carrybacks make the block's teaching physically present at the step that uses it.
+CANVAS · RESTORED
+R2 · C1
+CARD
+CG-T2 · C2
+GUARD
+Check the vertical tangent before dividing by slope
+CARRYBACK MARGIN · CANVAS RIGHT EDGE
+Budget
+Activation
+Death
+Carrybacks die at the variant sweep boundary — compression rebuilds their content in its own layout from registry phrasing, it does not inherit the cards.
+Only what the script explicitly carries back travels. The manifest line is
+— no scripted carryback, no artifact.
+29
+02 — Components · variants
+Variant sweep
+V1 · 2015
+Same locus, ellipse instead of circle
+V2 · EXPECT
+Angle at a point on the circle, not the centre
+V3 · EXPECT
+Chord length given, radius asked
+VS-A
+VS-A · Card stack
+V1 · CIRCLE → ELLIPSE
+VS-B
+VS-B · Canvas mutation
+One per anchor
+Each variant appears on its own spoken anchor and stays. The sweep accumulates — by the last variant, the whole set is visible as a family.
+Tag truth
+A filled year chip may only render if the script named that year. EXPECT chips are the only alternative. There is no third chip.
+The sweep runs over the dimmed canvas, not a fresh screen — variants are questions about THIS question, and the frame says so spatially.
+30
+02 — Components · craft
+Exam craft — fast replay
+The 30-second exam-hall version, visualised as a high-speed re-run of the solution's skeleton while the craft narration lands. The options return for the elimination angle.
+SETUP
+CHORD
+DISTANCE
+LOCUS
+REPLAY STRIP · 4× SPEED · LINEAR SCRUB
+RADIUS HALVED — TRAP
+SANITY CHECK — midpoint of a 90° chord sits at r/√2: between 3 and 6, so 18 fits.
+CRAFT · REPLAY + ELIMINATION + SANITY
+replay strip
+The solution's skeleton as 3–5 cells, re-run left to right with a linear scrub at roughly 4× feel. Cells are miniatures of real canvas/stack states — never new drawings.
+elimination
+Options return in their qcard geometry. Eliminated options strike red on their anchors, each with a mono reason tag if the script gives one. The correct option confirms green last.
+sanity check
+The replay is the one place the dead-screen rule inverts: motion is near-continuous for up to 25 seconds. Keep it in the strip — the options and sanity strip move only on their own anchors.
+31
+02 — Components · compression
+Compression frame
+One screen the learner can screenshot: concepts, method, guard. It must work with the audio muted — this frame is a revision asset with a life outside the video.
+Chord midpoint locus — the whole idea
+JEE ADV 2019 · P1
+C1 · CHORD MIDPOINT PROPERTY
+Centre-to-midpoint is perpendicular to the chord
+C2 · RIGHT ANGLE AT CENTRE
+A 90° chord spans r√2
+METHOD
+GUARD · CG-T2
+The locus radius is r/√2, not r/2 — the trap option is built on the halving reflex.
+ORANGE NELUMBO · PYQ MASTERCLASS
+SCREENSHOT THIS
+Assembly
+Concept cards, then method, then guard — each entering on its anchor as the sub-50-word narration names it. Complete before the segment's last word.
+Registry only
+Mute test
+QC verifies the final compression frame standalone: complete, legible at 360 px wide, self-explaining. Captions are suppressed on the finished frame's hold.
+32
+02 — Components · outro
+Outro & bridge
+A cached asset, like the sting. Its first frame is scheduled on the bridge line's first word, and it hosts the end-screen slots the bridge sentence points at.
+Two more questions run on this idea.
+END SCREEN · NEXT VIDEO
+PLAYLIST
+SUB
+OUTRO · CACHED · 8–10S
+The compression frame cross-dissolves to the outro over 500 ms starting on the bridge line's first word — the one legal dissolve in the video, because both frames are summaries, not state.
+Captions
+Burned captions end on the outro line's last word. The outro's hold after that is caption-free.
+Runtime check
+33
+02 — Components · captions
+Burned subtitles, running from the question card's first word to the outro line's last word. Never over the sting, never over the countdown.
+and here the question stops us: it is asking
+what we know about the tangency condition
+CAPTION · Y 920–1010 · MAX 2 × 42 CH
+Type
+Line breaks
+Coverage
+First qcard word → outro line's last word, exactly. Suppressed during the countdown and on the compression frame's final hold. Verbatim TTS text — no paraphrase, no added punctuation, no dashes.
+Collisions
+The band is reserved: layouts never place content in it, so captions never cover anything. If AG-C's tick bar is live, it sits 24 px above the band.
+Captions are part of the render, not a platform afterthought — the mute-viewing experience is a first-class deliverable, same as the compression frame's screenshot life.
+34
+02 — Components · emphasis
+Emphasis moves
+The legal menu for Law 2's floor and the dead-screen rule: when narration runs long over a settled frame, one of these lands on a meaningful word. Nothing else is legal filler.
+E1 · IGNITION PULSE
+the
+of the chord
+E2 · UNDERLINE SWEEP
+subtends a right angle
+at the centre
+E3 · VALUE TICK
+A known value re-asserts: 6 px rise and settle with a momentary ember tick. For numbers the narration re-reads.
+E4 · CAMERA PUSH
+E5 · LEADER FLASH
+step
+NOT MOVES
+Shakes, bounces, spins, particles, pull-out zooms, colour cycling, or any motion on an element the narration is not describing. Emphasis is attention, and attention obeys Law 3.
+Dead-screen procedure
+If 4 seconds pass with narration running and no visible change: pick the sentence's most meaningful word, land E1 or E2 on its referent at that word's onset. The move must point at what is being said — the rule buys sync, never decoration.
+35
+03 — Edge cases
+Long questions & overflow
+When even QC-C cannot hold the question at minimum sizes, the read splits — the text never shrinks below spec and never scrolls.
+The two-stage read
+Stage 1 · stem
+The scenario text alone, full frame, read with the underline sweep. When the read reaches the actual ask, the scenario compresses upward to 60% height…
+Stage 2 · ask + options
+…and the ask plus options assemble in the lower 40%, options on their anchors as always. The stem stays visible at 32 px — dim, but present.
+Countdown
+Other overflow rules
+Comprehension passages
+Long option sets
+Options over 12 words go single-column, and if all four cannot fit, they enter two at a time as read, earlier pair receding to 60% — never leaving the frame entirely.
+Matrix-match
+shrink below the 28 px floor, scroll text, paraphrase the question on screen, or crop the figure. The question appears exactly as the paper asked it, or the format changes.
+36
+Three-concept videos
+At the ceiling — 8:00, three blocks of roughly 90 seconds — the frame carries more simultaneous state than any other video. These adjustments keep it legible.
+Adjustments
+carrybacks
+The two-live limit binds hard: after block three, only the two most recent artifacts remain. The retired card's content is safe — compression rebuilds from registry phrasing.
+Expect one EQ-FOLD per return: fold the pre-wall lines as each block resolves, labelled by step. The stack reads as a table of contents of the walk.
+block pacing
+90-second blocks mean the four phases run tight: reactivation ≤ 25 s, results ≤ 35 s, edges ≤ 25 s, JEE ≤ 8 s. The phase rail keeps the learner oriented through the pace.
+compression
+The crowding test
+Four or more concepts
+37
+Figure-heavy & figure-less
+The canvas is mandatory either way — what changes is where it comes from and what it holds.
+Figure-heavy
+Figure-less
+domain line
+case table
+structure map
+For sequences, functional equations, counting: the objects as nodes, the relation as drawn edges. Enters piece by piece on anchors like any construction.
+The test is identical in every case: at the wall cue, is there a THING on screen that visibly parks and visibly returns? If not, the video has no spatial story and the format's payoff cannot land.
+38
+Two-part splits
+Four or more concepts make a pair of complete videos. Each part is fully self-contained visually — but the pair must read as siblings at a glance.
+Part-specific rules
+part badge
+The qcard meta strip gains a filled chip: PART 1 OF 2 / PART 2 OF 2. It persists in the compression frame of both parts.
+part 1 agenda
+part 1 ending
+Part 1 compresses its own concepts plus the setup state, and its final canvas state is saved as the pair's handoff snapshot. The outro headline bridges to Part 2.
+part 2 opening
+part 2 pause
+The attempt pause exists in Part 2 as well — the learner attempts the remaining distance with Part 1's state on screen. All countdown rules apply unchanged.
+Sibling identity
+Same qcard layout, same agenda variant, same canvas home framing across both parts. A learner scrubbing between parts should never feel a design change.
+Independence
+The handoff snapshot is a real manifest object: Part 2's manifest header references Part 1's terminal snapshot id, and QC verifies the rebuild reproduces it element for element.
+39
+Physics & Chemistry
+Physics
+units
+Every value renders with its unit, mono, never separated across a line break:
+9.8 m/s²
+. A unitless number in a Physics stack is a QC failure.
+FBD ritual
+simulation beats
+Chemistry
+structures
+the canvas is the scheme
+state colours
+Colour grammar is unchanged: the reacting centre gets ignition, spectator parts stay titanium. Never colour atoms by element — colour means attention here, not identity.
+40
+Options with figures
+Which graph shows the variation of potential along the axis?
+FIGURE OPTIONS · 4-UP ROW
+The read
+In exam craft, eliminated figures dim to 60% with a red corner ✕ — never a strike through the curve, which would draw a new false curve.
+The canvas
+The working canvas builds the TRUE graph from the physics/maths. The final beat overlays the derived curve onto the winning option — the answer is shown to be forced, not matched.
+41
+04 — Worked exemplar
+The specimen
+Six plates walk one complete video through every component in this book. The question is a specimen in the classic PYQ shape — substitute any real paper's metadata without changing a single rule.
+SPECIMEN
+MATHS · COORDINATE GEOMETRY
+2 CONCEPTS
+· KEY
+| chord-midpoint-locus | fps 30 | narration offset 5.000s
+SCR-0412
+audio:
+AUD-0412-t3
+alignment:
+ALN-0412
+QC-A · CD-A · AG-A
+concepts:
+C1 chord-midpoint-property, C2 right-angle-span
+Plate index
+P1 · 43
+P2 · 44
+Pause & decode
+P3 · 45
+Spine & wall
+P4 · 46
+Block internals
+P5 · 47
+The return
+P6 · 48
+Closing run
+42
+04 — Exemplar · plate 1
+Scene 001 — question card
+SPECIMEN PAPER
+subtends a
+right angle at the centre
+, then the locus of its midpoint is
+then the locus of its midpoint is
+STATE @ f420
+Manifest excerpt
+[SCENE 001 | seg 2 question-card | in 00:05.00 f150 | out 00:19.13 f574]
+CHECK ·
+Option D's slot is empty at f420: its first word has not been spoken. Law 1 in the layout itself.
+43
+04 — Exemplar · plate 2
+Scenes 002–003 — pause, decode
+C2
+Right angle span
+Locus of midpoint M
+SOLUTION: ONE SUBSTITUTION
+CHORD · 90° AT O
+STATE @ f920 · SLOT MODE LIVE
+[SCENE 002 | seg 3 attempt-pause | in f574 | out f724]
+[SCENE 003 | seg 4 decode+agenda | in f724 | out f912]
+Each agenda entry entered on its own concept-name anchor — two entries, two anchors, 29 frames apart.
+44
+04 — Exemplar · plate 3
+Scenes 004–005 — step, wall
+DIMMING · PARK STARTS f1580
+OM ⊥ chord — but why constant?
+STATE @ f1580 · WALL FIRING
+[SCENE 005 | seg 5 wall-1 → block C1 | in f1568]
+Snapshot S3 recorded at park: 6 live elements listed with slots. The restore at plate 5 verifies against it.
+45
+04 — Exemplar · plate 4
+Scene 006 — block C1 internals
+CONCEPT BLOCK · C1
+REACT ✓
+RESULTS ✓
+OM ⊥ CHORD — ALWAYS
+CG-T2
+Midpoint locus radius is r/√2, not r/2
+NOW
+STATE @ f2350 · EDGES PHASE · BASE DIMMED
+[SCENE 006 | seg 5 block C1 | in f1602 | out f2588]
+46
+04 — Exemplar · plate 5
+Scene 007 — the return
+OM ⊥ chord
+CG-T2 · C1
+r/√2, not r/2
+STATE @ f2660 · RESOLVED IN ONE LINE
+[SCENE 007 | seg 5 return-1 | in f2588]
+47
+04 — Exemplar · plate 6
+Scenes 010–013 — closing run
+The last minute in four states: variants over the dimmed canvas, craft's replay and elimination, the compression frame, the outro dissolve.
+V1 · EXPECT
+Ellipse instead of circle
+Angle at a circumference point
+Chord through a fixed point
+f2900–f3480 · VS-A
+SCENE 010 · VARIANT SWEEP
+A · 9
+B ✓ 18
+C · 12
+D · 24
+Sanity: between 3 and 6 → 18 ✓
+f3480–f4050
+SCENE 011 · EXAM CRAFT
+C1 · MIDPOINT ⊥
+C2 · 90° SPANS r√2
+GUARD · CG-T2 — r/√2, not r/2
+MUTE TEST ✓
+SCENE 012 · COMPRESSION — agenda already dead
+NEXT VIDEO
+DISSOLVE 500MS ON BRIDGE WORD 1 · CAPTIONS END ON LAST WORD
+SCENE 013 · OUTRO — runtime 6:38 ✓ inside 3:00–8:00
+48
+05 — Gatekeeping
+Renderer QC gate
+The frame agent's ten sync checks run upstream. These twelve visual checks run on the render. Any failure means fix, not annotate.
+V1
+One ignition subject per frame — no frame anywhere has two orange attention holders.
+V2
+V3
+V4
+V5
+Variant declarations honoured: the QC/CD/AG choices in the manifest header are what rendered, unchanged mid-video.
+V6
+V7
+V8
+V9
+Agenda lifecycle exact: born at decode, one arm at a time, each resolved once, dead before compression.
+V10
+V11
+V12
+No banned moves: no bounces on math, no white-on-orange, no redraws, no emphasis outside the E1–E5 menu.
+Escalation:
+49
+ON-VID-VG · v1.0 · 2026
+Spoken before seen.
+Seen when spoken.
+State is continuous.
+The script owns the words. The manifest owns the frames. This book owns the screen. A renderer holding all three needs no further decisions — and every Masterclass video looks like it came from the same mission control.
+utf-8
+__bundler_thumbnail
+0 0 1200 800
+1200
+800
+600
+380
+190
+none
+__bundler/manifest
+__bundler/template
+__bundler/ext_resources
+f78f526d-35de-4ec8-b46c-87f0a171fb2c
+mime
+text/javascript
+compressed
+data
+cfaf6a41-3122-48fb-801a-c88097ebb64b
+cf821963-4fbf-4937-a088-fba263db1292
+6e6a1dc7-63d8-4f5d-9825-7e09f14561ff
+font/woff2
+3a2f6c2b-0b16-462e-84e4-f9520e91e586
+6713838b-b0ce-443e-bfef-93452027503b
+730c10c8-4982-46cd-b71a-596d04c83146
+434059e4-65d2-484d-bbc3-9788ceff2e77
+da41ca8f-cf13-448f-a847-1f6a2b1d98fc
+e6c13a58-d430-47dd-a5be-e3ca0e46ecdc
+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
+fd59b3c4-7bcb-48d7-a03c-5b3894cd26ea
+766f0ac5-0dcb-4ea5-9e17-3db45c2db8c0
+2332d8ee-ad27-45d1-9687-8f0e972a29f6
+b0e65a68-8c8d-40e7-a7c9-5180990ce5e9
+841f35dd-9639-4af4-a4fb-2bbd23432604
+dde6bc20-327f-4040-bc5c-1f764165ee5a
+e258e2a1-bfbc-46fe-9550-d78aeb96ceb7
+1d702681-e585-4b9c-bc34-edc2c978c10b
+uuid
+DOMContentLoaded
+__bundler_loading
+error
+[bundle] resource failed to load:
++ e.lineno +
+, !!manifestEl,
++ uuids.length +
++ uuid +
++ entry.mime +
+JetBrains Mono
+woff2
+Manrope
+Space Grotesk
+s reserved slot, mono digits left. Used with QC-B, where the figure occupies the ring
+s core intuition, animated fast. The visual leads with the sub-subject
+s thesis picture. Everything later in the block — results, edge cases, the JEE angle — annotates or breaks THIS picture. It never leaves the block
+s bottom third, left to right, 420 px wide. The reactivation picture stays above — each card
+s line for the sentence
+s last word. The outro
+s first word to the outro line
+s last word, exactly. Suppressed during the countdown and on the compression frame
+s most meaningful word, land E1 or E2 on its referent at that word
+s manifest header references Part 1

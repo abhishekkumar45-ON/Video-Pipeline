@@ -23,3 +23,7 @@ outputs/
 # IDE
 .vscode/
 .idea/
+
+# Runtime locks & TTS scratch
+.questions.lock
+media/
