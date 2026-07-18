@@ -8,7 +8,7 @@ step rail. No progress counter. Voice af_bella. 4K. Gate-clean.
 from manim import *
 from nelumbo import *
 from manim_voiceover import VoiceoverScene
-from kokoro_service import KokoroService
+from voice import narration_service
 
 WORKC = LEFT * 1.15
 LOGO_CLEAR = 1.7   # top-edge buff for centered headers: keeps them ~1.5 cm below the logo
@@ -17,7 +17,7 @@ LOGO_CLEAR = 1.7   # top-edge buff for centered headers: keeps them ~1.5 cm belo
 class Scene_t9(VoiceoverScene):
     def construct(self):
         background(self)
-        self.set_speech_service(KokoroService(voice="af_bella"))
+        self.set_speech_service(narration_service(kokoro_voice="af_bella"))
 
         logo = on_logo(0.5).to_corner(UL, buff=0.45)
         chapter = Body("Thermodynamics", color=TITANIUM).scale(0.4).to_corner(DL, buff=0.45)

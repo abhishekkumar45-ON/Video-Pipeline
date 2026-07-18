@@ -16,7 +16,7 @@ nothing removed:
 from manim import *
 from nelumbo import *
 from manim_voiceover import VoiceoverScene
-from kokoro_service import KokoroService
+from voice import narration_service
 
 K = 8.0 / 1080.0
 def UX(px): return (px - 960) * K
@@ -29,7 +29,7 @@ GUARD = "#F2B21C"
 class Scene_t1(VoiceoverScene):
     def construct(self):
         background(self)
-        self.set_speech_service(KokoroService(voice="af_bella"))
+        self.set_speech_service(narration_service(kokoro_voice="af_bella"))
 
         from pathlib import Path
         badge = ImageMobject(str(Path("assets/on_logo.png").resolve())); badge.height = 0.5
