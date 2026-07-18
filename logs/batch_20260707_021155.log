@@ -1,0 +1,4 @@
+[2026-07-07 02:11:55] batch start · 10 to build · workers=1 · quality=-qk · music=True · drive=True
+[2026-07-07 02:11:55]   skip q10: already done
+[2026-07-07 02:11:55]   queue: ['t1', 't2', 't3', 't4', 't5', 't6', 't7', 't8', 't9', 't10']
+[2026-07-07 02:11:55] >>> [1/10] START t1 (Thermodynamics) -> logs/t1.log

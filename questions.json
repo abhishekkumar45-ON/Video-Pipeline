@@ -23,7 +23,7 @@
     "question": "Two isosceles prisms 1 and 2 (angles A1,A2; indices n1,n2) have inner faces a1b1, a2b2 parallel and both perpendicular to a horizontal mirror M. A ray enters a1c1, leaves prism 1 at a1b1, reflects off M, enters prism 2 at a2b2, emerges from a2c2. Pick correct statement(s). Key link: i2 = e1.",
     "options": "(A) both at min deviation => n2/n1 = sin(A1/2)/sin(A2/2)  (B) sin i1 = n2 sin(A2/2)  (C) theta = (1/2)[dm1/(n1-1)+dm2/(n2-1)]  (D) if prism1 at min deviation, sin i2 = n1 sin(A1/2)",
     "answer": "A and D",
-    "status": "pending"
+    "status": "prompted"
   },
   {
     "id": "q6",
@@ -67,5 +67,86 @@
     "answer": "A, B and C (D wrong: Pb=6.24 atm)",
     "status": "done",
     "video_url": "https://drive.google.com/open?id=1n7B7EleiT9qELPwaF6WBhbigSY-S5geE"
+  },
+  {
+    "id": "t1",
+    "chapter": "Thermodynamics",
+    "question": "JEE Advanced 2025 P2 · Monatomic gas, adiabatic+isobaric V-T cycle WXYZ (V=64,125,250). Heat absorbed along X->Y, given nRT_W=1 J.",
+    "options": "Numerical",
+    "answer": "1.6 J",
+    "status": "done",
+    "video_url": "https://drive.google.com/open?id=10rbZ7BruncLsS_rZ41o-JJiJzVdPngCh"
+  },
+  {
+    "id": "t2",
+    "chapter": "Thermodynamics",
+    "question": "JEE Advanced 2025 P2 · Thermally-conducting spring-loaded piston between 3/2 mol and 1 mol; piston L/2 from each edge, spring natural length 2L/5. Right pressure P=(kL/A)alpha, find alpha.",
+    "options": "Numerical",
+    "answer": "alpha = 0.2",
+    "status": "pending"
+  },
+  {
+    "id": "t3",
+    "chapter": "Thermodynamics",
+    "question": "JEE Advanced 2025 P1 · Black-body plates P,Q net flux W0; insert 2 plates (3 gaps in series), steady flux Ws. Find W0/Ws.",
+    "options": "Numerical",
+    "answer": "3",
+    "status": "pending"
+  },
+  {
+    "id": "t4",
+    "chapter": "Thermodynamics",
+    "question": "JEE Advanced 2024 P2 · Soap bubble in air chamber, dP=4S/r=144 Pa; chamber P0 reduced to 8P0/27 isothermally. Find new excess pressure.",
+    "options": "Numerical",
+    "answer": "96 Pa",
+    "status": "pending"
+  },
+  {
+    "id": "t5",
+    "chapter": "Thermodynamics",
+    "question": "JEE Advanced 2023 P2 · n degrees of freedom: U_n=(n/2)RT, v=sqrt(gamma RT/M), gamma=1+2/n. Which is correct? (A) v3<v6,U3>U6 (B) v5>v3,U3>U5 (C) v5>v7,U5<U6 (D) v6<v7,U6<U7",
+    "options": "MCQ Single",
+    "answer": "C",
+    "status": "pending"
+  },
+  {
+    "id": "t6",
+    "chapter": "Thermodynamics",
+    "question": "JEE Advanced 2023 P1 · Adiabatic (T_A,V0)->(T_f,5V0) vs isothermal (T_B,V0)->(T_f,5V0). Find T_A/T_B. (A) 5^(g-1) (B) 5^(1-g) (C) 5^g (D) 5^(1+g)",
+    "options": "MCQ Single",
+    "answer": "A (5^(gamma-1))",
+    "status": "pending"
+  },
+  {
+    "id": "t7",
+    "chapter": "Thermodynamics",
+    "question": "JEE Advanced 2023 P1 · Match black-body T (P 2000,Q 3000,R 5000,S 10000 K) to List-II via Wien/Stefan/photoemission. (Wien b=2.9e-3, hc/e=1.24e-6).",
+    "options": "MCQ Single",
+    "answer": "C (P->3,Q->4,R->2,S->1)",
+    "status": "pending"
+  },
+  {
+    "id": "t8",
+    "chapter": "Thermodynamics",
+    "question": "JEE Advanced 2022 P2 · 5 mol monatomic + 1 mol rigid diatomic, adiabatically compressed V0->V0/4 (2^1.2=2.3, 2^3.2=9.2). (A) |W|=13RT0 (B) avg KE 18-19RT0 (C) Pf between 9-10 P0 (D) gamma=1.6",
+    "options": "MCQ Multiple",
+    "answer": "A, C, D",
+    "status": "pending"
+  },
+  {
+    "id": "t9",
+    "chapter": "Thermodynamics",
+    "question": "JEE Advanced 2020 P1 · 1 mol He isothermal V1->4V1 then adiabatic ->32V1. W_iso/W_adia=f*ln2. Find f.",
+    "options": "Numerical",
+    "answer": "f = 16/9 (approx 1.78)",
+    "status": "pending"
+  },
+  {
+    "id": "t10",
+    "chapter": "Thermodynamics",
+    "question": "JEE Advanced 2018 P2 · 1 mol monatomic adiabatic expansion V->8V, T_i=100 K, R=8.0. Find decrease in internal energy.",
+    "options": "Numerical",
+    "answer": "900 J",
+    "status": "pending"
   }
 ]

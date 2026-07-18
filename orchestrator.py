@@ -30,6 +30,8 @@ Phase-2 (when you fund an API key, these become real autonomous agents):
   script_judge(), visual_qc(), caption_writer() hooks are stubbed below.
 """
 import argparse
+import contextlib
+import fcntl
 import glob
 import json
 import os
@@ -37,6 +39,7 @@ import re
 import shutil
 import subprocess
 import sys
+import tempfile
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 QUESTIONS = os.path.join(ROOT, "questions.json")
@@ -55,9 +58,37 @@ def load_questions():
 
 
 def save_questions(qs):
-    with open(QUESTIONS, "w", encoding="utf-8") as f:
+    """Atomic whole-file write: a concurrent reader sees old or new, never a half file."""
+    fd, tmp = tempfile.mkstemp(dir=ROOT, prefix=".questions.", suffix=".tmp")
+    with os.fdopen(fd, "w", encoding="utf-8") as f:
         json.dump(qs, f, indent=2, ensure_ascii=False)
         f.write("\n")
+    os.replace(tmp, QUESTIONS)
+
+
+_QLOCK = os.path.join(ROOT, ".questions.lock")
+
+
+@contextlib.contextmanager
+def questions_lock():
+    """Cross-process advisory lock so parallel builds don't clobber each other's writes."""
+    with open(_QLOCK, "w") as lf:
+        fcntl.flock(lf, fcntl.LOCK_EX)
+        try:
+            yield
+        finally:
+            fcntl.flock(lf, fcntl.LOCK_UN)
+
+
+def update_question(qid, **fields):
+    """Locked read-modify-write of a SINGLE question's fields — safe under 2+ concurrent builds."""
+    with questions_lock():
+        qs = load_questions()
+        for q in qs:
+            if q["id"] == qid:
+                q.update(fields)
+                break
+        save_questions(qs)
 
 
 def find_q(qs, qid):
@@ -278,7 +309,7 @@ def cmd_build(args):
         print("  py_compile FAILED:")
         print("   ", msg.splitlines()[-1] if msg else "")
         emit_prompt(q, error=msg, prior_code=read(scene_path), tag="repair")
-        q["status"] = "review"; save_questions(qs); return
+        update_question(q["id"], status="review"); return
 
     print("  layout gate (overlap / off-frame) ...", flush=True)
     ok, report = layout_check(scene_path, cls)
@@ -288,14 +319,14 @@ def cmd_build(args):
             print("   ", ln)
         emit_prompt(q, error="Layout gate failed — FIX THESE overlaps/clipping:\n" + report,
                     prior_code=read(scene_path), tag="repair")
-        q["status"] = "review"; save_questions(qs); return
+        update_question(q["id"], status="review"); return
 
     print(f"  rendering {args.quality} ...", flush=True)
     ok, msg = render(scene_path, cls, args.quality)
     if not ok:
         print("  render FAILED — writing repair prompt")
         emit_prompt(q, error=msg, prior_code=read(scene_path), tag="repair")
-        q["status"] = "review"; save_questions(qs); return
+        update_question(q["id"], status="review"); return
 
     os.makedirs(OUT_DIR, exist_ok=True)
     solo = os.path.join(OUT_DIR, f"{q['id']}.mp4")
@@ -326,11 +357,11 @@ def cmd_build(args):
             print(f"  (music step failed — shipping no-music version)\n{(r.stderr or '')[-300:]}")
 
     url = upload_to_drive(final, args.drive) if args.drive else None
+    fields = {"status": "done"}
     if url:
         print(f"  Drive: {url}")
-        q["video_url"] = url
-    q["status"] = "done"
-    save_questions(qs)
+        fields["video_url"] = url
+    update_question(q["id"], **fields)
     print(f"  {q['id']} DONE ✅")
 
 
